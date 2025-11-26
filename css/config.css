@@ -51,6 +51,8 @@
   align-items:center;
   gap:12px;
   color:white;
+  font-family: var(--font-display);
+  letter-spacing:0.03em;
 }
 
 .config-header-actions{
@@ -145,6 +147,8 @@
   display:flex;
   align-items:center;
   gap:10px;
+  font-family: var(--font-display);
+  letter-spacing:0.03em;
 }
 
 /* --- Config Item Cards (FIJO) --- */
@@ -413,6 +417,8 @@
   display:flex;
   align-items:center;
   gap:8px;
+  font-family: var(--font-display);
+  letter-spacing:0.03em;
 }
 
 .config-preview-content{

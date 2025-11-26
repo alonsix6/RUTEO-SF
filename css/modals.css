@@ -53,6 +53,8 @@
 .modal-header h2{
   margin:0;
   font-size:1.5rem;
+  font-family: var(--font-display);
+  letter-spacing:0.03em;
 }
 
 .modal-close{
@@ -89,6 +91,8 @@
   margin-bottom:16px;
   padding-bottom:8px;
   border-bottom:2px solid #e5e7eb;
+  font-family: var(--font-display);
+  letter-spacing:0.03em;
 }
 
 .modal-section h4{
