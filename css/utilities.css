@@ -1,0 +1,29 @@
+/* ============================================
+   📐 CSS: UTILIDADES
+   ============================================ */
+
+/* --- Toast Notifications --- */
+.toast{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:white;
+  padding:14px 20px;
+  border-radius:12px;
+  font-size:.9rem;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(99,102,241,0.35);
+  animation:slideInRight 0.4s ease;
+  z-index:1000;
+}
+
+@keyframes slideInRight{
+  from{opacity:0;transform:translateX(100px);}
+  to{opacity:1;transform:translateX(0);}
+}
+
+/* --- Hidden Utility --- */
+.hidden{
+  display:none!important;
+}
