@@ -1,0 +1,30 @@
+/* ============================================
+   📐 CSS: RESPONSIVE
+   ============================================ */
+
+@media(max-width:1000px){
+  .main-grid{
+    grid-template-columns:1fr;
+  }
+
+  .config-btn,
+  .theme-toggle{
+    width:48px;
+    height:48px;
+    font-size:1.3rem;
+  }
+
+  .config-modal-content{
+    max-width:95%;
+    max-height:95vh;
+  }
+
+  .config-tabs{
+    flex-wrap:wrap;
+  }
+
+  .config-tab-btn{
+    font-size:0.8rem;
+    padding:12px 10px;
+  }
+}

@@ -1,0 +1,163 @@
+/* ============================================
+   📐 CSS: LAYOUT BASE
+   ============================================ */
+
+/* --- Body y Background --- */
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.6;
+  padding:40px 24px;
+  min-height:100vh;
+  position:relative;
+  transition:var(--transition);
+}
+
+/* --- Background Gradients por Tema --- */
+body::before{
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(99,102,241,0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139,92,246,0.15), transparent 50%);
+  pointer-events:none;
+  z-index:0;
+  transition:var(--transition);
+}
+
+[data-theme="light"] body::before{
+  background:
+    radial-gradient(circle at 20% 50%, rgba(99,102,241,0.08), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139,92,246,0.08), transparent 50%);
+}
+
+[data-theme="ocean"] body::before{
+  background:
+    radial-gradient(circle at 20% 50%, rgba(14,165,233,0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(6,182,212,0.15), transparent 50%);
+}
+
+[data-theme="forest"] body::before{
+  background:
+    radial-gradient(circle at 20% 50%, rgba(16,185,129,0.3), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(52,211,153,0.3), transparent 50%);
+}
+
+[data-theme="pink"] body::before{
+  background:
+    radial-gradient(circle at 20% 50%, rgba(236,72,153,0.25), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(232,121,249,0.25), transparent 50%);
+}
+
+/* --- Container Principal --- */
+.container{
+  max-width:1200px;
+  margin:auto;
+  position:relative;
+  z-index:1;
+  padding-top:20px;
+}
+
+/* --- Header --- */
+.header{
+  text-align:center;
+  margin-bottom:48px;
+  margin-top:60px;
+  animation:slideDown 0.6s ease;
+}
+@keyframes slideDown{
+  from{opacity:0;transform:translateY(-30px);}
+  to{opacity:1;transform:none;}
+}
+
+.header h1{
+  font-size:2.5rem;
+  font-weight:800;
+  margin-bottom:12px;
+  background:linear-gradient(135deg,#818cf8 0%,#c084fc 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 4px 12px rgba(99,102,241,0.3));
+}
+
+/* --- Header Title: Variaciones por Tema --- */
+[data-theme="pink"] .header h1{
+  background:linear-gradient(135deg,#be185d 0%,#881337 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 4px 12px rgba(190,24,93,0.4));
+}
+
+[data-theme="forest"] .header h1{
+  background:linear-gradient(135deg,#166534 0%,#14532d 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 4px 12px rgba(22,101,52,0.4));
+}
+
+[data-theme="light"] .header h1{
+  background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 4px 12px rgba(99,102,241,0.3));
+}
+
+/* --- Header Subtitle --- */
+.header p{
+  color:var(--muted);
+  font-size:1.1rem;
+  margin:0;
+  font-weight:500;
+}
+
+[data-theme="pink"] .header p{
+  color:#be185d;
+  font-weight:600;
+}
+
+[data-theme="forest"] .header p{
+  color:#166534;
+  font-weight:600;
+}
+
+[data-theme="light"] .header p{
+  color:#64748b;
+  font-weight:600;
+}
+
+/* --- Footer --- */
+.footer{
+  text-align:center;
+  margin-top:48px;
+  color:var(--muted);
+  font-size:.9rem;
+  font-weight:500;
+}
+
+/* --- Form Container --- */
+.form-container{
+  max-width:900px;
+  margin:0 auto 80px;
+}
+
+.history-container{
+  max-width:900px;
+  margin:0 auto;
+  padding-top:40px;
+}
+
+.main-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+}

@@ -1,0 +1,187 @@
+/* ============================================
+   📐 CSS: FORMULARIOS
+   ============================================ */
+
+/* --- Labels --- */
+label{
+  display:block;
+  font-weight:600;
+  margin-bottom:8px;
+  color:var(--text);
+  font-size:0.9rem;
+  letter-spacing:0.3px;
+}
+
+[data-theme="pink"] label{
+  color:#ffffff;
+}
+
+/* --- Inputs, Selects, Textareas --- */
+input,select,textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:2px solid var(--border);
+  background:#0f172a;
+  color:var(--text);
+  font-size:0.95rem;
+  outline:none;
+  transition:var(--transition);
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea{
+  background:#ffffff;
+  border-color:#e2e8f0;
+}
+
+[data-theme="pink"] input,
+[data-theme="pink"] select,
+[data-theme="pink"] textarea{
+  background:#fce7f3;
+  border-color:#f9a8d4;
+  color:#881337;
+}
+
+[data-theme="pink"] input::placeholder{
+  color:#db2777;
+  opacity:0.6;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(99,102,241,0.15);
+  transform:translateY(-1px);
+}
+
+input[readonly]{
+  background:#1e293b;
+  color:var(--muted);
+}
+
+[data-theme="light"] input[readonly]{
+  background:#f1f5f9;
+  color:var(--muted);
+}
+
+[data-theme="pink"] input[readonly]{
+  background:#fbcfe8;
+  color:#be185d;
+}
+
+/* --- Form Groups --- */
+.form-group{
+  margin-bottom:16px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+/* --- Buttons --- */
+.btn{
+  border:none;
+  border-radius:12px;
+  padding:12px 20px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:0.95rem;
+  transition:var(--transition);
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.btn:active{
+  transform:translateY(0);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:white;
+}
+
+.btn-primary:hover{
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.btn-secondary{
+  background:linear-gradient(135deg,#334155,#475569);
+  color:#f1f5f9;
+}
+
+.btn-secondary:hover{
+  background:linear-gradient(135deg,#475569,#64748b);
+}
+
+.btn-success{
+  background:linear-gradient(135deg,#10b981,#059669);
+  color:white;
+}
+
+.btn-warning{
+  background:linear-gradient(135deg,#f59e0b,#d97706);
+  color:white;
+}
+
+.btn-group{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+}
+
+/* --- Result Box --- */
+.result-box{
+  background:rgba(99,102,241,0.08);
+  backdrop-filter:blur(10px);
+  border:2px solid var(--accent);
+  border-radius:14px;
+  padding:18px;
+  margin-top:20px;
+  box-shadow:0 8px 24px rgba(99,102,241,0.2);
+  position:relative;
+  animation:fadeIn .4s ease;
+  word-break:break-all;
+  overflow-wrap:break-word;
+}
+
+#resultText{
+  line-height:1.6;
+  padding-right:80px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:scale(0.95);}
+  to{opacity:1;transform:scale(1);}
+}
+
+.copy-btn{
+  position:absolute;
+  right:14px;
+  top:14px;
+  background:var(--accent);
+  color:white;
+  border:none;
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:0.85rem;
+  transition:var(--transition);
+}
+
+.copy-btn:hover{
+  background:var(--accent-hover);
+  transform:scale(1.05);
+}
