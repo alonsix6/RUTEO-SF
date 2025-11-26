@@ -29,12 +29,14 @@
 
 /* --- Card Title --- */
 .card-title{
+  font-family: var(--font-display);
   font-size:1.3rem;
   font-weight:700;
   margin-bottom:20px;
   padding-bottom:12px;
   border-bottom:3px solid var(--accent);
   color:var(--accent);
+  letter-spacing:0.03em;
 }
 
 /* --- Stat Grid --- */
