@@ -178,7 +178,7 @@ RUTEO-SF/
 
 #### Brand
 Requiere campos adicionales:
-- **Código de Pieza**: AON, NAB2B, HUE, ELABORDOS, etc.
+- **Código de Pieza**: AON, NAB2B, HUE, Elaborados, etc.
 - **Número de Pieza**: 01-30
 
 **Ejemplo de UTM Brand**:

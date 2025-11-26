@@ -153,7 +153,7 @@ function getDefaultConfig(){
       },
       {
         id: 'cod_4',
-        codigo: 'ELABORDOS',
+        codigo: 'Elaborados',
         descripcion: 'Elaborados',
         isCore: true
       }
