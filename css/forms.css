@@ -37,14 +37,14 @@ textarea::placeholder {
   opacity: 0.7;
 }
 
-/* --- Focus State con Borde Neón --- */
+/* --- Focus State con Borde del Tema --- */
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--color-neon-green);
-  box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow-color);
   transform: translateY(-1px);
-  background: var(--color-gray-dark);
+  background: var(--card-hover);
 }
 
 /* --- Readonly State --- */
@@ -111,16 +111,16 @@ input[readonly] {
   transform: none !important;
 }
 
-/* --- Button Primary (Verde Sólido) --- */
+/* --- Button Primary (Sólido con color del tema) --- */
 .btn-primary {
   background: var(--accent);
-  color: var(--color-black);
+  color: var(--text-contrast);
 }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.3);
+  box-shadow: 0 8px 24px var(--glow-color);
 }
 
 .btn-primary:active:not(:disabled) {
@@ -139,21 +139,21 @@ input[readonly] {
 .btn-ghost:hover:not(:disabled),
 .btn-secondary:hover:not(:disabled) {
   background: var(--accent);
-  color: var(--color-black);
+  color: var(--text-contrast);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.2);
+  box-shadow: 0 8px 24px var(--glow-color);
 }
 
-/* --- Button Success (Verde Neón Sólido) --- */
+/* --- Button Success (Usa color del tema) --- */
 .btn-success {
-  background: var(--color-success);
-  color: var(--color-black);
+  background: var(--accent);
+  color: var(--text-contrast);
 }
 
 .btn-success:hover:not(:disabled) {
-  background: var(--color-cyan);
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
+  box-shadow: 0 8px 24px var(--glow-color);
 }
 
 /* --- Button Warning (Naranja) --- */

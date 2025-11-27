@@ -10,7 +10,7 @@ body {
   color: var(--text);
   font-size: var(--text-base);
   line-height: 1.6;
-  padding: 80px var(--space-md) var(--space-xl);
+  padding: var(--space-xl) var(--space-md);
   min-height: 100vh;
   position: relative;
   transition: var(--transition);
@@ -65,13 +65,13 @@ body::before {
   margin-bottom: var(--space-sm);
   color: var(--color-white);
 
-  /* Efecto de degradado neón opcional en el título RUTEO */
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
+  /* Degradado del tema aplicado al título RUTEO */
+  background: var(--title-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  filter: drop-shadow(0 4px 24px rgba(0, 255, 133, 0.4));
+  filter: drop-shadow(0 4px 24px var(--glow-color));
 }
 
 /* --- Header Subtitle Reset --- */

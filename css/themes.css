@@ -11,16 +11,27 @@
   --accent-secondary: #6F42C1;
   --accent-rgb: 0, 255, 133;
 
+  /* Colores de texto con buen contraste */
   --bg: #000000;
   --card: #1A1A1A;
   --card-hover: #222222;
   --border: #333333;
   --text: #FFFFFF;
+  --text-contrast: #000000; /* Para usar sobre fondos accent */
   --muted: #AAAAAA;
 
+  /* Color para título RUTEO */
+  --title-color: #00FF85;
+  --title-gradient: linear-gradient(135deg, #00FF85 0%, #00E5FF 100%);
+
+  /* Sombras y glow del tema */
   --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.1);
   --shadow-md: 0 8px 32px rgba(0, 255, 133, 0.15);
   --shadow-lg: 0 16px 48px rgba(0, 255, 133, 0.25);
+  --glow-color: rgba(0, 255, 133, 0.2);
+
+  /* Dropdown text color */
+  --dropdown-text: #FFFFFF;
 }
 
 /* --- Tema Light (Gris Claro con Verde) --- */
@@ -30,16 +41,27 @@
   --accent-secondary: #6F42C1;
   --accent-rgb: 0, 204, 106;
 
+  /* Colores de texto con buen contraste para fondo claro */
   --bg: #F5F5F5;
   --card: #FFFFFF;
   --card-hover: #EEEEEE;
   --border: #DDDDDD;
   --text: #1A1A1A;
+  --text-contrast: #FFFFFF;
   --muted: #666666;
 
+  /* Color para título RUTEO en tema claro */
+  --title-color: #00CC6A;
+  --title-gradient: linear-gradient(135deg, #00CC6A 0%, #00A055 100%);
+
+  /* Sombras y glow del tema */
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
+  --glow-color: rgba(0, 204, 106, 0.2);
+
+  /* Dropdown text color */
+  --dropdown-text: #1A1A1A;
 }
 
 /* --- Tema Ocean (Azul/Cyan) --- */
@@ -54,11 +76,20 @@
   --card-hover: #002B47;
   --border: #003D5C;
   --text: #E0F7FF;
+  --text-contrast: #000A14;
   --muted: #7FC8E8;
+
+  /* Color para título RUTEO en tema ocean */
+  --title-color: #00E5FF;
+  --title-gradient: linear-gradient(135deg, #00E5FF 0%, #00B8D4 100%);
 
   --shadow-sm: 0 4px 16px rgba(0, 229, 255, 0.15);
   --shadow-md: 0 8px 32px rgba(0, 229, 255, 0.2);
   --shadow-lg: 0 16px 48px rgba(0, 229, 255, 0.3);
+  --glow-color: rgba(0, 229, 255, 0.25);
+
+  /* Dropdown text color */
+  --dropdown-text: #E0F7FF;
 }
 
 /* --- Tema Forest (Verde Oscuro Natural) --- */
@@ -73,11 +104,20 @@
   --card-hover: #1F331F;
   --border: #2D472D;
   --text: #E8F5E8;
+  --text-contrast: #0A1F0A;
   --muted: #8BC48B;
+
+  /* Color para título RUTEO en tema forest */
+  --title-color: #00FF85;
+  --title-gradient: linear-gradient(135deg, #00FF85 0%, #4CAF50 100%);
 
   --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.12);
   --shadow-md: 0 8px 32px rgba(0, 255, 133, 0.18);
   --shadow-lg: 0 16px 48px rgba(0, 255, 133, 0.25);
+  --glow-color: rgba(0, 255, 133, 0.2);
+
+  /* Dropdown text color */
+  --dropdown-text: #E8F5E8;
 }
 
 /* --- Tema Pink (Magenta/Rosa) --- */
@@ -92,9 +132,18 @@
   --card-hover: #3D0030;
   --border: #5C0047;
   --text: #FFE0F0;
+  --text-contrast: #1A0014;
   --muted: #E899CC;
+
+  /* Color para título RUTEO en tema pink */
+  --title-color: #FF0080;
+  --title-gradient: linear-gradient(135deg, #FF0080 0%, #FF3399 100%);
 
   --shadow-sm: 0 4px 16px rgba(255, 0, 128, 0.15);
   --shadow-md: 0 8px 32px rgba(255, 0, 128, 0.2);
   --shadow-lg: 0 16px 48px rgba(255, 0, 128, 0.3);
+  --glow-color: rgba(255, 0, 128, 0.25);
+
+  /* Dropdown text color */
+  --dropdown-text: #FFE0F0;
 }
