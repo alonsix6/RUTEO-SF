@@ -5,15 +5,11 @@
 
 /* --- Top Navigation Header --- */
 .top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-md) var(--space-lg);
-  z-index: var(--z-sticky);
+  position: static;
+  background: transparent;
+  border-bottom: none;
+  padding: 0 0 var(--space-lg) 0;
+  margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;
   gap: var(--space-md);
@@ -40,9 +36,9 @@
 
 .config-btn:hover {
   background: var(--accent);
-  color: var(--color-black);
+  color: var(--text-contrast);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 133, 0.2);
+  box-shadow: 0 4px 12px var(--glow-color);
 }
 
 .config-btn:active {
@@ -71,9 +67,9 @@
 
 .theme-toggle:hover {
   background: var(--accent);
-  color: var(--color-black);
+  color: var(--text-contrast);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 133, 0.2);
+  box-shadow: 0 4px 12px var(--glow-color);
 }
 
 .theme-toggle:active {
@@ -106,7 +102,7 @@
   transition: var(--transition);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--text);
+  color: var(--dropdown-text);
 }
 
 .theme-option:hover {
@@ -116,16 +112,16 @@
 
 .theme-option.active {
   background: var(--accent);
-  color: var(--color-black);
+  color: var(--text-contrast);
 }
 
 .theme-option.active .theme-text {
-  color: var(--color-black) !important;
+  color: var(--text-contrast) !important;
   font-weight: var(--weight-bold);
 }
 
 .theme-text {
-  color: var(--text);
+  color: var(--dropdown-text);
 }
 
 /* --- Help Button (Inferior Derecha sin Gradiente) --- */
