@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- CSS Stylesheets -->
-<link rel="stylesheet" href="css/variables.css?v=2.2">
-<link rel="stylesheet" href="css/themes.css?v=2.2">
-<link rel="stylesheet" href="css/layout.css?v=2.2">
-<link rel="stylesheet" href="css/navigation.css?v=2.2">
-<link rel="stylesheet" href="css/forms.css?v=2.2">
-<link rel="stylesheet" href="css/cards.css?v=2.2">
-<link rel="stylesheet" href="css/history.css?v=2.2">
-<link rel="stylesheet" href="css/modals.css?v=2.2">
-<link rel="stylesheet" href="css/config.css?v=2.2">
-<link rel="stylesheet" href="css/utilities.css?v=2.2">
-<link rel="stylesheet" href="css/responsive.css?v=2.2">
+<link rel="stylesheet" href="css/variables.css?v=2.3">
+<link rel="stylesheet" href="css/themes.css?v=2.3">
+<link rel="stylesheet" href="css/layout.css?v=2.3">
+<link rel="stylesheet" href="css/navigation.css?v=2.3">
+<link rel="stylesheet" href="css/forms.css?v=2.3">
+<link rel="stylesheet" href="css/cards.css?v=2.3">
+<link rel="stylesheet" href="css/history.css?v=2.3">
+<link rel="stylesheet" href="css/modals.css?v=2.3">
+<link rel="stylesheet" href="css/config.css?v=2.3">
+<link rel="stylesheet" href="css/utilities.css?v=2.3">
+<link rel="stylesheet" href="css/responsive.css?v=2.3">
 </head>
 
 <body>
@@ -591,8 +591,310 @@
         </table>
       </div>
 
-      <!-- Resto del contenido del modal de ayuda se mantiene igual -->
-      <!-- (Por brevedad, aquí solo incluyo las secciones principales) -->
+      <!-- PLATAFORMAS -->
+      <div class="modal-section">
+        <h3>🌐 Plataformas Disponibles</h3>
+        <div class="platform-grid">
+          <div class="platform-tag">Meta (FB/IG)</div>
+          <div class="platform-tag">Google</div>
+          <div class="platform-tag">TikTok</div>
+          <div class="platform-tag">LinkedIn</div>
+          <div class="platform-tag">X (Twitter)</div>
+          <div class="platform-tag">Programática</div>
+        </div>
+      </div>
+
+      <!-- OBJETIVOS Y MEDIUM -->
+      <div class="modal-section">
+        <h3>🎯 Objetivos y Medium</h3>
+        <h4>Objetivos disponibles:</h4>
+        <ul>
+          <li><strong>Tráfico (trf):</strong> Llevar usuarios al sitio</li>
+          <li><strong>Conversiones (conv):</strong> Generar compras o acciones específicas</li>
+          <li><strong>Interacciones (int):</strong> Engagement con el contenido</li>
+          <li><strong>Reproducciones (rpr):</strong> Video views</li>
+          <li><strong>Alcance (alc):</strong> Maximizar impresiones</li>
+        </ul>
+
+        <h4>Medium (se genera automáticamente):</h4>
+        <ul>
+          <li><strong>paid-social:</strong> Para redes sociales (Meta, TikTok, LinkedIn, etc.)</li>
+          <li><strong>paid-search:</strong> Para búsquedas en Google (SEM)</li>
+          <li><strong>display:</strong> Para banners en Google</li>
+          <li><strong>video:</strong> Para campañas de video en Google</li>
+          <li><strong>cross-network:</strong> Para Performance Max (PMAX)</li>
+        </ul>
+      </div>
+
+      <!-- PLACEMENT META -->
+      <div class="modal-section">
+        <h3>📱 Placement en Meta</h3>
+        <p>Cuando seleccionas Meta como plataforma, puedes especificar dónde se muestra el anuncio:</p>
+        <ul>
+          <li><strong>META:</strong> Facebook + Instagram simultáneamente</li>
+          <li><strong>FB:</strong> Solo Facebook</li>
+          <li><strong>IG:</strong> Solo Instagram</li>
+        </ul>
+        <div class="tip-box">
+          <strong>💡 Tip:</strong> Esto te permite filtrar resultados por red social específica en tus reportes.
+        </div>
+      </div>
+
+      <!-- GUÍA DE FILTRADO EN GA4 -->
+      <div class="modal-section">
+        <h3>📊 Cómo Filtrar en Google Analytics 4</h3>
+
+        <h4>Ruta básica:</h4>
+        <div class="code-example">Reports → Acquisition → Traffic Acquisition</div>
+
+        <h4>Filtros por plataforma:</h4>
+        <p><strong>Para ver solo Meta (Facebook/Instagram):</strong></p>
+        <div class="code-example">
+Session source = "facebook"<br>
+Session medium = "paid-social"<br>
+Session manual ad content CONTAINS "META" | "FB" | "IG"
+        </div>
+
+        <p><strong>Para ver solo Google Ads:</strong></p>
+        <div class="code-example">
+Session source = "google"<br>
+Session medium = "paid-search" | "display" | "video"
+        </div>
+
+        <p><strong>Para ver solo TikTok:</strong></p>
+        <div class="code-example">
+Session source = "tiktok"<br>
+Session medium = "paid-social"
+        </div>
+
+        <h4>Filtros avanzados:</h4>
+        <p><strong>Ver campañas de Brand específicas:</strong></p>
+        <div class="code-example">
+Session campaign CONTAINS "brand"<br>
+Session manual ad content CONTAINS "AON" (para Always On)
+        </div>
+
+        <p><strong>Ver campañas de Ecommerce:</strong></p>
+        <div class="code-example">
+Session campaign CONTAINS "ecommerce"<br>
+Session manual ad content CONTAINS "VALES" | "pollo" | "embutidos"
+        </div>
+
+        <div class="tip-box">
+          <strong>🔎 Consejo Pro:</strong> Usa "Explorations" en GA4 para análisis más profundos. Ve a Explore → Blank → Agrega dimensiones de Session source, Session medium, Session campaign y Session manual ad content.
+        </div>
+      </div>
+
+      <!-- CONSEJOS EXTRA -->
+      <div class="modal-section">
+        <h3>💎 Consejos de Filtrado Extra</h3>
+        <ul>
+          <li><strong>Usa filtros combinados:</strong> Source + Medium + Campaign para precisión máxima</li>
+          <li><strong>Crea segmentos:</strong> Guarda tus filtros favoritos como segmentos reutilizables</li>
+          <li><strong>Compara períodos:</strong> Usa date ranges para ver evolución temporal</li>
+          <li><strong>Secondary dimensions:</strong> Agrega Session manual ad content para ver creatividades</li>
+          <li><strong>Custom channel groups:</strong> Agrupa plataformas similares para reportes ejecutivos</li>
+        </ul>
+      </div>
+
+      <!-- MOTIVO Y CREATIVIDAD -->
+      <div class="modal-section">
+        <h3>🎨 Especificación de Motivo y Creatividad</h3>
+        <p>Es crucial ser específico en el campo "Motivo/Creatividad" para identificar exactamente qué pieza gráfica o mensaje está generando resultados:</p>
+
+        <div class="warning-box">
+          <strong>⚠️ MUY IMPORTANTE - Restricciones de Caracteres:</strong>
+          <p style="margin:8px 0 0 0;"><strong>NO uses espacios, tildes, ñ, ni caracteres especiales</strong> en los campos de la UTM. Estos elementos rompen la estructura de la UTM e impiden el tracking posterior en Analytics.</p>
+
+          <h4 style="margin-top:16px;margin-bottom:8px;color:#ef4444;">❌ CARACTERES PROHIBIDOS:</h4>
+          <div class="code-example" style="margin-top:8px;">
+• Espacios: "pollo parrillero" ❌<br>
+• Tildes: "promoción", "válido", "más" ❌<br>
+• Eñes: "diseño", "niño" ❌<br>
+• Puntuación española: "¿qué?", "¡wow!" ❌<br>
+• Acentos sueltos: "´", "`" ❌<br>
+• Especiales: "%", "&", "#", "×", "/", "\", "&lt;", "&gt;", etc. ❌
+          </div>
+
+          <h4 style="margin-top:16px;margin-bottom:8px;color:#10b981;">✅ USA EN SU LUGAR:</h4>
+          <div class="code-example" style="margin-top:8px;background:#f0fdf4;border-color:#86efac;">
+✅ "pollo_parrillero" (guión bajo en lugar de espacio)<br>
+✅ "promocion", "valido", "mas" (sin tildes)<br>
+✅ "diseno", "nino" (reemplaza ñ → n)<br>
+✅ "que", "wow" (sin signos de puntuación)<br>
+✅ "2x1", "descuento20" (números y letras simples)
+          </div>
+
+          <p style="margin-top:12px;"><strong>💡 Tip:</strong> El sistema limpia automáticamente estos caracteres mientras escribes, pero es mejor evitarlos desde el inicio.</p>
+        </div>
+
+        <div class="tip-box">
+          <strong>✅ BUENAS PRÁCTICAS:</strong>
+          <ul style="margin-top:8px;">
+            <li>Usa guiones bajos (_) en lugar de espacios</li>
+            <li>Usa nombres descriptivos y únicos</li>
+            <li>Incluye el formato si es relevante: "video_pollo", "carousel_hamburguesa"</li>
+            <li>Diferencia versiones: "VALES_v1", "VALES_v2"</li>
+            <li>Especifica promociones: "descuento20", "2x1pollo"</li>
+            <li>Indica el producto exacto: "pechugaentera", "hotdog"</li>
+            <li>Evita tildes: usa "promocion" en vez de "promoción"</li>
+          </ul>
+        </div>
+
+        <div class="code-example">
+❌ MAL: motivo = "¿promoción válida?"<br>
+✅ BIEN: motivo = "promocion_valida"<br><br>
+❌ MAL: motivo = "¡oferta 2×1!"<br>
+✅ BIEN: motivo = "oferta_2x1"<br><br>
+❌ MAL: motivo = "diseño navideño" (tiene espacio y ñ)<br>
+✅ BIEN: motivo = "diseno_navideno"<br><br>
+❌ MAL: motivo = "más_productos" (tiene tilde)<br>
+✅ BIEN: motivo = "mas_productos"
+        </div>
+
+        <p><strong>Esto evita:</strong></p>
+        <ul>
+          <li>Confusión entre campañas similares</li>
+          <li>Mezcla de datos de diferentes creatividades</li>
+          <li>Imposibilidad de identificar el origen exacto de las conversiones</li>
+          <li><strong>Errores de tracking por caracteres no permitidos</strong></li>
+        </ul>
+      </div>
+
+      <!-- EJEMPLOS PRÁCTICOS -->
+      <div class="modal-section">
+        <h3>💼 Ejemplos Prácticos</h3>
+
+        <h4>Ejemplo 1: Campaña Brand en Meta</h4>
+        <div class="code-example">
+URL: https://delivery.sanfernando.pe/categorias/pollo<br>
+División: Brand<br>
+Plataforma: Meta (FB/IG)<br>
+Objetivo: Conversiones<br>
+Tipo: AON<br>
+Placement: META<br>
+Código pieza: AON<br>
+Número pieza: 01<br>
+Motivo: pollo_parrillero_video<br><br>
+<strong>UTM generada:</strong><br>
+utm_source=facebook<br>
+utm_medium=paid-social<br>
+utm_campaign=brand_conv_AON_OCTUBRE_2025<br>
+utm_content=brand_AON_01_META_pollo_parrillero_video
+        </div>
+
+        <h4>Ejemplo 2: Campaña Ecommerce en Google</h4>
+        <div class="code-example">
+URL: https://delivery.sanfernando.pe/vales<br>
+División: Ecommerce<br>
+Plataforma: Google<br>
+Medium: paid-search (SEM)<br>
+Objetivo: Conversiones<br>
+Tipo: account_link<br>
+Motivo: VALES_descuento20<br><br>
+<strong>UTM generada:</strong><br>
+utm_source=google<br>
+utm_medium=paid-search<br>
+utm_campaign=ecommerce_conv_account_link_OCTUBRE_2025<br>
+utm_content=ecom_GOOGLE_VALES_descuento20
+        </div>
+
+        <h4>Ejemplo 3: Campaña Ecommerce en Meta</h4>
+        <div class="code-example">
+URL: https://delivery.sanfernando.pe/categorias/embutidos<br>
+División: Ecommerce<br>
+Plataforma: Meta (FB/IG)<br>
+Placement: FB (Solo Facebook)<br><br>
+Objetivo: Conversiones<br>
+Tipo: Cyber<br>
+Motivo: chorizo_parrillero_2x1<br><br>
+<strong>UTM generada:</strong><br>
+utm_source=facebook<br>
+utm_medium=paid-social<br>
+utm_campaign=ecommerce_conv_Cyber_OCTUBRE_2025<br>
+utm_content=ecom_FB_chorizo_parrillero_2x1
+        </div>
+
+        <h4>Ejemplo 4: Campaña Brand en TikTok</h4>
+        <div class="code-example">
+URL: https://delivery.sanfernando.pe/<br>
+División: Brand<br>
+Plataforma: TikTok<br>
+Objetivo: Alcance<br>
+Tipo: Cyber<br>
+Código pieza: HUE<br>
+Número pieza: 03<br>
+Motivo: huevos_frescos_dance<br><br>
+<strong>UTM generada:</strong><br>
+utm_source=tiktok<br>
+utm_medium=paid-social<br>
+utm_campaign=brand_alc_Cyber_OCTUBRE_2025<br>
+utm_content=brand_HUE_03_TIKTOK_huevos_frescos_dance
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="modal-section">
+        <h3>❓ Preguntas Frecuentes</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Por qué Ecommerce no usa códigos de pieza?</div>
+          <div class="faq-answer">Es una diferencia en la estrategia de naming. Ecommerce se enfoca en el producto/motivo directamente, mientras que Brand necesita un sistema más estructurado para sus creatividades y campañas de awareness.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Cómo sé qué código de pieza usar?</div>
+          <div class="faq-answer">Los códigos identifican la campaña principal (AON = Always On, NAB2B = Navidad B2B, HUE = Huevos, Elaborados = Elaborados). El número de pieza (01-30) identifica la creatividad específica dentro de esa campaña.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Qué es "account_link" en Google?</div>
+          <div class="faq-answer">Es un tipo de campaña especial que solo aparece para Google. Se usa para elementos compartidos entre distintas campañas de Google Ads que no se limitan a un objetivo específico, como píxeles de conversión, públicos similares, o configuraciones de cuenta que aplican a múltiples campañas simultáneamente.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Puedo usar la misma UTM en varios lugares?</div>
+          <div class="faq-answer">Sí, pero NO es recomendable. Cada UTM debe ser única para cada ubicación/creatividad. Si usas la misma UTM en Facebook e Instagram, no podrás diferenciar de dónde vino el tráfico.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Los parámetros UTM son case-sensitive?</div>
+          <div class="faq-answer">Sí. "VALES", "vales" y "Vales" se consideran diferentes en Analytics. El generador mantiene consistencia, pero ten cuidado si editas manualmente.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Puedo exportar mi historial?</div>
+          <div class="faq-answer">Sí, usa el botón "📥 CSV" en el historial para descargar todas tus UTMs generadas en formato Excel/CSV.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">¿Qué hago si veo tráfico "Unassigned" en GA4?</div>
+          <div class="faq-answer">Significa que GA4 no pudo categorizar automáticamente ese tráfico. Usa el filtro "Session source / medium" para ver de dónde viene y ajusta tu nomenclatura si es necesario.</div>
+        </div>
+      </div>
+
+      <!-- BUENAS PRÁCTICAS FINALES -->
+      <div class="modal-section">
+        <h3>✨ Buenas Prácticas Finales</h3>
+        <ul>
+          <li>✅ Siempre completa todos los campos obligatorios</li>
+          <li>✅ Sé consistente con la nomenclatura (mayúsculas/minúsculas)</li>
+          <li>✅ Usa nombres descriptivos en "Motivo/Creatividad"</li>
+          <li>✅ Guarda tu historial exportando regularmente a CSV</li>
+          <li>✅ Prueba tus UTMs antes de lanzar campañas grandes</li>
+          <li>✅ Documenta tus convenciones de naming para todo el equipo</li>
+          <li>✅ Usa guiones bajos (_) para separar palabras</li>
+          <li>❌ <strong>No uses espacios (rompen la UTM)</strong></li>
+          <li>❌ <strong>No uses tildes ni ñ (impiden tracking)</strong></li>
+          <li>❌ <strong>No uses caracteres especiales: ¿¡´`, %, &, #, ×, /, etc.</strong></li>
+          <li>❌ No reutilices UTMs para campañas diferentes</li>
+          <li>❌ No agregues UTMs a enlaces internos de tu sitio</li>
+        </ul>
+
+        <div class="warning-box" style="margin-top:20px;">
+          <strong>🚨 RECUERDA:</strong> Los espacios, tildes, eñes y caracteres especiales españoles (¿¡´`) son la causa #1 de UTMs rotas. Siempre revisa antes de implementar.
+        </div>
+      </div>
 
     </div>
   </div>
