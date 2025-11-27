@@ -1,187 +1,366 @@
 /* ============================================
-   📐 CSS: FORMULARIOS
+   📐 RESET AGENCIA - FORMULARIOS
+   Inputs, Selects, Buttons estilo Reset
    ============================================ */
 
 /* --- Labels --- */
-label{
-  display:block;
-  font-weight:600;
-  margin-bottom:8px;
-  color:var(--text);
-  font-size:0.9rem;
-  letter-spacing:0.3px;
+label {
+  display: block;
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-sm);
+  color: var(--text);
+  font-size: var(--text-sm);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-family: var(--font-body);
 }
 
-[data-theme="pink"] label{
-  color:#ffffff;
+/* --- Inputs, Selects, Textareas Reset Style --- */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--color-gray-dark);
+  color: var(--text);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
 }
 
-/* --- Inputs, Selects, Textareas --- */
-input,select,textarea{
-  width:100%;
-  padding:12px 14px;
-  border-radius:12px;
-  border:2px solid var(--border);
-  background:#0f172a;
-  color:var(--text);
-  font-size:0.95rem;
-  outline:none;
-  transition:var(--transition);
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
 }
 
-[data-theme="light"] input,
-[data-theme="light"] select,
-[data-theme="light"] textarea{
-  background:#ffffff;
-  border-color:#e2e8f0;
+/* --- Focus State con Borde Neón --- */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-neon-green);
+  box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.1);
+  transform: translateY(-1px);
+  background: var(--color-gray-dark);
 }
 
-[data-theme="pink"] input,
-[data-theme="pink"] select,
-[data-theme="pink"] textarea{
-  background:#fce7f3;
-  border-color:#f9a8d4;
-  color:#881337;
-}
-
-[data-theme="pink"] input::placeholder{
-  color:#db2777;
-  opacity:0.6;
-}
-
-input:focus,select:focus,textarea:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(99,102,241,0.15);
-  transform:translateY(-1px);
-}
-
-input[readonly]{
-  background:#1e293b;
-  color:var(--muted);
-}
-
-[data-theme="light"] input[readonly]{
-  background:#f1f5f9;
-  color:var(--muted);
-}
-
-[data-theme="pink"] input[readonly]{
-  background:#fbcfe8;
-  color:#be185d;
+/* --- Readonly State --- */
+input[readonly] {
+  background: var(--color-gray-ultra-dark);
+  color: var(--muted);
+  cursor: not-allowed;
+  border-color: var(--border);
 }
 
 /* --- Form Groups --- */
-.form-group{
-  margin-bottom:16px;
+.form-group {
+  margin-bottom: var(--space-md);
 }
 
-.form-group.full{
-  grid-column:1/-1;
+.form-group.full {
+  grid-column: 1 / -1;
 }
 
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-bottom:16px;
+/* --- Form Row (2 columnas) --- */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 
-/* --- Buttons --- */
-.btn{
-  border:none;
-  border-radius:12px;
-  padding:12px 20px;
-  font-weight:700;
-  cursor:pointer;
-  font-size:0.95rem;
-  transition:var(--transition);
-  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+/* ============================================
+   BOTONES ESTILO RESET
+   ============================================ */
+
+/* --- Base Button --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:active{
-  transform:translateY(0);
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
-.btn-primary{
-  background:linear-gradient(135deg,#6366f1,#8b5cf6);
-  color:white;
+/* --- Button Primary (Gradient Verde-Cian Neón) --- */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
+  color: var(--color-black);
 }
 
-.btn-primary:hover{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
 }
 
-.btn-secondary{
-  background:linear-gradient(135deg,#334155,#475569);
-  color:#f1f5f9;
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
 }
 
-.btn-secondary:hover{
-  background:linear-gradient(135deg,#475569,#64748b);
+/* --- Button Ghost (Borde Neón) --- */
+.btn-ghost,
+.btn-secondary {
+  background: transparent;
+  color: var(--color-neon-green);
+  border: 2px solid var(--color-neon-green);
+  box-shadow: none;
 }
 
-.btn-success{
-  background:linear-gradient(135deg,#10b981,#059669);
-  color:white;
+.btn-ghost:hover:not(:disabled),
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-neon-green);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
 }
 
-.btn-warning{
-  background:linear-gradient(135deg,#f59e0b,#d97706);
-  color:white;
+/* --- Button Success (Verde Neón Sólido) --- */
+.btn-success {
+  background: var(--color-success);
+  color: var(--color-black);
 }
 
-.btn-group{
-  display:flex;
-  gap:10px;
-  margin-top:18px;
+.btn-success:hover:not(:disabled) {
+  background: var(--color-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
 }
 
-/* --- Result Box --- */
-.result-box{
-  background:rgba(99,102,241,0.08);
-  backdrop-filter:blur(10px);
-  border:2px solid var(--accent);
-  border-radius:14px;
-  padding:18px;
-  margin-top:20px;
-  box-shadow:0 8px 24px rgba(99,102,241,0.2);
-  position:relative;
-  animation:fadeIn .4s ease;
-  word-break:break-all;
-  overflow-wrap:break-word;
+/* --- Button Warning (Naranja) --- */
+.btn-warning {
+  background: var(--color-warning);
+  color: var(--color-white);
 }
 
-#resultText{
-  line-height:1.6;
-  padding-right:80px;
+.btn-warning:hover:not(:disabled) {
+  background: #FF9922;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 136, 0, 0.3);
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:scale(0.95);}
-  to{opacity:1;transform:scale(1);}
+/* --- Button Danger (Rojo) --- */
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-white);
 }
 
-.copy-btn{
-  position:absolute;
-  right:14px;
-  top:14px;
-  background:var(--accent);
-  color:white;
-  border:none;
-  border-radius:10px;
-  padding:8px 12px;
-  cursor:pointer;
-  font-weight:600;
-  font-size:0.85rem;
-  transition:var(--transition);
+.btn-danger:hover:not(:disabled) {
+  background: #FF5555;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 68, 68, 0.3);
 }
 
-.copy-btn:hover{
-  background:var(--accent-hover);
-  transform:scale(1.05);
+/* --- Button Sizes --- */
+.btn-sm {
+  padding: 10px 20px;
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  padding: 18px 40px;
+  font-size: var(--text-lg);
+}
+
+/* --- Button Group --- */
+.btn-group {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   RESULT BOX (Caja de Resultados)
+   ============================================ */
+
+.result-box {
+  background: rgba(0, 255, 133, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-neon-green);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+#resultText {
+  line-height: 1.6;
+  padding-right: 80px;
+  color: var(--text);
+  font-family: monospace;
+  font-size: var(--text-sm);
+}
+
+/* --- Copy Button en Result Box --- */
+.copy-btn {
+  position: absolute;
+  right: var(--space-md);
+  top: var(--space-md);
+  background: var(--color-neon-green);
+  color: var(--color-black);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.copy-btn:hover {
+  background: var(--color-cyan);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 133, 0.3);
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   CUSTOM SELECT STYLE
+   ============================================ */
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300FF85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300E5FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* ============================================
+   CHECKBOX Y RADIO BUTTONS CUSTOM
+   ============================================ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: var(--space-xs);
+  cursor: pointer;
+  accent-color: var(--color-neon-green);
+}
+
+/* ============================================
+   INPUT DE BÚSQUEDA
+   ============================================ */
+
+input[type="search"] {
+  padding-left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23AAAAAA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px;
+}
+
+input[type="search"]:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2300FF85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* ============================================
+   TEXTAREA ESPECÍFICO
+   ============================================ */
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ============================================
+   ESTADOS DE ERROR Y ÉXITO EN INPUTS
+   ============================================ */
+
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--color-danger);
+}
+
+input.error:focus,
+select.error:focus,
+textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+}
+
+input.success,
+select.success,
+textarea.success {
+  border-color: var(--color-success);
+}
+
+input.success:focus,
+select.success:focus,
+textarea.success:focus {
+  box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.1);
+}
+
+/* --- Error Message --- */
+.error-message {
+  color: var(--color-danger);
+  font-size: var(--text-xs);
+  margin-top: var(--space-xs);
+  font-weight: var(--weight-medium);
+}
+
+/* --- Success Message --- */
+.success-message {
+  color: var(--color-success);
+  font-size: var(--text-xs);
+  margin-top: var(--space-xs);
+  font-weight: var(--weight-medium);
 }

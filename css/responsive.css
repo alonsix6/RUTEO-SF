@@ -1,52 +1,327 @@
 /* ============================================
-   📐 CSS: RESPONSIVE
+   📐 RESET AGENCIA - RESPONSIVE DESIGN
+   Mobile-first approach estilo Reset
    ============================================ */
 
-@media(max-width:1000px){
-  .main-grid{
-    grid-template-columns:1fr;
+/* --- Tablet y Desktop Pequeño (max 1000px) --- */
+@media (max-width: 1000px) {
+  .main-grid {
+    grid-template-columns: 1fr;
   }
 
   .config-btn,
-  .theme-toggle{
-    width:48px;
-    height:48px;
-    font-size:1.3rem;
+  .theme-toggle {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-lg);
   }
 
-  .config-modal-content{
-    max-width:95%;
-    max-height:95vh;
+  .config-modal-content {
+    max-width: 95%;
+    max-height: 95vh;
   }
 
-  .config-tabs{
-    flex-wrap:wrap;
+  .config-tabs {
+    flex-wrap: wrap;
   }
 
-  .config-tab-btn{
-    font-size:0.8rem;
-    padding:12px 10px;
+  .config-tab-btn {
+    font-size: var(--text-sm);
+    padding: 12px 10px;
   }
 
   /* Header responsive */
-  .header h1{
-    font-size:3.5rem;
-    letter-spacing:0.06em;
+  .header h1 {
+    font-size: clamp(56px, 10vw, 80px);
+    letter-spacing: -0.01em;
   }
 
-  .header p{
-    font-size:0.8rem;
+  .header p {
+    font-size: var(--text-sm);
+  }
+
+  /* Cards Grid Responsive */
+  .cards-grid-3,
+  .cards-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
-@media(max-width:600px){
-  .header h1{
-    font-size:2.5rem;
-    letter-spacing:0.05em;
+/* --- Mobile (max 768px) --- */
+@media (max-width: 768px) {
+  /* Typography */
+  .header h1 {
+    font-size: clamp(48px, 12vw, 64px);
+    line-height: 1.05;
+    letter-spacing: 0;
   }
 
-  .header p{
-    font-size:0.75rem;
+  .header p {
+    font-size: var(--text-xs);
+  }
+
+  /* Spacing */
+  body {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .header {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  /* All cards full width */
+  .cards-grid,
+  .cards-grid-2,
+  .cards-grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Buttons */
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Forms */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  /* Modals */
+  .modal-overlay {
+    padding: var(--space-sm);
+  }
+
+  .modal-header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .modal-header h2 {
+    font-size: var(--text-xl);
+  }
+
+  .modal-body {
+    padding: var(--space-md);
+  }
+
+  .modal-section h3 {
+    font-size: var(--text-lg);
+  }
+
+  /* Navigation */
+  .config-btn,
+  .theme-toggle {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-lg);
+  }
+
+  .help-btn {
+    width: 48px;
+    height: 48px;
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+  }
+
+  /* Nav Tabs */
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+
+  .nav-tab {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  /* History */
+  .utm-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .utm-campaign {
+    min-width: 100%;
+  }
+
+  .utm-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .history-filters {
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .utm-url {
+    font-size: var(--text-xs);
+  }
+
+  /* Tables */
+  .modal-section table {
+    font-size: var(--text-xs);
+  }
+
+  .modal-section table th,
+  .modal-section table td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  /* Platform Grid */
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Config Modal */
+  .config-modal-body {
+    padding: var(--space-md);
+  }
+
+  .config-form-actions {
+    flex-direction: column;
+  }
+
+  .config-form-btn {
+    width: 100%;
+  }
+}
+
+/* --- Mobile Pequeño (max 480px) --- */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: clamp(40px, 14vw, 56px);
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+
+  .card-title {
+    font-size: var(--text-lg);
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: var(--text-sm);
+  }
+
+  /* Extra small buttons */
+  .config-btn,
+  .theme-toggle,
+  .help-btn {
+    width: 44px;
+    height: 44px;
+    font-size: var(--text-base);
+  }
+
+  .modal-section h3 {
+    font-size: var(--text-base);
+  }
+
+  .modal-section p,
+  .modal-section li {
+    font-size: var(--text-sm);
+  }
+}
+
+/* --- Landscape Mobile --- */
+@media (max-height: 600px) and (orientation: landscape) {
+  .header {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .header h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .modal-content {
+    max-height: 95vh;
+  }
+
+  .modal-body {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* --- Large Desktop (min 1440px) --- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .header h1 {
+    font-size: 120px;
+  }
+
+  .section {
+    padding: var(--space-4xl) 0;
+  }
+}
+
+/* --- Extra Large Desktop (min 1920px) --- */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+}
+
+/* --- Reducir Animaciones (Preferencias de Accesibilidad) --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Dark Mode OS Preference --- */
+@media (prefers-color-scheme: dark) {
+  /* Reset ya es dark por defecto */
+}
+
+/* --- Alto Contraste (Accesibilidad) --- */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #555555;
+  }
+
+  .card,
+  .utm-item,
+  input,
+  select,
+  textarea {
+    border-width: 2px;
   }
 }
