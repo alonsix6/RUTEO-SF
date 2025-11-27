@@ -1,448 +1,480 @@
 /* ============================================
-   📐 CSS: CONFIG MODAL
+   📐 RESET AGENCIA - CONFIG MODAL
+   Modal de configuración con identidad Reset
    ============================================ */
 
-/* --- Config Modal Structure (FIJO - NO AFECTADO POR TEMAS) --- */
-.config-modal-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background:rgba(0,0,0,0.8);
-  backdrop-filter:blur(8px);
-  z-index:1001;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  animation:fadeIn 0.3s ease;
+/* --- Config Modal Overlay --- */
+.config-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  animation: fadeIn 0.3s ease;
 }
 
-.config-modal-content{
-  background:#ffffff;
-  border-radius:16px;
-  max-width:1000px;
-  width:100%;
-  max-height:90vh;
-  overflow:hidden;
-  box-shadow:0 24px 64px rgba(0,0,0,0.6);
-  animation:slideUp 0.4s ease;
-  display:flex;
-  flex-direction:column;
+.config-modal-content {
+  background: var(--color-black);
+  border: 2px solid var(--color-gray-medium);
+  border-radius: var(--radius);
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 255, 133, 0.2);
+  animation: slideUp 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* --- Config Modal Header (FIJO) --- */
-.config-modal-header{
-  background:linear-gradient(135deg,#10b981,#059669);
-  color:white;
-  padding:24px 32px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-radius:16px 16px 0 0;
-  flex-shrink:0;
+/* --- Config Modal Header con Gradiente Neón --- */
+.config-modal-header {
+  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  color: var(--color-black);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--radius) var(--radius) 0 0;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 255, 133, 0.3);
 }
 
-.config-modal-header h2{
-  margin:0;
-  font-size:1.5rem;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:white;
+.config-modal-header h2 {
+  margin: 0;
+  font-size: var(--text-2xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-black);
   font-family: var(--font-display);
-  letter-spacing:0.03em;
+  font-weight: var(--weight-black);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.config-header-actions{
-  display:flex;
-  gap:8px;
+.config-header-actions {
+  display: flex;
+  gap: var(--space-xs);
 }
 
-.config-restore-btn{
-  background:rgba(255,255,255,0.2);
-  border:none;
-  color:white;
-  padding:8px 16px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:0.85rem;
-  font-weight:600;
-  transition:all 0.3s ease;
+.config-restore-btn {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: var(--color-black);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-restore-btn:hover{
-  background:rgba(255,255,255,0.3);
+.config-restore-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.config-modal-close{
-  background:rgba(255,255,255,0.2);
-  border:none;
-  color:white;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:1.2rem;
-  transition:all 0.3s ease;
+.config-modal-close {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: var(--color-black);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  transition: var(--transition);
 }
 
-.config-modal-close:hover{
-  background:rgba(255,255,255,0.3);
-  transform:rotate(90deg);
+.config-modal-close:hover {
+  background: rgba(0, 0, 0, 0.4);
+  transform: rotate(90deg);
 }
 
-/* --- Config Tabs Navigation (FIJO) --- */
-.config-tabs{
-  display:flex;
-  background:#f9fafb;
-  border-bottom:2px solid #e5e7eb;
-  flex-shrink:0;
+/* --- Config Tabs Navigation --- */
+.config-tabs {
+  display: flex;
+  background: var(--color-gray-ultra-dark);
+  border-bottom: 2px solid var(--border);
+  flex-shrink: 0;
 }
 
-.config-tab-btn{
-  flex:1;
-  padding:16px 20px;
-  background:transparent;
-  border:none;
-  color:#6b7280;
-  font-size:0.9rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  border-bottom:3px solid transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+.config-tab-btn {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-tab-btn:hover{
-  background:#f3f4f6;
-  color:#10b981;
+.config-tab-btn:hover {
+  background: var(--color-gray-dark);
+  color: var(--color-neon-green);
 }
 
-.config-tab-btn.active{
-  background:#ffffff;
-  color:#10b981;
-  border-bottom-color:#10b981;
+.config-tab-btn.active {
+  background: var(--color-black);
+  color: var(--color-neon-green);
+  border-bottom-color: var(--color-neon-green);
 }
 
-/* --- Config Modal Body (FIJO) --- */
-.config-modal-body{
-  padding:32px;
-  overflow-y:auto;
-  flex:1;
-  background:#ffffff;
-  color:#1f2937;
+/* --- Config Modal Body --- */
+.config-modal-body {
+  padding: var(--space-lg);
+  overflow-y: auto;
+  flex: 1;
+  background: var(--color-black);
+  color: var(--text);
 }
 
-/* --- Config Section Title (FIJO) --- */
-.config-section-title{
-  font-size:1.2rem;
-  font-weight:700;
-  margin-bottom:20px;
-  color:#10b981;
-  display:flex;
-  align-items:center;
-  gap:10px;
+/* --- Config Section Title --- */
+.config-section-title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-extrabold);
+  margin-bottom: var(--space-lg);
+  color: var(--color-neon-green);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   font-family: var(--font-display);
-  letter-spacing:0.03em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-/* --- Config Item Cards (FIJO) --- */
-.config-items-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-bottom:24px;
+/* --- Config Items List --- */
+.config-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
 }
 
-.config-item-card{
-  background:#f9fafb;
-  border:2px solid #e5e7eb;
-  border-radius:12px;
-  padding:16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  transition:all 0.3s ease;
+.config-item-card {
+  background: var(--color-gray-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
 }
 
-.config-item-card:hover{
-  border-color:#10b981;
-  background:#f0fdf4;
-  transform:translateX(4px);
-  box-shadow:0 4px 12px rgba(16,185,129,0.15);
+.config-item-card:hover {
+  border-color: var(--color-neon-green);
+  background: var(--color-gray-medium);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
 }
 
-.config-item-info{
-  flex:1;
+.config-item-info {
+  flex: 1;
 }
 
-.config-item-name{
-  font-weight:700;
-  font-size:1rem;
-  color:#1f2937;
-  margin-bottom:4px;
+.config-item-name {
+  font-weight: var(--weight-bold);
+  font-size: var(--text-base);
+  color: var(--text);
+  margin-bottom: var(--space-xs);
 }
 
-.config-item-desc{
-  font-size:0.85rem;
-  color:#6b7280;
+.config-item-desc {
+  font-size: var(--text-sm);
+  color: var(--muted);
 }
 
-.config-item-meta{
-  display:flex;
-  gap:8px;
-  margin-top:8px;
+.config-item-meta {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
 }
 
-.config-badge{
-  display:inline-block;
-  padding:4px 10px;
-  border-radius:6px;
-  font-size:0.75rem;
-  font-weight:600;
+.config-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-badge.core{
-  background:#fef2f2;
-  color:#ef4444;
-  border:1px solid #ef4444;
+.config-badge.core {
+  background: rgba(255, 68, 68, 0.1);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
 }
 
-.config-badge.custom{
-  background:#eff6ff;
-  color:#3b82f6;
-  border:1px solid #3b82f6;
+.config-badge.custom {
+  background: rgba(0, 82, 204, 0.1);
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue);
 }
 
-.config-badge.both{
-  background:#f3e8ff;
-  color:#8b5cf6;
-  border:1px solid #8b5cf6;
+.config-badge.both {
+  background: rgba(111, 66, 193, 0.1);
+  color: var(--color-violet);
+  border: 1px solid var(--color-violet);
 }
 
-.config-badge.brand{
-  background:#f0fdf4;
-  color:#10b981;
-  border:1px solid #10b981;
+.config-badge.brand {
+  background: rgba(0, 255, 133, 0.1);
+  color: var(--color-neon-green);
+  border: 1px solid var(--color-neon-green);
 }
 
-.config-badge.ecommerce{
-  background:#fef3c7;
-  color:#f59e0b;
-  border:1px solid #f59e0b;
+.config-badge.ecommerce {
+  background: rgba(255, 136, 0, 0.1);
+  color: var(--color-warning);
+  border: 1px solid var(--color-warning);
 }
 
-.config-item-actions{
-  display:flex;
-  gap:8px;
+.config-item-actions {
+  display: flex;
+  gap: var(--space-xs);
 }
 
-.config-action-btn{
-  padding:8px 12px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  font-size:0.85rem;
-  font-weight:600;
-  transition:all 0.3s ease;
+.config-action-btn {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-action-btn.edit{
-  background:#10b981;
-  color:white;
+.config-action-btn.edit {
+  background: var(--color-neon-green);
+  color: var(--color-black);
 }
 
-.config-action-btn.edit:hover{
-  background:#059669;
-  transform:scale(1.05);
+.config-action-btn.edit:hover {
+  background: var(--color-cyan);
+  transform: scale(1.05);
 }
 
-.config-action-btn.delete{
-  background:#ef4444;
-  color:white;
+.config-action-btn.delete {
+  background: var(--color-danger);
+  color: var(--color-white);
 }
 
-.config-action-btn.delete:hover{
-  background:#dc2626;
-  transform:scale(1.05);
+.config-action-btn.delete:hover {
+  background: #FF5555;
+  transform: scale(1.05);
 }
 
-.config-action-btn.locked{
-  background:#d1d5db;
-  color:#6b7280;
-  cursor:not-allowed;
-  opacity:0.6;
+.config-action-btn.locked {
+  background: var(--color-gray-medium);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-/* --- Add New Item Button (FIJO) --- */
-.config-add-btn{
-  width:100%;
-  padding:16px;
-  background:linear-gradient(135deg,#10b981,#059669);
-  color:white;
-  border:none;
-  border-radius:12px;
-  font-size:1rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:24px;
+/* --- Add New Item Button --- */
+.config-add-btn {
+  width: 100%;
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  color: var(--color-black);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-add-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(16,185,129,0.4);
+.config-add-btn:hover {
+  background: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* --- Config Form (Inline Add/Edit) --- */
-.config-form{
-  background:#f0fdf4;
-  border:2px solid #10b981;
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:24px;
-  animation:slideDown 0.3s ease;
+.config-form {
+  background: rgba(0, 255, 133, 0.05);
+  border: 2px solid var(--color-neon-green);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  animation: slideDown 0.3s ease;
 }
 
-@keyframes slideDown{
-  from{
-    opacity:0;
-    transform:translateY(-10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.config-form-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-cyan);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-form-title{
-  font-size:1rem;
-  font-weight:700;
-  color:#059669;
-  margin-bottom:16px;
+.config-form-group {
+  margin-bottom: var(--space-md);
 }
 
-.config-form-group{
-  margin-bottom:16px;
-}
-
-.config-form-group label{
-  display:block;
-  font-weight:600;
-  margin-bottom:8px;
-  color:#1f2937;
-  font-size:0.9rem;
+.config-form-group label {
+  display: block;
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-xs);
+  color: var(--text);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .config-form-group input,
 .config-form-group select,
-.config-form-group textarea{
-  width:100%;
-  padding:10px 12px;
-  border-radius:8px;
-  border:2px solid #d1d5db;
-  background:#ffffff;
-  color:#1f2937;
-  font-size:0.9rem;
-  outline:none;
-  transition:all 0.3s ease;
+.config-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--color-gray-dark);
+  color: var(--text);
+  font-size: var(--text-base);
+  outline: none;
+  transition: var(--transition);
 }
 
 .config-form-group input:focus,
 .config-form-group select:focus,
-.config-form-group textarea:focus{
-  border-color:#10b981;
-  box-shadow:0 0 0 3px rgba(16,185,129,0.15);
+.config-form-group textarea:focus {
+  border-color: var(--color-neon-green);
+  box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.1);
 }
 
-.config-form-actions{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
+.config-form-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
 }
 
-.config-form-btn{
-  flex:1;
-  padding:12px;
-  border:none;
-  border-radius:8px;
-  font-weight:700;
-  cursor:pointer;
-  transition:all 0.3s ease;
+.config-form-btn {
+  flex: 1;
+  padding: var(--space-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.config-form-btn.save{
-  background:#10b981;
-  color:white;
+.config-form-btn.save {
+  background: var(--color-neon-green);
+  color: var(--color-black);
 }
 
-.config-form-btn.save:hover{
-  background:#059669;
-  transform:translateY(-2px);
+.config-form-btn.save:hover {
+  background: var(--color-cyan);
+  transform: translateY(-2px);
 }
 
-.config-form-btn.cancel{
-  background:#d1d5db;
-  color:#1f2937;
+.config-form-btn.cancel {
+  background: var(--color-gray-medium);
+  color: var(--text);
 }
 
-.config-form-btn.cancel:hover{
-  background:#9ca3af;
-  transform:translateY(-2px);
+.config-form-btn.cancel:hover {
+  background: var(--color-gray-light);
+  transform: translateY(-2px);
 }
 
-/* --- Config Preview Box (FIJO) --- */
-.config-preview-box{
-  background:#eff6ff;
-  border:2px solid #3b82f6;
-  border-radius:12px;
-  padding:20px;
-  margin-top:24px;
+/* --- Config Preview Box --- */
+.config-preview-box {
+  background: rgba(0, 82, 204, 0.05);
+  border: 2px solid var(--color-blue);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
-.config-preview-title{
-  font-size:1rem;
-  font-weight:700;
-  color:#3b82f6;
-  margin-bottom:12px;
-  display:flex;
-  align-items:center;
-  gap:8px;
+.config-preview-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-blue);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
   font-family: var(--font-display);
-  letter-spacing:0.03em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.config-preview-content{
-  background:#ffffff;
-  border-radius:8px;
-  padding:16px;
-  font-family:monospace;
-  font-size:0.9rem;
-  line-height:1.8;
-  color:#1f2937;
-  word-break:break-all;
+.config-preview-content {
+  background: var(--color-black);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--text);
+  word-break: break-all;
 }
 
-.config-preview-label{
-  color:#6b7280;
-  font-size:0.85rem;
-  margin-bottom:4px;
+.config-preview-label {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-xs);
 }
 
-.config-preview-value{
-  color:#3b82f6;
-  font-weight:700;
+.config-preview-value {
+  color: var(--color-blue);
+  font-weight: var(--weight-bold);
 }
 
-.config-tab-content{
-  display:block;
+.config-tab-content {
+  display: block;
+}
+
+/* --- Scrollbar en Config Modal --- */
+.config-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.config-modal-body::-webkit-scrollbar-track {
+  background: var(--color-gray-dark);
+}
+
+.config-modal-body::-webkit-scrollbar-thumb {
+  background: var(--color-gray-medium);
+  border-radius: 4px;
+}
+
+.config-modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-green);
 }
