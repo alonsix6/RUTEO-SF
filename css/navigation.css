@@ -1,48 +1,95 @@
 /* ============================================
    📐 RESET AGENCIA - NAVEGACIÓN
-   Botones de navegación y configuración Reset
+   Header superior izquierda estilo Reset
    ============================================ */
 
-/* --- Theme Toggle Button (Botón Superior Derecha) --- */
-.theme-toggle {
-  position: absolute;
+/* --- Top Navigation Header --- */
+.top-nav {
+  position: fixed;
   top: 0;
+  left: 0;
   right: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
-  color: var(--color-black);
-  border: none;
-  font-size: var(--text-xl);
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  z-index: var(--z-tooltip);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-md) var(--space-lg);
+  z-index: var(--z-sticky);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: var(--space-md);
+}
+
+/* --- Config Button (Rectangular Outline con Texto "Ajustes") --- */
+.config-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+}
+
+.config-btn:hover {
+  background: var(--accent);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 133, 0.2);
+}
+
+.config-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Theme Toggle Button (Rectangular Outline Dropdown) --- */
+.theme-toggle {
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  position: relative;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: var(--shadow-lg);
+  background: var(--accent);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 133, 0.2);
 }
 
 .theme-toggle:active {
-  transform: scale(1.05) rotate(15deg);
+  transform: translateY(0);
 }
 
-/* --- Theme Menu Dropdown --- */
+/* --- Theme Menu Dropdown (Debajo del botón) --- */
 .theme-menu {
   position: absolute;
-  top: 68px;
-  right: 0;
+  top: calc(100% + 8px);
+  left: 0;
   background: var(--card);
   border: 2px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-xs);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
   z-index: var(--z-dropdown);
   min-width: 200px;
   animation: fadeIn 0.2s ease;
@@ -68,7 +115,7 @@
 }
 
 .theme-option.active {
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   color: var(--color-black);
 }
 
@@ -81,37 +128,7 @@
   color: var(--text);
 }
 
-/* --- Config Button (Superior Izquierda) --- */
-.config-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-violet), var(--color-purple));
-  color: var(--color-white);
-  border: none;
-  font-size: var(--text-xl);
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  z-index: var(--z-tooltip);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.config-btn:hover {
-  transform: scale(1.1) rotate(-15deg);
-  box-shadow: var(--shadow-lg);
-}
-
-.config-btn:active {
-  transform: scale(1.05) rotate(-15deg);
-}
-
-/* --- Help Button (Inferior Derecha Fijo) --- */
+/* --- Help Button (Inferior Derecha sin Gradiente) --- */
 .help-btn {
   position: fixed;
   bottom: var(--space-md);
@@ -119,7 +136,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   color: var(--color-black);
   border: none;
   font-size: var(--text-xl);
@@ -130,13 +147,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 .help-btn:hover {
+  background: var(--accent-hover);
   transform: scale(1.15);
   box-shadow: var(--shadow-lg);
-  animation: none;
 }
 
 .help-btn:active {
@@ -309,12 +325,12 @@
 }
 
 .fab-primary {
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   color: var(--color-black);
 }
 
 .fab-secondary {
-  background: linear-gradient(135deg, var(--color-violet), var(--color-purple));
+  background: var(--color-violet);
   color: var(--color-white);
 }
 

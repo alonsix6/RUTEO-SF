@@ -34,17 +34,18 @@
   flex-direction: column;
 }
 
-/* --- Config Modal Header con Gradiente Neón --- */
+/* --- Config Modal Header sin Gradiente --- */
 .config-modal-header {
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
-  color: var(--color-black);
+  background: var(--color-gray-dark);
+  color: var(--text);
   padding: var(--space-md) var(--space-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 2px solid var(--accent);
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0, 255, 133, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .config-modal-header h2 {
@@ -53,7 +54,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  color: var(--color-black);
+  color: var(--accent);
   font-family: var(--font-display);
   font-weight: var(--weight-black);
   letter-spacing: 0.03em;
@@ -66,9 +67,9 @@
 }
 
 .config-restore-btn {
-  background: rgba(0, 0, 0, 0.2);
-  border: none;
-  color: var(--color-black);
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -80,13 +81,14 @@
 }
 
 .config-restore-btn:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--accent);
+  color: var(--color-black);
 }
 
 .config-modal-close {
-  background: rgba(0, 0, 0, 0.2);
-  border: none;
-  color: var(--color-black);
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -97,7 +99,8 @@
 }
 
 .config-modal-close:hover {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--accent);
+  color: var(--color-black);
   transform: rotate(90deg);
 }
 
@@ -298,7 +301,7 @@
 .config-add-btn {
   width: 100%;
   padding: var(--space-md);
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   color: var(--color-black);
   border: none;
   border-radius: var(--radius-md);
@@ -316,7 +319,7 @@
 }
 
 .config-add-btn:hover {
-  background: var(--color-white);
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -394,12 +397,12 @@
 }
 
 .config-form-btn.save {
-  background: var(--color-neon-green);
+  background: var(--accent);
   color: var(--color-black);
 }
 
 .config-form-btn.save:hover {
-  background: var(--color-cyan);
+  background: var(--accent-hover);
   transform: translateY(-2px);
 }
 

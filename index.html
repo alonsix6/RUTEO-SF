@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- CSS Stylesheets -->
-<link rel="stylesheet" href="css/variables.css?v=3.0">
-<link rel="stylesheet" href="css/themes.css?v=3.0">
-<link rel="stylesheet" href="css/layout.css?v=3.0">
-<link rel="stylesheet" href="css/navigation.css?v=3.0">
-<link rel="stylesheet" href="css/forms.css?v=3.0">
-<link rel="stylesheet" href="css/cards.css?v=3.0">
-<link rel="stylesheet" href="css/history.css?v=3.0">
-<link rel="stylesheet" href="css/modals.css?v=3.0">
-<link rel="stylesheet" href="css/config.css?v=3.0">
-<link rel="stylesheet" href="css/utilities.css?v=3.0">
-<link rel="stylesheet" href="css/responsive.css?v=3.0">
+<link rel="stylesheet" href="css/variables.css?v=3.1">
+<link rel="stylesheet" href="css/themes.css?v=3.1">
+<link rel="stylesheet" href="css/layout.css?v=3.1">
+<link rel="stylesheet" href="css/navigation.css?v=3.1">
+<link rel="stylesheet" href="css/forms.css?v=3.1">
+<link rel="stylesheet" href="css/cards.css?v=3.1">
+<link rel="stylesheet" href="css/history.css?v=3.1">
+<link rel="stylesheet" href="css/modals.css?v=3.1">
+<link rel="stylesheet" href="css/config.css?v=3.1">
+<link rel="stylesheet" href="css/utilities.css?v=3.1">
+<link rel="stylesheet" href="css/responsive.css?v=3.1">
 </head>
 
 <body>
@@ -37,37 +37,44 @@
   </div>
 
   <!-- ============================================
-       🏗️ HTML SECTION 2: NAVEGACIÓN (Theme + Config Toggle)
+       🏗️ HTML SECTION 2: NAVEGACIÓN TOP HEADER
        ============================================ -->
 
-  <!-- --- Config Button (Top-Left) --- -->
-  <button class="config-btn" onclick="openConfigModal()" title="Configuración">
-    ⚙️
-  </button>
+  <!-- --- Top Navigation Header --- -->
+  <nav class="top-nav">
+    <!-- Config Button con Texto "Ajustes" -->
+    <button class="config-btn" onclick="openConfigModal()" title="Configuración">
+      <span>⚙️</span>
+      <span>Ajustes</span>
+    </button>
 
-  <!-- --- Theme Toggle Button (Top-Right) --- -->
-  <button class="theme-toggle" onclick="toggleThemeMenu()" title="Cambiar tema" id="themeToggle">
-    🎨
-  </button>
+    <!-- Theme Toggle Button (Dropdown) -->
+    <div style="position: relative;">
+      <button class="theme-toggle" onclick="toggleThemeMenu()" title="Cambiar tema" id="themeToggle">
+        <span>🎨</span>
+        <span>Temas</span>
+      </button>
 
-  <!-- --- Theme Menu Dropdown --- -->
-  <div id="themeMenu" class="theme-menu hidden">
-    <div class="theme-option" onclick="changeTheme('dark')" data-theme="dark">
-      <span>🌙</span> <span class="theme-text">Oscuro</span>
+      <!-- Theme Menu Dropdown -->
+      <div id="themeMenu" class="theme-menu hidden">
+        <div class="theme-option" onclick="changeTheme('dark')" data-theme="dark">
+          <span>🌙</span> <span class="theme-text">Oscuro</span>
+        </div>
+        <div class="theme-option" onclick="changeTheme('light')" data-theme="light">
+          <span>☀️</span> <span class="theme-text">Claro</span>
+        </div>
+        <div class="theme-option" onclick="changeTheme('ocean')" data-theme="ocean">
+          <span>🌊</span> <span class="theme-text">Ocean Blue</span>
+        </div>
+        <div class="theme-option" onclick="changeTheme('forest')" data-theme="forest">
+          <span>🌿</span> <span class="theme-text">Forest Green</span>
+        </div>
+        <div class="theme-option" onclick="changeTheme('pink')" data-theme="pink">
+          <span>💖</span> <span class="theme-text">Pink</span>
+        </div>
+      </div>
     </div>
-    <div class="theme-option" onclick="changeTheme('light')" data-theme="light">
-      <span>☀️</span> <span class="theme-text">Claro</span>
-    </div>
-    <div class="theme-option" onclick="changeTheme('ocean')" data-theme="ocean">
-      <span>🌊</span> <span class="theme-text">Ocean Blue</span>
-    </div>
-    <div class="theme-option" onclick="changeTheme('forest')" data-theme="forest">
-      <span>🌿</span> <span class="theme-text">Forest Green</span>
-    </div>
-    <div class="theme-option" onclick="changeTheme('pink')" data-theme="pink">
-      <span>💖</span> <span class="theme-text">Pink</span>
-    </div>
-  </div>
+  </nav>
 
   <!-- ============================================
        🏗️ HTML SECTION 3: FORMULARIO PRINCIPAL

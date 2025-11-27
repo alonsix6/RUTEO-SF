@@ -10,7 +10,7 @@ body {
   color: var(--text);
   font-size: var(--text-base);
   line-height: 1.6;
-  padding: var(--space-xl) var(--space-md);
+  padding: 80px var(--space-md) var(--space-xl);
   min-height: 100vh;
   position: relative;
   transition: var(--transition);

@@ -45,19 +45,20 @@
   }
 }
 
-/* --- Modal Header con Gradiente Neón --- */
+/* --- Modal Header sin Gradiente --- */
 .modal-header {
   position: sticky;
   top: 0;
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
-  color: var(--color-black);
+  background: var(--color-gray-dark);
+  color: var(--text);
   padding: var(--space-md) var(--space-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 2px solid var(--accent);
   z-index: var(--z-sticky);
-  box-shadow: 0 4px 16px rgba(0, 255, 133, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header h2 {
@@ -67,14 +68,14 @@
   font-weight: var(--weight-black);
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: var(--accent);
 }
 
 /* --- Modal Close Button --- */
 .modal-close {
-  background: rgba(0, 0, 0, 0.2);
-  border: none;
-  color: var(--color-black);
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -89,7 +90,8 @@
 }
 
 .modal-close:hover {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--accent);
+  color: var(--color-black);
   transform: rotate(90deg);
 }
 

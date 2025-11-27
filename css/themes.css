@@ -1,44 +1,100 @@
 /* ============================================
-   📐 RESET AGENCIA - TEMA ÚNICO
-   Solo identidad visual Reset - Sin temas alternativos
+   📐 RESET AGENCIA - TEMAS FUNCIONALES
+   Variantes de color con identidad Reset
    ============================================ */
 
-/*
-  NOTA: Este archivo mantiene compatibilidad con el sistema
-  de temas del código JavaScript, pero todos los temas ahora
-  utilizan la misma identidad visual Reset.
-
-  El tema "dark" es el tema por defecto y único.
-*/
-
-/* --- Tema Default: Reset Dark (Negro Puro) --- */
+/* --- Tema Dark (Default - Verde Neón) --- */
 :root,
 [data-theme="dark"] {
-  /* Ya definido en variables.css - aquí por compatibilidad */
+  --accent: #00FF85;
+  --accent-hover: #00E5FF;
+  --accent-secondary: #6F42C1;
+  --accent-rgb: 0, 255, 133;
+
+  --bg: #000000;
+  --card: #1A1A1A;
+  --card-hover: #222222;
+  --border: #333333;
+  --text: #FFFFFF;
+  --muted: #AAAAAA;
+
+  --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.1);
+  --shadow-md: 0 8px 32px rgba(0, 255, 133, 0.15);
+  --shadow-lg: 0 16px 48px rgba(0, 255, 133, 0.25);
 }
 
-/* --- Todos los demás temas ahora usan Reset Dark --- */
-[data-theme="light"],
-[data-theme="ocean"],
-[data-theme="forest"],
+/* --- Tema Light (Gris Claro con Verde) --- */
+[data-theme="light"] {
+  --accent: #00CC6A;
+  --accent-hover: #00FF85;
+  --accent-secondary: #6F42C1;
+  --accent-rgb: 0, 204, 106;
+
+  --bg: #F5F5F5;
+  --card: #FFFFFF;
+  --card-hover: #EEEEEE;
+  --border: #DDDDDD;
+  --text: #1A1A1A;
+  --muted: #666666;
+
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Tema Ocean (Azul/Cyan) --- */
+[data-theme="ocean"] {
+  --accent: #00E5FF;
+  --accent-hover: #00B8D4;
+  --accent-secondary: #0052CC;
+  --accent-rgb: 0, 229, 255;
+
+  --bg: #000A14;
+  --card: #001E33;
+  --card-hover: #002B47;
+  --border: #003D5C;
+  --text: #E0F7FF;
+  --muted: #7FC8E8;
+
+  --shadow-sm: 0 4px 16px rgba(0, 229, 255, 0.15);
+  --shadow-md: 0 8px 32px rgba(0, 229, 255, 0.2);
+  --shadow-lg: 0 16px 48px rgba(0, 229, 255, 0.3);
+}
+
+/* --- Tema Forest (Verde Oscuro Natural) --- */
+[data-theme="forest"] {
+  --accent: #00FF85;
+  --accent-hover: #00CC6A;
+  --accent-secondary: #4CAF50;
+  --accent-rgb: 0, 255, 133;
+
+  --bg: #0A1F0A;
+  --card: #162816;
+  --card-hover: #1F331F;
+  --border: #2D472D;
+  --text: #E8F5E8;
+  --muted: #8BC48B;
+
+  --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.12);
+  --shadow-md: 0 8px 32px rgba(0, 255, 133, 0.18);
+  --shadow-lg: 0 16px 48px rgba(0, 255, 133, 0.25);
+}
+
+/* --- Tema Pink (Magenta/Rosa) --- */
 [data-theme="pink"] {
-  /* Forzar mismo tema Reset en todos */
-  --accent: var(--color-neon-green);
-  --accent-hover: var(--color-cyan);
-  --success: var(--color-success);
-  --warning: var(--color-warning);
-  --danger: var(--color-danger);
-  --bg: var(--color-black);
-  --card: var(--color-gray-dark);
-  --card-hover: var(--color-gray-medium);
-  --border: var(--border);
-  --text: var(--color-white);
-  --muted: var(--color-gray-light);
-  --shadow: var(--shadow-md);
-}
+  --accent: #FF0080;
+  --accent-hover: #FF3399;
+  --accent-secondary: #9B59B6;
+  --accent-rgb: 255, 0, 128;
 
-/*
-  Eliminar gradientes de fondo variable por tema.
-  Ahora body::before usa siempre el sutil patrón neón de Reset
-  definido en layout.css
-*/
+  --bg: #1A0014;
+  --card: #2B0022;
+  --card-hover: #3D0030;
+  --border: #5C0047;
+  --text: #FFE0F0;
+  --muted: #E899CC;
+
+  --shadow-sm: 0 4px 16px rgba(255, 0, 128, 0.15);
+  --shadow-md: 0 8px 32px rgba(255, 0, 128, 0.2);
+  --shadow-lg: 0 16px 48px rgba(255, 0, 128, 0.3);
+}
