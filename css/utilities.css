@@ -8,7 +8,7 @@
   position: fixed;
   right: var(--space-md);
   bottom: var(--space-md);
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   color: var(--color-black);
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
@@ -18,7 +18,7 @@
   animation: slideInRight 0.4s ease;
   z-index: var(--z-tooltip);
   max-width: 400px;
-  border: 2px solid var(--color-cyan);
+  border: 2px solid var(--accent);
 }
 
 @keyframes slideInRight {
