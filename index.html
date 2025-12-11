@@ -100,7 +100,7 @@
             <option value="https://delivery.sanfernando.pe/vales">Delivery – Vales</option>
             <option value="custom">➕ URL Personalizada</option>
           </select>
-          <input id="urlCustom" class="hidden" type="url" placeholder="https://example.com" style="margin-top:8px"/>
+          <input id="urlCustom" class="hidden custom-input" type="url" placeholder="https://example.com"/>
         </div>
 
         <!-- División y Plataforma -->
@@ -172,7 +172,7 @@
               <option value="account_link" id="accountLinkOption" style="display:none;">account_link</option>
               <option value="custom">➕ Personalizada</option>
             </select>
-            <input id="campanaCustom" class="hidden" type="text" placeholder="Nombre de campaña" style="margin-top:8px"/>
+            <input id="campanaCustom" class="hidden custom-input" type="text" placeholder="Nombre de campaña"/>
           </div>
           <div class="form-group">
             <label>Motivo/Creatividad *</label>
@@ -188,7 +188,7 @@
               <option value="DescuentoWeb">Descuento Web</option>
               <option value="custom">➕ Personalizado</option>
             </select>
-            <input id="motivoCustom" class="hidden" type="text" placeholder="Descripción del motivo" style="margin-top:8px"/>
+            <input id="motivoCustom" class="hidden custom-input" type="text" placeholder="Descripción del motivo"/>
           </div>
         </div>
 
@@ -222,7 +222,7 @@
         </div>
 
         <!-- Campos Brand (Condicionales) -->
-        <div id="brandFields" class="form-row hidden" style="margin-top:8px">
+        <div id="brandFields" class="form-row hidden brand-fields">
           <div class="form-group">
             <label>Código de Pieza *</label>
             <select id="codigoPieza">
@@ -233,7 +233,7 @@
               <option value="Elaborados">Elaborados</option>
               <option value="custom">➕ Otro código</option>
             </select>
-            <input id="codigoCustom" class="hidden" type="text" placeholder="Código personalizado" style="margin-top:8px"/>
+            <input id="codigoCustom" class="hidden custom-input" type="text" placeholder="Código personalizado"/>
           </div>
           <div class="form-group">
             <label>Número de Pieza *</label>
@@ -242,8 +242,8 @@
         </div>
 
         <!-- Buttons -->
-        <div class="btn-group">
-          <button class="btn btn-primary" type="submit" style="flex:1">🚀 GENERAR UTM</button>
+        <div class="btn-group form-actions">
+          <button class="btn btn-primary btn-generate" type="submit">🚀 GENERAR UTM</button>
           <button class="btn btn-secondary" type="button" onclick="resetForm()">🔄 LIMPIAR</button>
         </div>
       </form>
@@ -252,7 +252,7 @@
       <div id="resultContainer" class="hidden">
         <div class="result-box">
           <button class="copy-btn" onclick="copyResult()">📋 Copiar</button>
-          <div id="resultText" style="padding-right:70px"></div>
+          <div id="resultText"></div>
         </div>
       </div>
     </div>
@@ -283,9 +283,9 @@
       </div>
 
       <!-- Export Buttons -->
-      <div class="btn-group" style="margin-bottom:12px">
+      <div class="btn-group export-buttons">
         <button class="btn btn-success" onclick="exportCSV()">📥 CSV</button>
-        <button class="btn btn-success" onclick="exportExcel()" style="background:linear-gradient(135deg,#059669,#047857);">📊 Excel</button>
+        <button class="btn btn-success btn-excel" onclick="exportExcel()">📊 Excel</button>
         <button class="btn btn-warning" onclick="clearHistory()">🗑️ Borrar</button>
       </div>
 
@@ -561,42 +561,44 @@
         <h3>🏢 Brand vs Ecommerce</h3>
         <p>Cada división tiene una estrategia diferente de naming según sus objetivos:</p>
 
-        <table style="width:100%;border-collapse:collapse;margin:20px 0;">
-          <thead>
-            <tr style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;">
-              <th style="padding:14px;text-align:left;border:none;font-size:1rem;">Característica</th>
-              <th style="padding:14px;text-align:left;border:none;font-size:1rem;">BRAND</th>
-              <th style="padding:14px;text-align:left;border:none;font-size:1rem;">ECOMMERCE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background:#f8fafc;">
-              <td style="padding:12px;border:1px solid #e2e8f0;font-weight:600;color:#1f2937;">Código de Pieza</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">✅ Sí (AON, NAB2B, HUE, etc.)</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">❌ No</td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px;border:1px solid #e2e8f0;font-weight:600;color:#1f2937;">Número de Pieza</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">✅ Sí (01, 02, 14, etc.)</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">❌ No</td>
-            </tr>
-            <tr style="background:#f8fafc;">
-              <td style="padding:12px;border:1px solid #e2e8f0;font-weight:600;color:#1f2937;">Enfoque</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">Awareness y Branding</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;">Producto y Conversión directa</td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px;border:1px solid #e2e8f0;font-weight:600;color:#1f2937;">Ejemplo Campaign</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;"><code style="background:#eff6ff;padding:4px 8px;border-radius:4px;font-size:0.85rem;">brand_alc_AON_OCTUBRE_2025</code></td>
-              <td style="padding:12px;border:1px solid #e2e8f0;"><code style="background:#eff6ff;padding:4px 8px;border-radius:4px;font-size:0.85rem;">ecommerce_conv_Cyber_OCT_2025</code></td>
-            </tr>
-            <tr style="background:#f8fafc;">
-              <td style="padding:12px;border:1px solid #e2e8f0;font-weight:600;color:#1f2937;">Ejemplo Content</td>
-              <td style="padding:12px;border:1px solid #e2e8f0;"><code style="background:#eff6ff;padding:4px 8px;border-radius:4px;font-size:0.85rem;">brand_AON_14_IG_VALES</code></td>
-              <td style="padding:12px;border:1px solid #e2e8f0;"><code style="background:#eff6ff;padding:4px 8px;border-radius:4px;font-size:0.85rem;">ecom_META_chorizo</code></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>BRAND</th>
+                <th>ECOMMERCE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Código de Pieza</strong></td>
+                <td>✅ Sí (AON, NAB2B, HUE, etc.)</td>
+                <td>❌ No</td>
+              </tr>
+              <tr>
+                <td><strong>Número de Pieza</strong></td>
+                <td>✅ Sí (01, 02, 14, etc.)</td>
+                <td>❌ No</td>
+              </tr>
+              <tr>
+                <td><strong>Enfoque</strong></td>
+                <td>Awareness y Branding</td>
+                <td>Producto y Conversión directa</td>
+              </tr>
+              <tr>
+                <td><strong>Ejemplo Campaign</strong></td>
+                <td><code>brand_alc_AON_OCTUBRE_2025</code></td>
+                <td><code>ecommerce_conv_Cyber_OCT_2025</code></td>
+              </tr>
+              <tr>
+                <td><strong>Ejemplo Content</strong></td>
+                <td><code>brand_AON_14_IG_VALES</code></td>
+                <td><code>ecom_META_chorizo</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- PLATAFORMAS -->

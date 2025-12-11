@@ -1,311 +1,311 @@
-# 🚀 Generador UTM — RESET 2025 San Fernando
+# 🚀 RUTEO — Generador UTM
 
-Herramienta web para la generación automatizada de parámetros UTM para campañas digitales de San Fernando. Diseñado para los equipos de Brand y Ecommerce.
+Herramienta web para la generación automatizada de parámetros UTM para campañas digitales. Diseñado para equipos de marketing digital con soporte para múltiples marcas.
 
 ## 📋 Tabla de Contenidos
 
 - [Características](#características)
-- [Estructura del Proyecto](#estructura-del-proyecto)
 - [Instalación](#instalación)
-- [Deploy en Netlify](#deploy-en-netlify)
+- [Comandos](#comandos)
+- [Estructura del Proyecto](#estructura-del-proyecto)
 - [Uso](#uso)
+- [Adaptar para Otra Marca](#adaptar-para-otra-marca)
 - [Configuración](#configuración)
-- [Desarrollo](#desarrollo)
 - [Tecnologías](#tecnologías)
 
 ## ✨ Características
 
-### Funcionalidades Principales
+- ✅ **Generación de UTMs**: URLs de rastreo con parámetros UTM personalizados
+- 🎨 **5 Temas Visuales**: Dark, Light, Ocean Blue, Forest Green, Pink
+- 📊 **Historial**: Guarda y gestiona UTMs con localStorage
+- 📥 **Exportación**: CSV y Excel con formato
+- ⚙️ **Configurable**: URLs, campañas, motivos y códigos personalizables
+- ✅ **Validación de URLs**: Verifica accesibilidad automáticamente
+- 📱 **Responsive**: Adaptable a cualquier dispositivo
+- 💾 **Sin Backend**: 100% cliente, sin servidor requerido
+- ⚡ **Vite**: Bundling optimizado para producción
 
-- ✅ **Generación de UTMs Personalizada**: Crea URLs de rastreo con parámetros UTM siguiendo las convenciones de San Fernando
-- 🎨 **5 Temas Visuales**: Dark, Light, Ocean Blue, Forest Green y Pink
-- 📊 **Historial de UTMs**: Guarda y gestiona todas las UTMs generadas con localStorage
-- 📥 **Exportación**: Descarga el historial en formato CSV o Excel
-- ⚙️ **Sistema de Configuración**: Gestiona URLs, campañas, motivos y códigos personalizados
-- ✅ **Validación de URLs**: Verifica automáticamente que las URLs de destino sean accesibles
-- 🔄 **Sincronización Automática**: Los cambios en configuración se reflejan inmediatamente en los formularios
-- 📱 **Responsive**: Diseño adaptable para desktop, tablet y móvil
-- 💾 **Persistencia Local**: Todo se guarda en localStorage (sin necesidad de backend)
+## 🔧 Instalación
 
-### División Brand vs Ecommerce
+### Requisitos
+- Node.js 18+
+- npm 9+
 
-- **Brand**: Incluye códigos de pieza, números de pieza y estructura detallada
-- **Ecommerce**: Enfoque simplificado en producto y conversión directa
+### Setup
 
-### Plataformas Soportadas
+```bash
+# Clonar repositorio
+git clone <repository-url>
+cd RUTEO-SF
 
-- Meta (Facebook/Instagram)
-- Google Ads (SEM, PMAX, Display, Video)
-- TikTok
-- LinkedIn
-- X (Twitter)
-- Programática
+# Instalar dependencias
+npm install
+```
+
+## 📦 Comandos
+
+```bash
+# Desarrollo (hot reload en http://localhost:3000)
+npm run dev
+
+# Build de producción
+npm run build
+
+# Preview del build
+npm run preview
+```
 
 ## 📁 Estructura del Proyecto
 
 ```
 RUTEO-SF/
-├── index.html                 # HTML principal
-├── netlify.toml              # Configuración de Netlify
-├── README.md                 # Documentación
+├── index.html              # HTML principal
+├── package.json            # Dependencias y scripts
+├── vite.config.js          # Configuración de Vite
 │
-├── css/                      # Estilos organizados por módulos
-│   ├── variables.css         # Variables CSS y reset
-│   ├── themes.css            # 5 temas de color
-│   ├── layout.css            # Layout base y containers
-│   ├── navigation.css        # Botones de navegación y menús
-│   ├── forms.css             # Formularios y campos
-│   ├── cards.css             # Cards y contenedores
-│   ├── history.css           # Historial de UTMs
-│   ├── modals.css            # Modales de ayuda
-│   ├── config.css            # Modal de configuración
-│   ├── utilities.css         # Utilidades (toast, hidden, etc.)
-│   └── responsive.css        # Media queries
+├── src/                    # Código fuente (ES Modules)
+│   ├── main.js             # Entry point
+│   ├── constants.js        # Constantes y mapeos
+│   ├── utils.js            # Utilidades (toast)
+│   ├── config.js           # Sistema de configuración
+│   ├── theme.js            # Gestión de temas
+│   ├── form.js             # Lógica del formulario
+│   ├── utm.js              # Generación de UTMs
+│   ├── history.js          # Gestión del historial
+│   ├── export.js           # Exportación CSV/Excel
+│   ├── validation.js       # Validación de URLs
+│   └── modals.js           # Modales
 │
-└── js/                       # JavaScript modular
-    ├── constants.js          # Constantes y mapeos
-    ├── utils.js              # Utilidades (toast)
-    ├── config.js             # Sistema de configuración
-    ├── theme.js              # Gestión de temas
-    ├── form.js               # Lógica del formulario
-    ├── utm.js                # Generación de UTMs
-    ├── history.js            # Gestión del historial
-    ├── export.js             # Exportación CSV/Excel
-    ├── validation.js         # Validación de URLs
-    ├── modals.js             # Modales
-    └── main.js               # Inicialización
+├── css/                    # Estilos modulares
+│   ├── variables.css       # Variables CSS
+│   ├── themes.css          # 5 temas de color
+│   ├── layout.css          # Layout base
+│   ├── navigation.css      # Navegación
+│   ├── forms.css           # Formularios
+│   ├── cards.css           # Cards
+│   ├── history.css         # Historial
+│   ├── modals.css          # Modal de ayuda
+│   ├── config.css          # Modal de configuración
+│   ├── utilities.css       # Utilidades
+│   └── responsive.css      # Media queries
+│
+├── dist/                   # Build de producción (generado)
+└── js/                     # (Legacy - puede eliminarse)
 ```
-
-## 🔧 Instalación
-
-### Requisitos
-
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Conexión a internet (para importar SheetJS en exportación Excel)
-
-### Instalación Local
-
-1. **Clonar el repositorio**:
-   ```bash
-   git clone <repository-url>
-   cd RUTEO-SF
-   ```
-
-2. **Abrir directamente**:
-   ```bash
-   # Simplemente abre index.html en tu navegador
-   # O usa un servidor local:
-
-   # Con Python 3
-   python -m http.server 8000
-
-   # O directamente abre el archivo
-   open index.html
-   ```
-
-3. **Acceder**:
-   ```
-   http://localhost:8000
-   ```
-
-## 🌐 Deploy en Netlify
-
-### Deploy Directo desde Git (Recomendado)
-
-1. **Push a GitHub**:
-   ```bash
-   git add .
-   git commit -m "Conversion to modular structure"
-   git push origin main
-   ```
-
-2. **Conectar con Netlify**:
-   - Ve a [Netlify](https://app.netlify.com)
-   - Click en "Add new site" > "Import an existing project"
-   - Selecciona tu repositorio de GitHub
-   - Netlify detectará automáticamente la configuración de `netlify.toml`
-   - Click en "Deploy site"
-
-3. **¡Listo!**
-   - Tu sitio estará disponible en una URL tipo: `https://random-name.netlify.app`
-   - Puedes cambiar el nombre en Site settings > Domain management
 
 ## 📖 Uso
 
-### 1. Generar una UTM
+### Generar UTM
 
-1. **Selecciona la URL de destino** (o ingresa una personalizada)
-2. **Elige la división**: Brand o Ecommerce
-3. **Selecciona la plataforma**: Meta, Google, TikTok, etc.
-4. **Define el objetivo**: Tráfico, Conversiones, Alcance, etc.
-5. **Completa los campos**:
-   - Tipo de campaña
-   - Mes y año
-   - Motivo/Creatividad
-   - (Si es Brand) Código y número de pieza
-6. **Click en "🚀 GENERAR UTM"**
-7. La UTM aparecerá en el resultado y en el historial
+1. Selecciona URL de destino
+2. Elige división (Brand/Ecommerce)
+3. Selecciona plataforma (Meta, Google, TikTok, etc.)
+4. Define objetivo y campaña
+5. Click en **🚀 GENERAR UTM**
 
-### 2. Configurar Opciones Personalizadas
+### Configuración
 
-1. Click en el botón **⚙️** (top-left)
-2. Navega entre las pestañas:
-   - **📍 URLs**: Gestiona URLs predeterminadas
-   - **🎯 Campañas**: Agrega tipos de campaña
-   - **🎨 Motivos**: Define motivos/creatividades
-   - **🏷️ Códigos Brand**: Gestiona códigos de pieza
-3. Click en **"➕ Agregar"** para crear nuevos items
-4. Los cambios se sincronizan automáticamente con el formulario
+Click en **⚙️ Ajustes** para gestionar:
+- 📍 URLs predeterminadas
+- 🎯 Tipos de campaña
+- 🎨 Motivos/creatividades
+- 🏷️ Códigos de pieza (Brand)
 
-### 3. Exportar Historial
+---
 
-- **CSV**: Click en "📥 CSV" para descargar en formato CSV
-- **Excel**: Click en "📊 Excel" para descargar con formato (requiere conexión)
+## 🔄 Adaptar para Otra Marca
 
-### 4. Cambiar Tema
+Esta guía explica cómo adaptar RUTEO para una nueva marca/cliente.
 
-1. Click en el botón **🎨** (top-right)
-2. Selecciona entre:
-   - 🌙 Oscuro
-   - ☀️ Claro
-   - 🌊 Ocean Blue
-   - 🌿 Forest Green
-   - 💖 Pink
+### Paso 1: Información de la marca
 
-## ⚙️ Configuración
+Antes de empezar, necesitas:
+- Nombre de la marca
+- URLs de destino principales
+- Tipos de campaña específicos
+- Productos/motivos principales
+- Colores de la marca (opcional para personalizar temas)
+- Logo/favicon
 
-### Configuración por División
+### Paso 2: Configurar datos por defecto
 
-#### Brand
-Requiere campos adicionales:
-- **Código de Pieza**: AON, NAB2B, HUE, Elaborados, etc.
-- **Número de Pieza**: 01-30
+Edita `src/config.js` → función `getDefaultConfig()`:
 
-**Ejemplo de UTM Brand**:
+```javascript
+export function getDefaultConfig() {
+  return {
+    // URLs predeterminadas de la marca
+    urls: [
+      {
+        id: 'url_1',
+        label: 'Web Principal',
+        url: 'https://www.tu-marca.com/',
+        isDefault: true,
+        category: 'web'
+      },
+      {
+        id: 'url_2',
+        label: 'Tienda Online',
+        url: 'https://tienda.tu-marca.com/',
+        isDefault: false,
+        category: 'ecommerce'
+      }
+      // Agrega más URLs...
+    ],
+
+    // Tipos de campaña
+    campanias: [
+      { id: 'camp_1', nombre: 'AON', descripcion: 'Always On', isCore: true, division: 'both' },
+      { id: 'camp_2', nombre: 'Lanzamiento', descripcion: 'Lanzamiento de producto', isCore: true, division: 'both' },
+      // Agrega más campañas...
+    ],
+
+    // Motivos/creatividades
+    motivos: [
+      { id: 'mot_1', nombre: 'promocion', categoria: 'promocion', division: 'both' },
+      { id: 'mot_2', nombre: 'producto_nuevo', categoria: 'producto', division: 'both' },
+      // Agrega más motivos...
+    ],
+
+    // Códigos para división Brand
+    codigosBrand: [
+      { id: 'cod_1', codigo: 'AON', descripcion: 'Always On', isCore: true },
+      { id: 'cod_2', codigo: 'LANZO', descripcion: 'Lanzamiento', isCore: true },
+      // Agrega más códigos...
+    ]
+  };
+}
 ```
-utm_source=facebook
-utm_medium=paid-social
-utm_campaign=brand_conv_AON_OCTUBRE_2025
-utm_content=brand_AON_01_META_pollo
+
+### Paso 3: Actualizar textos e identidad
+
+#### 3.1 Título y metadata (`index.html`)
+
+```html
+<title>RUTEO — [NOMBRE MARCA] 2025</title>
+<link rel="icon" type="image/png" href="favicon.png">
 ```
 
-#### Ecommerce
-Estructura simplificada:
+#### 3.2 Header visible (`index.html`)
 
-**Ejemplo de UTM Ecommerce**:
+Busca y modifica:
+```html
+<div class="header">
+  <h1>RUTEO</h1>
+  <p>[NOMBRE AGENCIA] — [NOMBRE MARCA]</p>
+</div>
 ```
-utm_source=facebook
-utm_medium=paid-social
-utm_campaign=ecommerce_conv_Cyber_OCTUBRE_2025
-utm_content=ecom_META_chorizo
+
+#### 3.3 Footer (`index.html`)
+
+```html
+<div class="footer">Powered by <span class="font-display">[AGENCIA]</span> | Generador UTM v2.1</div>
 ```
 
-### Almacenamiento Local
+### Paso 4: Cambiar favicon
 
-El generador usa localStorage para persistir:
-- ✅ Historial de UTMs (`utmHistory`)
-- ✅ Configuración personalizada (`utmGeneratorConfig`)
-- ✅ Tema seleccionado (`theme`)
+Reemplaza `favicon.png` con el logo de la marca (idealmente 32x32 o 64x64 px).
 
-**Importante**: Los datos solo existen en tu navegador. Si limpias el caché, se perderán.
+### Paso 5: Personalizar colores (opcional)
 
-## 🛠️ Desarrollo
-
-### Modificar Estilos
-
-Los estilos están modularizados en `/css/`:
+Para cambiar los colores del tema principal, edita `css/themes.css`:
 
 ```css
-/* Para cambiar colores del tema Dark */
-/* Edita: css/variables.css */
-
-:root {
-  --accent: #6366f1;  /* Color principal */
-  --success: #10b981; /* Color de éxito */
+/* Tema Dark - Cambiar el verde neón por el color de la marca */
+:root,
+[data-theme="dark"] {
+  --accent: #TU_COLOR;           /* Color principal */
+  --accent-hover: #TU_COLOR_HOVER;
+  --title-color: #TU_COLOR;
   /* ... */
 }
 ```
 
-### Agregar Nueva Funcionalidad
+### Paso 6: Actualizar package.json
 
-```javascript
-// 1. Crea tu función en el módulo apropiado
-// Ejemplo: js/utm.js
-
-function miNuevaFuncion() {
-  // Tu código aquí
+```json
+{
+  "name": "ruteo-[marca]",
+  "version": "1.0.0",
+  "description": "Generador UTM para [Marca]"
 }
-
-// 2. Llámala desde main.js o donde la necesites
 ```
 
-## 🔒 Validación y Seguridad
+### Paso 7: Build y deploy
 
-### Caracteres Permitidos en UTMs
+```bash
+# Verificar cambios en desarrollo
+npm run dev
 
-**NO PERMITIDOS** (se limpian automáticamente):
-- ❌ Espacios
-- ❌ Tildes (á, é, í, ó, ú)
-- ❌ Ñ
-- ❌ Caracteres especiales (¿, ¡, ´, `, %, &, #, etc.)
+# Crear build de producción
+npm run build
 
-**PERMITIDOS**:
-- ✅ Letras (a-z, A-Z)
-- ✅ Números (0-9)
-- ✅ Guiones bajos (_)
-- ✅ Guiones (-)
+# El contenido de dist/ está listo para deploy
+```
 
-### Verificación de URLs
+### Checklist de adaptación
 
-El sistema verifica automáticamente que las URLs sean accesibles:
-- ✅ **OK**: URL accesible (verde)
-- ⚠️ **Warning**: Redirect detectado (amarillo)
-- ❌ **Error**: URL no accesible (rojo)
+- [ ] URLs de destino actualizadas en `src/config.js`
+- [ ] Campañas específicas de la marca
+- [ ] Motivos/productos de la marca
+- [ ] Códigos Brand (si aplica)
+- [ ] Título y header en `index.html`
+- [ ] Footer actualizado
+- [ ] Favicon reemplazado
+- [ ] Colores personalizados (opcional)
+- [ ] `package.json` actualizado
+- [ ] Build probado (`npm run build`)
+
+---
+
+## ⚙️ Configuración Técnica
+
+### localStorage Keys
+
+| Key | Descripción |
+|-----|-------------|
+| `utmHistory` | Array de UTMs generadas |
+| `utmGeneratorConfig` | Configuración personalizada |
+| `theme` | Tema seleccionado |
+
+### Estructura UTM
+
+**Brand**:
+```
+utm_campaign=brand_[objetivo]_[campaña]_[mes]_[año]
+utm_content=brand_[codigo]_[numero]_[placement]_[motivo]
+```
+
+**Ecommerce**:
+```
+utm_campaign=ecommerce_[objetivo]_[campaña]_[mes]_[año]
+utm_content=ecom_[placement]_[motivo]
+```
 
 ## 🌟 Tecnologías
 
-- **HTML5**: Estructura semántica
-- **CSS3**: Estilos modulares con variables CSS
-- **JavaScript (ES6+)**: Vanilla JS, sin frameworks
-- **SheetJS (XLSX)**: Exportación a Excel
-- **LocalStorage**: Persistencia de datos
-- **Netlify**: Hosting y deploy
-
-## 📝 Notas Importantes
-
-1. **Sin Backend**: Todo funciona en el navegador (client-side)
-2. **Sin Dependencias**: No requiere npm/node para funcionar
-3. **Privacidad**: Los datos nunca salen del navegador del usuario
-4. **Offline**: Funciona sin conexión (excepto exportación Excel)
+- **Vite** - Bundler y dev server
+- **ES Modules** - JavaScript modular
+- **CSS3** - Variables CSS y Grid/Flexbox
+- **LocalStorage** - Persistencia de datos
+- **SheetJS** - Exportación Excel (CDN)
 
 ## 🐛 Troubleshooting
 
 ### "No se genera la UTM"
-- Verifica que todos los campos obligatorios (*) estén completos
-- Asegúrate de que la URL comience con http:// o https://
+- Verifica campos obligatorios (*)
+- URL debe comenzar con http:// o https://
 
-### "No se exporta a Excel"
-- Requiere conexión a internet (importa SheetJS desde CDN)
-- Si falla, usa la exportación a CSV
+### "Error en build"
+- Ejecuta `npm install` primero
+- Verifica Node.js 18+
 
-### "Se perdió mi historial"
-- Los datos están en localStorage del navegador
-- Si limpiaste el caché, se habrán borrado
-- **Solución**: Exporta regularmente tu historial
-
-### "Los caracteres especiales desaparecen"
-- Es correcto: las UTMs no permiten tildes, ñ ni espacios
-- Se reemplazan automáticamente por caracteres válidos
-
-## 📄 Licencia
-
-Proyecto privado para uso interno de San Fernando.
-
-## 👥 Créditos
-
-Desarrollado por el equipo RESET 2025 de San Fernando.
+### "Excel no exporta"
+- Requiere conexión a internet
+- Usa CSV como alternativa
 
 ---
 
 **Versión**: 2.1
+**Bundler**: Vite 5.4
 **Última actualización**: 2025
