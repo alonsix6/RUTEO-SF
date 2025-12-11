@@ -103,7 +103,6 @@
   transition: var(--transition);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--dropdown-text);
 }
 
 .theme-option:hover {
@@ -113,25 +112,20 @@
 
 .theme-option.active {
   background: var(--accent);
-  color: var(--text-contrast);
 }
 
-.theme-option.active .theme-text {
+/* Forzar color de texto en opciones del menú de temas */
+/* Sobrescribir colores heredados del atributo data-theme */
+.theme-menu .theme-option,
+.theme-menu .theme-option .theme-text {
+  color: var(--dropdown-text) !important;
+}
+
+/* Opción activa: texto con contraste sobre fondo accent */
+.theme-menu .theme-option.active,
+.theme-menu .theme-option.active .theme-text {
   color: var(--text-contrast) !important;
   font-weight: var(--weight-bold);
-}
-
-.theme-menu .theme-text {
-  color: var(--dropdown-text);
-}
-
-/* Asegurar que el texto de las opciones no activas sea visible */
-.theme-menu .theme-option:not(.active) {
-  color: var(--dropdown-text);
-}
-
-.theme-menu .theme-option:not(.active) .theme-text {
-  color: var(--dropdown-text);
 }
 
 /* --- Help Button (Inferior Derecha sin Gradiente) --- */
