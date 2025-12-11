@@ -80,6 +80,16 @@ input[readonly] {
   }
 }
 
+/* --- Inputs personalizados que aparecen debajo de selects --- */
+.custom-input {
+  margin-top: var(--space-sm);
+}
+
+/* --- Campos de Brand condicionales --- */
+.brand-fields {
+  margin-top: var(--space-sm);
+}
+
 /* ============================================
    BOTONES ESTILO RESET
    ============================================ */
@@ -211,6 +221,26 @@ input[readonly] {
   }
 }
 
+/* Form actions - botones de formulario */
+.form-actions {
+  margin-top: var(--space-lg);
+}
+
+.form-actions .btn-generate {
+  flex: 2;
+}
+
+.form-actions .btn-secondary {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .form-actions .btn-generate,
+  .form-actions .btn-secondary {
+    flex: 1;
+  }
+}
+
 /* ============================================
    RESULT BOX (Caja de Resultados)
    ============================================ */
@@ -235,6 +265,29 @@ input[readonly] {
   color: var(--text);
   font-family: monospace;
   font-size: var(--text-sm);
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/* Result box responsive */
+@media (max-width: 768px) {
+  .result-box {
+    padding: var(--space-md);
+  }
+
+  #resultText {
+    padding-right: 0;
+    padding-top: 44px;
+    font-size: var(--text-xs);
+  }
+
+  .copy-btn {
+    position: absolute;
+    right: var(--space-sm);
+    top: var(--space-sm);
+    padding: 6px 10px;
+    font-size: var(--text-xs);
+  }
 }
 
 /* --- Copy Button en Result Box --- */
@@ -367,4 +420,41 @@ textarea.success:focus {
   font-size: var(--text-xs);
   margin-top: var(--space-xs);
   font-weight: var(--weight-medium);
+}
+
+/* ============================================
+   EXPORT BUTTONS (Botones de exportación)
+   ============================================ */
+
+.export-buttons {
+  margin-bottom: var(--space-md);
+}
+
+.btn-excel {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.btn-excel:hover:not(:disabled) {
+  background: linear-gradient(135deg, #047857, #065f46);
+}
+
+/* Export buttons responsive */
+@media (max-width: 768px) {
+  .export-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .export-buttons .btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 12px;
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 400px) {
+  .export-buttons .btn {
+    flex: 1 1 100%;
+  }
 }

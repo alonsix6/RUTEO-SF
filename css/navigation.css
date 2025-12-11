@@ -302,12 +302,26 @@ html[data-theme="pink"] .theme-menu .theme-option.active .theme-text {
     transform: scale(1.1);
   }
 
-  /* Ajustar posiciones en mobile */
+  /* Top navigation responsive */
+  .top-nav {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  /* Botones de navegación - mantener texto legible */
   .config-btn,
   .theme-toggle {
-    width: 48px;
-    height: 48px;
-    font-size: var(--text-lg);
+    padding: 8px 12px;
+    font-size: var(--text-xs);
+    min-width: auto;
+    width: auto;
+    height: auto;
+  }
+
+  /* Ocultar texto en pantallas muy pequeñas */
+  .config-btn span:last-child,
+  .theme-toggle span:last-child {
+    display: none;
   }
 
   .help-btn {
@@ -324,6 +338,33 @@ html[data-theme="pink"] .theme-menu .theme-option.active .theme-text {
   .nav-tab {
     padding: var(--space-xs) var(--space-md);
     font-size: var(--text-sm);
+  }
+
+  /* Theme menu responsive - evitar desbordamiento */
+  .theme-menu {
+    left: auto;
+    right: 0;
+    min-width: 160px;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 400px) {
+  .top-nav {
+    justify-content: center;
+  }
+
+  .config-btn,
+  .theme-toggle {
+    flex: 1;
+    justify-content: center;
+    max-width: 120px;
+  }
+
+  /* Mostrar solo emoji en pantallas muy pequeñas */
+  .config-btn span:last-child,
+  .theme-toggle span:last-child {
+    display: none;
   }
 }
 
