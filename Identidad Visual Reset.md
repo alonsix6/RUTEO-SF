@@ -6,6 +6,14 @@ Propósito: Guía definitiva para replicar el branding visual de Reset en cualqu
 📋 Resumen Ejecutivo
 Reset es una agencia de medios ubicada en Barranco, Lima, Perú, con una identidad visual moderna, minimalista y de alto contraste. Su estética combina fondos negros intensos con tipografía bold en blanco y acentos de color vibrantes (principalmente verde neón y tonos morados/violetas). El diseño prioriza jerarquía visual clara, espacios generosos y geometría limpia.
 
+⚠️ PRINCIPIO FUNDAMENTAL: LEGIBILIDAD SOBRE ESTÉTICA
+La legibilidad y usabilidad siempre tienen prioridad sobre efectos visuales llamativos:
+- **Colores sólidos** sobre gradientes (los gradientes verde-cian cansan la vista)
+- **Contraste suficiente** para lectura cómoda (WCAG AA mínimo 4.5:1)
+- **Tipografía clara** sin efectos que dificulten la lectura
+- **Feedback visual** sutil en interacciones (no destellos ni animaciones excesivas)
+- **El contenido es el protagonista**, no los efectos visuales
+
 🎨 Sistema de Color
 Color Primario: Negro Profundo
 
@@ -20,20 +28,21 @@ Hex: #FFFFFF (blanco puro, sin grises)
 Uso: Tipografía principal, títulos, elementos de contraste
 Regla crítica: NUNCA usar gris claro (#F5F5F5) - siempre blanco puro para máximo contraste
 
-Color Acento 1: Verde Neón/Cian Eléctrico
+Color Acento 1: Verde Neón
 
-Hex aproximado: #00FF85 a #00FFAA (verde neón)
-Variante cian: #00E5FF (cian brillante)
+Hex principal: #00FF85 (verde neón) - USAR COMO COLOR SÓLIDO
+⚠️ IMPORTANTE: Evitar gradientes verde-cian, dificultan la legibilidad
 Uso:
 
 Highlights en texto (palabras clave como "RESEARCH")
 Bordes de elementos gráficos
 Contornos de formas geométricas
-Call-to-actions
+Botones primarios (fondo sólido, no gradiente)
 
 
 Intensidad: Debe "brillar" sobre el fondo negro - saturación al 100%
 Contexto: Representa innovación, digital, tecnología
+Hover/Active: Usar versión más oscura (#00CC6A) para feedback visual
 
 Color Acento 2: Sistema Violeta/Morado
 
@@ -222,10 +231,10 @@ FT. [blanco] RESEARCH [verde neón]
    - Nunca líneas grises claras - alto contraste
 
 4. **Degradados (Gradientes)**
-   - **Muy sutiles** - no son el foco
-   - Ejemplo: Negro → gris muy oscuro (#000000 → #1A1A1A)
-   - En visualizaciones: Morado → Fucsia o Azul → Cian
-   - Siempre lineales, nunca radiales
+   - **EVITAR en la mayoría de casos** - dificultan la legibilidad
+   - Si es necesario: Muy sutiles, solo en fondos (Negro → gris muy oscuro #000000 → #1A1A1A)
+   - ❌ NO usar gradiente verde-cian en textos ni botones (cansa la vista)
+   - Preferir siempre colores sólidos para elementos interactivos
 
 ### Iconografía
 
@@ -382,7 +391,7 @@ Mantener jerarquía visual
 🎨 Paleta de Componentes UI
 Botones
 Estilo Primario:
-cssbackground: linear-gradient(135deg, #00FF85 0%, #00E5FF 100%);
+cssbackground: #00FF85; /* Verde neón sólido - EVITAR gradientes por legibilidad */
 color: #000000; /* Texto negro sobre verde brillante */
 font-weight: 700;
 padding: 14px 32px;
@@ -392,7 +401,7 @@ text-transform: uppercase;
 letter-spacing: 1px;
 font-size: 14-16px;
 Hover:
-cssbackground: #FFFFFF;
+cssbackground: #00CC6A; /* Versión más oscura para contraste */
 color: #000000;
 transition: all 0.3s ease;
 Estilo Secundario (Ghost):
@@ -495,7 +504,8 @@ Profesionalismo: Colores corporativos, datos presentados limpiamente
 Contraste: Negro vs blanco, grande vs pequeño, nunca términos medios
 
 Lo Que NO Es Reset
-❌ Gradientes llamativos y multicolores
+❌ Gradientes llamativos verde-cian (daña la vista, dificulta legibilidad)
+❌ Degradados multicolores o fosforescentes
 ❌ Tipografía serif o script
 ❌ Fondos blancos o grises claros
 ❌ Sombras dramáticas (dropshadows exageradas)
@@ -503,6 +513,7 @@ Lo Que NO Es Reset
 ❌ Ilustraciones coloridas o cartoonescas
 ❌ Múltiples fuentes tipográficas en una composición
 ❌ Elementos decorativos sin función
+❌ Colores de saturación extrema que dificulten la lectura
 
 🛠️ Implementación en Código: Plantilla CSS Base
 css/* ============================================
@@ -653,12 +664,12 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
+  background: var(--color-neon-green); /* Sólido - evitar gradientes */
   color: var(--color-black);
 }
 
 .btn-primary:hover {
-  background: var(--color-white);
+  background: #00CC6A; /* Verde más oscuro para feedback visual */
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
 }
@@ -714,11 +725,10 @@ p {
   text-align: center;
 }
 
-.text-gradient-neon {
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* NOTA: Evitar text-gradient ya que dificulta la legibilidad */
+/* En su lugar usar color sólido: */
+.text-neon {
+  color: var(--color-neon-green);
 }
 
 /* Animaciones */
@@ -1660,9 +1670,9 @@ css.card {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  background: var(--color-neon-green); /* Borde sólido - evitar gradientes */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1756,7 +1766,7 @@ css.progress-container {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
+  background: var(--color-neon-green); /* Sólido para mejor visibilidad */
   border-radius: 4px;
   transition: width 0.3s ease-out;
   position: relative;
@@ -2207,7 +2217,7 @@ css.features {
 .feature-icon {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--color-neon-green); /* Sólido para mejor legibilidad */
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -2416,12 +2426,12 @@ css/* Button.css */
 
 /* Variants */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
+  background: var(--color-neon-green); /* Sólido - evitar gradientes */
   color: var(--color-black);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: var(--color-white);
+  background: #00CC6A; /* Verde más oscuro para feedback */
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 255, 133, 0.3);
 }
