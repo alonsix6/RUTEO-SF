@@ -16,33 +16,11 @@
   overflow: hidden;
 }
 
-/* --- Card Hover Effect con Borde Neón --- */
+/* --- Card Hover Effect con Borde del Tema --- */
 .card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-neon-green);
-  box-shadow: 0 12px 40px rgba(0, 255, 133, 0.15);
-}
-
-/* --- Efecto de Borde Degradado en Hover --- */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-}
-
-.card:hover::before {
-  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
 }
 
 /* --- Card Title --- */
@@ -52,8 +30,8 @@
   font-weight: var(--weight-extrabold);
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-sm);
-  border-bottom: 3px solid var(--color-neon-green);
-  color: var(--color-neon-green);
+  border-bottom: 3px solid var(--accent);
+  color: var(--accent);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -144,22 +122,20 @@
   left: 100%;
 }
 
-/* --- Stat Card Variantes Reset --- */
+/* --- Stat Card Variantes (Colores Sólidos) --- */
 .stat-card:nth-child(1) {
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
-  color: var(--color-black);
+  background: var(--accent);
+  color: var(--text-contrast);
 }
 
 .stat-card:nth-child(2) {
-  background: linear-gradient(135deg, var(--color-violet), var(--color-purple));
+  background: var(--accent-secondary);
+  color: var(--color-white);
 }
 
 .stat-card:nth-child(3) {
-  background: linear-gradient(135deg, var(--color-blue), var(--color-blue-secondary));
-}
-
-.stat-card:nth-child(4) {
-  background: linear-gradient(135deg, var(--color-magenta), var(--color-purple));
+  background: var(--color-blue);
+  color: var(--color-white);
 }
 
 /* --- Stat Number --- */
@@ -202,7 +178,7 @@
 
 .metric-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-neon-green);
+  border-color: var(--accent);
   box-shadow: var(--shadow-md);
 }
 
@@ -247,14 +223,14 @@
 
 .feature-card:hover {
   transform: translateY(-8px);
-  border-color: var(--color-neon-green);
-  box-shadow: 0 16px 48px rgba(0, 255, 133, 0.2);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
 }
 
 .feature-icon {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, var(--color-neon-green), var(--color-cyan));
+  background: var(--accent);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -266,8 +242,8 @@
 .feature-icon i {
   width: 28px;
   height: 28px;
-  stroke: var(--color-black);
-  color: var(--color-black);
+  stroke: var(--text-contrast);
+  color: var(--text-contrast);
 }
 
 .feature-title {
@@ -290,14 +266,14 @@
    ============================================ */
 
 .card-glazed {
-  background: rgba(26, 26, 26, 0.6);
+  background: rgba(var(--accent-rgb), 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 255, 133, 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.1);
 }
 
 .card-glazed:hover {
-  background: rgba(26, 26, 26, 0.8);
-  border-color: rgba(0, 255, 133, 0.3);
+  background: rgba(var(--accent-rgb), 0.1);
+  border-color: rgba(var(--accent-rgb), 0.3);
 }
 
 /* ============================================
@@ -305,12 +281,8 @@
    ============================================ */
 
 .card-highlight {
-  border: 2px solid var(--color-neon-green);
-  box-shadow: 0 0 0 4px rgba(0, 255, 133, 0.1);
-}
-
-.card-highlight::before {
-  opacity: 1;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--glow-color);
 }
 
 /* ============================================
@@ -381,8 +353,8 @@
   position: absolute;
   top: var(--space-md);
   right: var(--space-md);
-  background: var(--color-neon-green);
-  color: var(--color-black);
+  background: var(--accent);
+  color: var(--text-contrast);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   font-size: var(--text-xs);

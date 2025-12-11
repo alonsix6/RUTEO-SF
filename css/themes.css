@@ -7,7 +7,7 @@
 :root,
 [data-theme="dark"] {
   --accent: #00FF85;
-  --accent-hover: #00E5FF;
+  --accent-hover: #00CC6A;
   --accent-secondary: #6F42C1;
   --accent-rgb: 0, 255, 133;
 
@@ -22,7 +22,6 @@
 
   /* Color para título RUTEO */
   --title-color: #00FF85;
-  --title-gradient: linear-gradient(135deg, #00FF85 0%, #00E5FF 100%);
 
   /* Sombras y glow del tema */
   --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.1);
@@ -36,114 +35,110 @@
 
 /* --- Tema Light (Gris Claro con Verde) --- */
 [data-theme="light"] {
-  --accent: #00CC6A;
-  --accent-hover: #00FF85;
+  --accent: #00996B;
+  --accent-hover: #007D56;
   --accent-secondary: #6F42C1;
-  --accent-rgb: 0, 204, 106;
+  --accent-rgb: 0, 153, 107;
 
   /* Colores de texto con buen contraste para fondo claro */
   --bg: #F5F5F5;
   --card: #FFFFFF;
-  --card-hover: #EEEEEE;
+  --card-hover: #F0F0F0;
   --border: #DDDDDD;
   --text: #1A1A1A;
   --text-contrast: #FFFFFF;
   --muted: #666666;
 
   /* Color para título RUTEO en tema claro */
-  --title-color: #00CC6A;
-  --title-gradient: linear-gradient(135deg, #00CC6A 0%, #00A055 100%);
+  --title-color: #00996B;
 
   /* Sombras y glow del tema */
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
-  --glow-color: rgba(0, 204, 106, 0.2);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.18);
+  --glow-color: rgba(0, 153, 107, 0.15);
 
   /* Dropdown text color */
   --dropdown-text: #1A1A1A;
 }
 
-/* --- Tema Ocean (Azul/Cyan) --- */
+/* --- Tema Ocean (Azul Profundo) --- */
 [data-theme="ocean"] {
-  --accent: #00E5FF;
-  --accent-hover: #00B8D4;
-  --accent-secondary: #0052CC;
-  --accent-rgb: 0, 229, 255;
+  --accent: #00B4D8;
+  --accent-hover: #0096C7;
+  --accent-secondary: #0077B6;
+  --accent-rgb: 0, 180, 216;
 
-  --bg: #000A14;
-  --card: #001E33;
-  --card-hover: #002B47;
-  --border: #003D5C;
-  --text: #E0F7FF;
-  --text-contrast: #000A14;
-  --muted: #7FC8E8;
+  --bg: #03071E;
+  --card: #0A1628;
+  --card-hover: #122236;
+  --border: #1A3A52;
+  --text: #CAF0F8;
+  --text-contrast: #03071E;
+  --muted: #90E0EF;
 
   /* Color para título RUTEO en tema ocean */
-  --title-color: #00E5FF;
-  --title-gradient: linear-gradient(135deg, #00E5FF 0%, #00B8D4 100%);
+  --title-color: #00B4D8;
 
-  --shadow-sm: 0 4px 16px rgba(0, 229, 255, 0.15);
-  --shadow-md: 0 8px 32px rgba(0, 229, 255, 0.2);
-  --shadow-lg: 0 16px 48px rgba(0, 229, 255, 0.3);
-  --glow-color: rgba(0, 229, 255, 0.25);
+  --shadow-sm: 0 4px 16px rgba(0, 180, 216, 0.15);
+  --shadow-md: 0 8px 32px rgba(0, 180, 216, 0.2);
+  --shadow-lg: 0 16px 48px rgba(0, 180, 216, 0.3);
+  --glow-color: rgba(0, 180, 216, 0.2);
 
   /* Dropdown text color */
-  --dropdown-text: #E0F7FF;
+  --dropdown-text: #CAF0F8;
 }
 
-/* --- Tema Forest (Verde Oscuro Natural) --- */
+/* --- Tema Forest (Verde Bosque Natural) --- */
 [data-theme="forest"] {
-  --accent: #00FF85;
-  --accent-hover: #00CC6A;
-  --accent-secondary: #4CAF50;
-  --accent-rgb: 0, 255, 133;
+  --accent: #2E7D32;
+  --accent-hover: #1B5E20;
+  --accent-secondary: #388E3C;
+  --accent-rgb: 46, 125, 50;
 
-  --bg: #0A1F0A;
-  --card: #162816;
-  --card-hover: #1F331F;
+  --bg: #0D1F0D;
+  --card: #1A2E1A;
+  --card-hover: #243D24;
   --border: #2D472D;
-  --text: #E8F5E8;
-  --text-contrast: #0A1F0A;
-  --muted: #8BC48B;
+  --text: #E8F5E9;
+  --text-contrast: #FFFFFF;
+  --muted: #A5D6A7;
 
   /* Color para título RUTEO en tema forest */
-  --title-color: #00FF85;
-  --title-gradient: linear-gradient(135deg, #00FF85 0%, #4CAF50 100%);
+  --title-color: #4CAF50;
 
-  --shadow-sm: 0 4px 16px rgba(0, 255, 133, 0.12);
-  --shadow-md: 0 8px 32px rgba(0, 255, 133, 0.18);
-  --shadow-lg: 0 16px 48px rgba(0, 255, 133, 0.25);
-  --glow-color: rgba(0, 255, 133, 0.2);
+  --shadow-sm: 0 4px 16px rgba(46, 125, 50, 0.15);
+  --shadow-md: 0 8px 32px rgba(46, 125, 50, 0.2);
+  --shadow-lg: 0 16px 48px rgba(46, 125, 50, 0.28);
+  --glow-color: rgba(46, 125, 50, 0.2);
 
   /* Dropdown text color */
-  --dropdown-text: #E8F5E8;
+  --dropdown-text: #E8F5E9;
 }
 
-/* --- Tema Pink (Magenta/Rosa) --- */
+/* --- Tema Pink (Rosa/Magenta) --- */
 [data-theme="pink"] {
-  --accent: #FF0080;
-  --accent-hover: #FF3399;
-  --accent-secondary: #9B59B6;
-  --accent-rgb: 255, 0, 128;
+  --accent: #E91E63;
+  --accent-hover: #C2185B;
+  --accent-secondary: #9C27B0;
+  --accent-rgb: 233, 30, 99;
 
-  --bg: #1A0014;
-  --card: #2B0022;
-  --card-hover: #3D0030;
-  --border: #5C0047;
-  --text: #FFE0F0;
-  --text-contrast: #1A0014;
-  --muted: #E899CC;
+  --bg: #1A0A12;
+  --card: #2D1520;
+  --card-hover: #3D1F2D;
+  --border: #5C2D42;
+  --text: #FCE4EC;
+  --text-contrast: #FFFFFF;
+  --muted: #F8BBD9;
 
   /* Color para título RUTEO en tema pink */
-  --title-color: #FF0080;
-  --title-gradient: linear-gradient(135deg, #FF0080 0%, #FF3399 100%);
+  --title-color: #E91E63;
 
-  --shadow-sm: 0 4px 16px rgba(255, 0, 128, 0.15);
-  --shadow-md: 0 8px 32px rgba(255, 0, 128, 0.2);
-  --shadow-lg: 0 16px 48px rgba(255, 0, 128, 0.3);
-  --glow-color: rgba(255, 0, 128, 0.25);
+  --shadow-sm: 0 4px 16px rgba(233, 30, 99, 0.15);
+  --shadow-md: 0 8px 32px rgba(233, 30, 99, 0.2);
+  --shadow-lg: 0 16px 48px rgba(233, 30, 99, 0.3);
+  --glow-color: rgba(233, 30, 99, 0.2);
 
   /* Dropdown text color */
-  --dropdown-text: #FFE0F0;
+  --dropdown-text: #FCE4EC;
 }
