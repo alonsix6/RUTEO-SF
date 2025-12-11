@@ -21,31 +21,31 @@
 }
 
 .config-modal-content {
-  background: var(--color-black);
-  border: 2px solid var(--color-gray-medium);
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
   border-radius: var(--radius);
   max-width: 1000px;
   width: 100%;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0, 255, 133, 0.2);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
   animation: slideUp 0.4s ease;
   display: flex;
   flex-direction: column;
 }
 
-/* --- Config Modal Header sin Gradiente --- */
+/* --- Config Modal Header (Fondo Gris Claro Fijo) --- */
 .config-modal-header {
-  background: var(--color-gray-dark);
-  color: var(--text);
+  background: #F5F5F5;
+  color: #1A1A1A;
   padding: var(--space-md) var(--space-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: var(--radius) var(--radius) 0 0;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid #00CC6A;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .config-modal-header h2 {
@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  color: var(--accent);
+  color: #00996B;
   font-family: var(--font-display);
   font-weight: var(--weight-black);
   letter-spacing: 0.03em;
@@ -68,8 +68,8 @@
 
 .config-restore-btn {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid #666666;
+  color: #666666;
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -81,14 +81,14 @@
 }
 
 .config-restore-btn:hover {
-  background: var(--accent);
-  color: var(--color-black);
+  background: #666666;
+  color: #FFFFFF;
 }
 
 .config-modal-close {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid #666666;
+  color: #666666;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -99,16 +99,16 @@
 }
 
 .config-modal-close:hover {
-  background: var(--accent);
-  color: var(--color-black);
+  background: #666666;
+  color: #FFFFFF;
   transform: rotate(90deg);
 }
 
-/* --- Config Tabs Navigation --- */
+/* --- Config Tabs Navigation (Colores Fijos) --- */
 .config-tabs {
   display: flex;
-  background: var(--color-gray-ultra-dark);
-  border-bottom: 2px solid var(--border);
+  background: #EEEEEE;
+  border-bottom: 2px solid #E0E0E0;
   flex-shrink: 0;
 }
 
@@ -117,7 +117,7 @@
   padding: var(--space-md) var(--space-lg);
   background: transparent;
   border: none;
-  color: var(--muted);
+  color: #666666;
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   cursor: pointer;
@@ -132,31 +132,31 @@
 }
 
 .config-tab-btn:hover {
-  background: var(--color-gray-dark);
-  color: var(--color-neon-green);
+  background: #E0E0E0;
+  color: #00996B;
 }
 
 .config-tab-btn.active {
-  background: var(--color-black);
-  color: var(--color-neon-green);
-  border-bottom-color: var(--color-neon-green);
+  background: #FFFFFF;
+  color: #00996B;
+  border-bottom-color: #00996B;
 }
 
-/* --- Config Modal Body --- */
+/* --- Config Modal Body (Fondo Blanco Fijo) --- */
 .config-modal-body {
   padding: var(--space-lg);
   overflow-y: auto;
   flex: 1;
-  background: var(--color-black);
-  color: var(--text);
+  background: #FFFFFF;
+  color: #1A1A1A;
 }
 
-/* --- Config Section Title --- */
+/* --- Config Section Title (Color Fijo) --- */
 .config-section-title {
   font-size: var(--text-xl);
   font-weight: var(--weight-extrabold);
   margin-bottom: var(--space-lg);
-  color: var(--color-neon-green);
+  color: #00996B;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -174,8 +174,8 @@
 }
 
 .config-item-card {
-  background: var(--color-gray-dark);
-  border: 1px solid var(--border);
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
   border-radius: var(--radius-md);
   padding: var(--space-md);
   display: flex;
@@ -185,10 +185,10 @@
 }
 
 .config-item-card:hover {
-  border-color: var(--color-neon-green);
-  background: var(--color-gray-medium);
+  border-color: #00996B;
+  background: #EEEEEE;
   transform: translateX(4px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .config-item-info {
@@ -198,13 +198,13 @@
 .config-item-name {
   font-weight: var(--weight-bold);
   font-size: var(--text-base);
-  color: var(--text);
+  color: #1A1A1A;
   margin-bottom: var(--space-xs);
 }
 
 .config-item-desc {
   font-size: var(--text-sm);
-  color: var(--muted);
+  color: #666666;
 }
 
 .config-item-meta {
@@ -271,38 +271,38 @@
 }
 
 .config-action-btn.edit {
-  background: var(--color-neon-green);
-  color: var(--color-black);
+  background: #00996B;
+  color: #FFFFFF;
 }
 
 .config-action-btn.edit:hover {
-  background: var(--color-cyan);
+  background: #00B37E;
   transform: scale(1.05);
 }
 
 .config-action-btn.delete {
-  background: var(--color-danger);
-  color: var(--color-white);
+  background: #DC3545;
+  color: #FFFFFF;
 }
 
 .config-action-btn.delete:hover {
-  background: #FF5555;
+  background: #E35D6A;
   transform: scale(1.05);
 }
 
 .config-action-btn.locked {
-  background: var(--color-gray-medium);
-  color: var(--muted);
+  background: #CCCCCC;
+  color: #888888;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-/* --- Add New Item Button --- */
+/* --- Add New Item Button (Color Fijo) --- */
 .config-add-btn {
   width: 100%;
   padding: var(--space-md);
-  background: var(--accent);
-  color: var(--color-black);
+  background: #00996B;
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--text-base);
@@ -319,15 +319,15 @@
 }
 
 .config-add-btn:hover {
-  background: var(--accent-hover);
+  background: #00B37E;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 24px rgba(0, 153, 107, 0.3);
 }
 
-/* --- Config Form (Inline Add/Edit) --- */
+/* --- Config Form (Inline Add/Edit - Colores Fijos) --- */
 .config-form {
-  background: rgba(0, 255, 133, 0.05);
-  border: 2px solid var(--color-neon-green);
+  background: #E8F5E9;
+  border: 2px solid #00996B;
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   margin-bottom: var(--space-lg);
@@ -337,7 +337,7 @@
 .config-form-title {
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
-  color: var(--color-cyan);
+  color: #007D56;
   margin-bottom: var(--space-md);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -351,7 +351,7 @@
   display: block;
   font-weight: var(--weight-semibold);
   margin-bottom: var(--space-xs);
-  color: var(--text);
+  color: #1A1A1A;
   font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -363,9 +363,9 @@
   width: 100%;
   padding: 12px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--color-gray-dark);
-  color: var(--text);
+  border: 1px solid #CCCCCC;
+  background: #FFFFFF;
+  color: #1A1A1A;
   font-size: var(--text-base);
   outline: none;
   transition: var(--transition);
@@ -374,8 +374,8 @@
 .config-form-group input:focus,
 .config-form-group select:focus,
 .config-form-group textarea:focus {
-  border-color: var(--color-neon-green);
-  box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.1);
+  border-color: #00996B;
+  box-shadow: 0 0 0 3px rgba(0, 153, 107, 0.15);
 }
 
 .config-form-actions {
@@ -397,29 +397,29 @@
 }
 
 .config-form-btn.save {
-  background: var(--accent);
-  color: var(--color-black);
+  background: #00996B;
+  color: #FFFFFF;
 }
 
 .config-form-btn.save:hover {
-  background: var(--accent-hover);
+  background: #00B37E;
   transform: translateY(-2px);
 }
 
 .config-form-btn.cancel {
-  background: var(--color-gray-medium);
-  color: var(--text);
+  background: #CCCCCC;
+  color: #333333;
 }
 
 .config-form-btn.cancel:hover {
-  background: var(--color-gray-light);
+  background: #BBBBBB;
   transform: translateY(-2px);
 }
 
-/* --- Config Preview Box --- */
+/* --- Config Preview Box (Colores Fijos) --- */
 .config-preview-box {
-  background: rgba(0, 82, 204, 0.05);
-  border: 2px solid var(--color-blue);
+  background: #E3F2FD;
+  border: 2px solid #1976D2;
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   margin-top: var(--space-lg);
@@ -428,7 +428,7 @@
 .config-preview-title {
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
-  color: var(--color-blue);
+  color: #1976D2;
   margin-bottom: var(--space-sm);
   display: flex;
   align-items: center;
@@ -439,24 +439,25 @@
 }
 
 .config-preview-content {
-  background: var(--color-black);
+  background: #FFFFFF;
   border-radius: var(--radius-sm);
   padding: var(--space-md);
   font-family: 'Monaco', 'Courier New', monospace;
   font-size: var(--text-sm);
   line-height: 1.8;
-  color: var(--text);
+  color: #333333;
   word-break: break-all;
+  border: 1px solid #E0E0E0;
 }
 
 .config-preview-label {
-  color: var(--muted);
+  color: #666666;
   font-size: var(--text-sm);
   margin-bottom: var(--space-xs);
 }
 
 .config-preview-value {
-  color: var(--color-blue);
+  color: #1976D2;
   font-weight: var(--weight-bold);
 }
 
@@ -464,20 +465,20 @@
   display: block;
 }
 
-/* --- Scrollbar en Config Modal --- */
+/* --- Scrollbar en Config Modal (Colores Fijos) --- */
 .config-modal-body::-webkit-scrollbar {
   width: 8px;
 }
 
 .config-modal-body::-webkit-scrollbar-track {
-  background: var(--color-gray-dark);
+  background: #F0F0F0;
 }
 
 .config-modal-body::-webkit-scrollbar-thumb {
-  background: var(--color-gray-medium);
+  background: #CCCCCC;
   border-radius: 4px;
 }
 
 .config-modal-body::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neon-green);
+  background: #00996B;
 }

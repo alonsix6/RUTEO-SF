@@ -174,7 +174,7 @@
   color: var(--muted);
   margin-top: var(--space-sm);
   padding: var(--space-sm);
-  background: var(--color-gray-dark);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   word-break: break-all;
@@ -184,7 +184,7 @@
 }
 
 .utm-url:hover {
-  background: var(--color-gray-medium);
+  background: var(--card);
   border-color: var(--accent);
 }
 
@@ -249,7 +249,7 @@
   color: var(--muted);
   font-weight: var(--weight-semibold);
   padding: var(--space-xs) var(--space-sm);
-  background: var(--color-gray-dark);
+  background: var(--card);
   border-radius: var(--radius-sm);
 }
 
@@ -349,7 +349,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 255, 133, 0.1),
+    var(--glow-color),
     transparent
   );
   animation: shimmer 1.5s infinite;

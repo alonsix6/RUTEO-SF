@@ -49,12 +49,11 @@
 
   /* Acentos */
   --accent: #00FF85;
-  --accent-hover: #00E5FF;
+  --accent-hover: #00CC6A;
   --accent-secondary: #6F42C1;
 
   /* RGB Variables para rgba() */
   --accent-rgb: 0, 255, 133;
-  --cyan-rgb: 0, 229, 255;
   --violet-rgb: 111, 66, 193;
 
   /* Sombras Reset */
@@ -149,19 +148,12 @@ body {
 }
 
 /* --- Utilidades de Texto Reset --- */
-.text-neon {
-  color: var(--color-neon-green);
+.text-accent {
+  color: var(--accent);
 }
 
-.text-cyan {
-  color: var(--color-cyan);
-}
-
-.text-gradient-neon {
-  background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.text-muted {
+  color: var(--muted);
 }
 
 /* --- Animaciones Globales Reset --- */

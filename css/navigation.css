@@ -186,7 +186,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--color-neon-green);
+  background: var(--accent);
   transform: scaleX(0);
   transition: var(--transition);
 }
@@ -196,7 +196,7 @@
 }
 
 .nav-tab.active {
-  color: var(--color-neon-green);
+  color: var(--accent);
 }
 
 .nav-tab.active::after {
@@ -227,7 +227,7 @@
 }
 
 .breadcrumb-item a:hover {
-  color: var(--color-neon-green);
+  color: var(--accent);
 }
 
 .breadcrumb-item.active {
@@ -254,8 +254,8 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--color-neon-green);
-    color: var(--color-black);
+    background: var(--accent);
+    color: var(--text-contrast);
     border: none;
     font-size: var(--text-lg);
     cursor: pointer;
@@ -340,12 +340,12 @@
   display: inline-flex;
   align-items: center;
   padding: var(--space-xs) var(--space-sm);
-  background: rgba(0, 255, 133, 0.1);
-  border: 1px solid var(--color-neon-green);
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   font-size: var(--text-xs);
   font-weight: var(--weight-bold);
-  color: var(--color-neon-green);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   gap: var(--space-xs);
