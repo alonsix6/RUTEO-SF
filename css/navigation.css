@@ -89,6 +89,7 @@
   z-index: var(--z-dropdown);
   min-width: 200px;
   animation: fadeIn 0.2s ease;
+  color: var(--dropdown-text);
 }
 
 /* --- Theme Options --- */
@@ -120,7 +121,16 @@
   font-weight: var(--weight-bold);
 }
 
-.theme-text {
+.theme-menu .theme-text {
+  color: var(--dropdown-text);
+}
+
+/* Asegurar que el texto de las opciones no activas sea visible */
+.theme-menu .theme-option:not(.active) {
+  color: var(--dropdown-text);
+}
+
+.theme-menu .theme-option:not(.active) .theme-text {
   color: var(--dropdown-text);
 }
 
