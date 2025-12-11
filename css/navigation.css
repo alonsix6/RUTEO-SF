@@ -114,17 +114,45 @@
   background: var(--accent);
 }
 
-/* Forzar color de texto en opciones del menú de temas */
-/* Sobrescribir colores heredados del atributo data-theme */
-.theme-menu .theme-option,
-.theme-menu .theme-option .theme-text {
-  color: var(--dropdown-text) !important;
+/* ================================================
+   COLORES DE TEXTO DEL SELECTOR DE TEMAS
+   Basados en el tema del HTML, no del elemento
+   ================================================ */
+
+/* Tema CLARO: texto negro sobre fondo blanco */
+html[data-theme="light"] .theme-menu .theme-option,
+html[data-theme="light"] .theme-menu .theme-option .theme-text {
+  color: #1A1A1A !important;
 }
 
-/* Opción activa: texto con contraste sobre fondo accent */
-.theme-menu .theme-option.active,
-.theme-menu .theme-option.active .theme-text {
-  color: var(--text-contrast) !important;
+/* Temas OSCUROS: texto blanco sobre fondo oscuro */
+html[data-theme="dark"] .theme-menu .theme-option,
+html[data-theme="dark"] .theme-menu .theme-option .theme-text,
+html[data-theme="ocean"] .theme-menu .theme-option,
+html[data-theme="ocean"] .theme-menu .theme-option .theme-text,
+html[data-theme="forest"] .theme-menu .theme-option,
+html[data-theme="forest"] .theme-menu .theme-option .theme-text,
+html[data-theme="pink"] .theme-menu .theme-option,
+html[data-theme="pink"] .theme-menu .theme-option .theme-text {
+  color: #FFFFFF !important;
+}
+
+/* Opción ACTIVA: texto con contraste sobre fondo accent */
+html[data-theme="light"] .theme-menu .theme-option.active,
+html[data-theme="light"] .theme-menu .theme-option.active .theme-text {
+  color: #FFFFFF !important;
+  font-weight: var(--weight-bold);
+}
+
+html[data-theme="dark"] .theme-menu .theme-option.active,
+html[data-theme="dark"] .theme-menu .theme-option.active .theme-text,
+html[data-theme="ocean"] .theme-menu .theme-option.active,
+html[data-theme="ocean"] .theme-menu .theme-option.active .theme-text,
+html[data-theme="forest"] .theme-menu .theme-option.active,
+html[data-theme="forest"] .theme-menu .theme-option.active .theme-text,
+html[data-theme="pink"] .theme-menu .theme-option.active,
+html[data-theme="pink"] .theme-menu .theme-option.active .theme-text {
+  color: #000000 !important;
   font-weight: var(--weight-bold);
 }
 
