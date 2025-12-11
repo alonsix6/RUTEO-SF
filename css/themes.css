@@ -118,10 +118,10 @@
 
 /* --- Tema Pink (Rosa/Magenta) --- */
 [data-theme="pink"] {
-  --accent: #E91E63;
-  --accent-hover: #C2185B;
+  --accent: #D81B60; /* Oscurecido para WCAG AA: ratio ~4.8:1 con texto blanco */
+  --accent-hover: #AD1457;
   --accent-secondary: #9C27B0;
-  --accent-rgb: 233, 30, 99;
+  --accent-rgb: 216, 27, 96;
 
   --bg: #1A0A12;
   --card: #2D1520;
@@ -132,12 +132,12 @@
   --muted: #F8BBD9;
 
   /* Color para título RUTEO en tema pink */
-  --title-color: #E91E63;
+  --title-color: #D81B60;
 
-  --shadow-sm: 0 4px 16px rgba(233, 30, 99, 0.15);
-  --shadow-md: 0 8px 32px rgba(233, 30, 99, 0.2);
-  --shadow-lg: 0 16px 48px rgba(233, 30, 99, 0.3);
-  --glow-color: rgba(233, 30, 99, 0.2);
+  --shadow-sm: 0 4px 16px rgba(216, 27, 96, 0.15);
+  --shadow-md: 0 8px 32px rgba(216, 27, 96, 0.2);
+  --shadow-lg: 0 16px 48px rgba(216, 27, 96, 0.3);
+  --glow-color: rgba(216, 27, 96, 0.2);
 
   /* Dropdown text color - blanco para temas oscuros */
   --dropdown-text: #FFFFFF;
