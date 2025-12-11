@@ -1,0 +1,28 @@
+{
+  "name": "ruteo-sf",
+  "version": "2.1.0",
+  "description": "Generador de UTMs para San Fernando - Reset Agency",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "author": "Reset Agency",
+  "license": "MIT",
+  "keywords": [
+    "utm",
+    "generator",
+    "marketing",
+    "san-fernando"
+  ],
+  "config": {
+    "brand": {
+      "name": "San Fernando",
+      "code": "SF"
+    }
+  }
+}
