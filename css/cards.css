@@ -75,7 +75,7 @@
   margin-bottom: var(--space-lg);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1000px) {
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -333,7 +333,7 @@
   gap: var(--space-lg);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1000px) {
   .cards-grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
