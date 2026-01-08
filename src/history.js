@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Historial (Render y CRUD)
+   Linky - Historial (Render y CRUD)
    ES Module Version
    ============================================ */
 

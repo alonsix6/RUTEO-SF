@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Sistema de Configuración
+   Linky - Sistema de Configuración
    ES Module Version
    ============================================ */
 

@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Gestión de Temas
+   Linky - Gestión de Temas
    ES Module Version
    ============================================ */
 

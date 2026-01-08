@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Exportación (CSV y Excel)
+   Linky - Exportación (CSV y Excel)
    ES Module Version
    ============================================ */
 

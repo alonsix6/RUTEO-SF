@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Generación de UTMs
+   Linky - Generación de UTMs
    ES Module Version
    ============================================ */
 

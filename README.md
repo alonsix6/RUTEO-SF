@@ -1,4 +1,4 @@
-# 🚀 RUTEO — Generador UTM
+# 🚀 Linky — Generador UTM
 
 Herramienta web para la generación automatizada de parámetros UTM para campañas digitales. Diseñado para equipos de marketing digital con soporte para múltiples marcas.
 
@@ -36,7 +36,7 @@ Herramienta web para la generación automatizada de parámetros UTM para campañ
 ```bash
 # Clonar repositorio
 git clone <repository-url>
-cd RUTEO-SF
+cd Linky
 
 # Instalar dependencias
 npm install
@@ -58,7 +58,7 @@ npm run preview
 ## 📁 Estructura del Proyecto
 
 ```
-RUTEO-SF/
+Linky/
 ├── index.html              # HTML principal
 ├── package.json            # Dependencias y scripts
 ├── vite.config.js          # Configuración de Vite
@@ -115,7 +115,7 @@ Click en **⚙️ Ajustes** para gestionar:
 
 ## 🔄 Adaptar para Otra Marca
 
-Esta guía explica cómo adaptar RUTEO para una nueva marca/cliente.
+Esta guía explica cómo adaptar Linky para una nueva marca/cliente.
 
 ### Paso 1: Información de la marca
 
@@ -182,7 +182,7 @@ export function getDefaultConfig() {
 #### 3.1 Título y metadata (`index.html`)
 
 ```html
-<title>RUTEO — [NOMBRE MARCA] 2025</title>
+<title>Linky — [NOMBRE MARCA] 2025</title>
 <link rel="icon" type="image/png" href="favicon.png">
 ```
 
@@ -191,7 +191,7 @@ export function getDefaultConfig() {
 Busca y modifica:
 ```html
 <div class="header">
-  <h1>RUTEO</h1>
+  <h1>Linky</h1>
   <p>[NOMBRE AGENCIA] — [NOMBRE MARCA]</p>
 </div>
 ```
@@ -225,7 +225,7 @@ Para cambiar los colores del tema principal, edita `css/themes.css`:
 
 ```json
 {
-  "name": "ruteo-[marca]",
+  "name": "linky-[marca]",
   "version": "1.0.0",
   "description": "Generador UTM para [Marca]"
 }

@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Punto de Entrada Principal
+   Linky - Punto de Entrada Principal
    ES Module Version
 
    Este archivo:
@@ -124,5 +124,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cargar tema
   loadTheme();
 
-  console.log('🚀 RUTEO inicializado correctamente');
+  console.log('🚀 Linky inicializado correctamente');
 });
