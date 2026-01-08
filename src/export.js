@@ -8,7 +8,7 @@ import { toast } from './utils.js';
 
 /* --- Exportar a CSV --- */
 export function exportCSV() {
-  if (!utmHistory.length) return toast('⚠️ Sin datos para exportar');
+  if (!utmHistory.length) return toast('Sin datos para exportar');
 
   const h = ['division', 'plataforma', 'medium', 'objetivo', 'tipoCampana', 'mes', 'ano', 'placement', 'codigoPieza', 'numeroPieza', 'motivo', 'urlDestino', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'urlCompleta', 'createdAt'];
 
@@ -23,12 +23,12 @@ export function exportCSV() {
   a.download = 'utm_history.csv';
   a.click();
 
-  toast('📥 CSV descargado');
+  toast('CSV descargado');
 }
 
 /* --- Exportar a Excel --- */
 export async function exportExcel() {
-  if (!utmHistory.length) return toast('⚠️ Sin datos para exportar');
+  if (!utmHistory.length) return toast('Sin datos para exportar');
 
   try {
     // Importar SheetJS
@@ -164,9 +164,9 @@ export async function exportExcel() {
       type: 'binary'
     });
 
-    toast('📊 Excel descargado con formato');
+    toast('Excel descargado con formato');
   } catch (error) {
     console.error('Error exportando Excel:', error);
-    toast('❌ Error al exportar Excel. Intenta con CSV.');
+    toast('Error al exportar Excel. Intenta con CSV.');
   }
 }

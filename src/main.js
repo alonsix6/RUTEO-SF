@@ -124,5 +124,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cargar tema
   loadTheme();
 
-  console.log('🚀 Linky inicializado correctamente');
+  console.log('Linky inicializado correctamente');
 });

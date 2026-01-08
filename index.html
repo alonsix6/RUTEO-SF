@@ -21,12 +21,36 @@
 <link rel="stylesheet" href="css/config.css?v=3.5">
 <link rel="stylesheet" href="css/utilities.css?v=3.5">
 <link rel="stylesheet" href="css/responsive.css?v=3.5">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    display: inline-block;
+  }
+  .icon-sm { width: 0.875em; height: 0.875em; }
+  .icon-lg { width: 1.25em; height: 1.25em; }
+  .btn .icon, .config-btn .icon, .theme-toggle .icon { margin-right: 0.35em; }
+  .theme-option .icon { margin-right: 0.5em; }
+  .card-title .icon { margin-right: 0.4em; }
+  .config-tab-btn .icon { margin-right: 0.35em; }
+  .config-section-title .icon { margin-right: 0.4em; }
+  .config-form-title .icon { margin-right: 0.35em; }
+  .config-preview-title .icon { margin-right: 0.35em; }
+  .config-form-btn .icon { margin-right: 0.3em; }
+  .modal-section h3 .icon { margin-right: 0.4em; }
+  .tip-box .icon, .warning-box .icon { margin-right: 0.3em; }
+  .help-btn .icon { width: 1.2em; height: 1.2em; }
+</style>
 </head>
 
 <body>
 
 <!-- ============================================
-     🏗️ HTML SECTION 1: CONTAINER Y HEADER
+     HTML SECTION 1: CONTAINER Y HEADER
      ============================================ -->
 
 <div class="container">
@@ -38,52 +62,52 @@
   </div>
 
   <!-- ============================================
-       🏗️ HTML SECTION 2: NAVEGACIÓN TOP HEADER
+       HTML SECTION 2: NAVEGACION TOP HEADER
        ============================================ -->
 
   <!-- --- Top Navigation Header --- -->
   <nav class="top-nav">
     <!-- Config Button con Texto "Ajustes" -->
     <button class="config-btn" onclick="openConfigModal()" title="Configuración">
-      <span>⚙️</span>
+      <i data-lucide="settings" class="icon"></i>
       <span>Ajustes</span>
     </button>
 
     <!-- Theme Toggle Button (Dropdown) -->
     <div style="position: relative;">
       <button class="theme-toggle" onclick="toggleThemeMenu()" title="Cambiar tema" id="themeToggle">
-        <span>🎨</span>
+        <i data-lucide="palette" class="icon"></i>
         <span>Temas</span>
       </button>
 
       <!-- Theme Menu Dropdown -->
       <div id="themeMenu" class="theme-menu hidden">
         <div class="theme-option" onclick="changeTheme('dark')" data-theme="dark">
-          <span>🌙</span> <span class="theme-text">Oscuro</span>
+          <i data-lucide="moon" class="icon"></i> <span class="theme-text">Oscuro</span>
         </div>
         <div class="theme-option" onclick="changeTheme('light')" data-theme="light">
-          <span>☀️</span> <span class="theme-text">Claro</span>
+          <i data-lucide="sun" class="icon"></i> <span class="theme-text">Claro</span>
         </div>
         <div class="theme-option" onclick="changeTheme('ocean')" data-theme="ocean">
-          <span>🌊</span> <span class="theme-text">Ocean Blue</span>
+          <i data-lucide="waves" class="icon"></i> <span class="theme-text">Ocean Blue</span>
         </div>
         <div class="theme-option" onclick="changeTheme('forest')" data-theme="forest">
-          <span>🌿</span> <span class="theme-text">Forest Green</span>
+          <i data-lucide="leaf" class="icon"></i> <span class="theme-text">Forest Green</span>
         </div>
         <div class="theme-option" onclick="changeTheme('pink')" data-theme="pink">
-          <span>💖</span> <span class="theme-text">Pink</span>
+          <i data-lucide="heart" class="icon"></i> <span class="theme-text">Pink</span>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- ============================================
-       🏗️ HTML SECTION 3: FORMULARIO PRINCIPAL
+       HTML SECTION 3: FORMULARIO PRINCIPAL
        ============================================ -->
 
   <div class="form-container">
     <div class="card">
-      <div class="card-title">🧩 Crear Nueva UTM</div>
+      <div class="card-title"><i data-lucide="puzzle" class="icon"></i> Crear Nueva UTM</div>
 
       <!-- --- Form --- -->
       <form id="utmForm" autocomplete="off">
@@ -98,12 +122,12 @@
             <option value="https://delivery.sanfernando.pe/categorias/embutidos">Delivery – Embutidos</option>
             <option value="https://delivery.sanfernando.pe/categorias/huevo">Delivery – Huevos</option>
             <option value="https://delivery.sanfernando.pe/vales">Delivery – Vales</option>
-            <option value="custom">➕ URL Personalizada</option>
+            <option value="custom">+ URL Personalizada</option>
           </select>
           <input id="urlCustom" class="hidden custom-input" type="url" placeholder="https://example.com"/>
         </div>
 
-        <!-- División y Plataforma -->
+        <!-- Division y Plataforma -->
         <div class="form-row">
           <div class="form-group">
             <label>División *</label>
@@ -170,7 +194,7 @@
               <option value="NAVIDADB2B">NAVIDADB2B</option>
               <option value="Elaborados">Elaborados</option>
               <option value="account_link" id="accountLinkOption" style="display:none;">account_link</option>
-              <option value="custom">➕ Personalizada</option>
+              <option value="custom">+ Personalizada</option>
             </select>
             <input id="campanaCustom" class="hidden custom-input" type="text" placeholder="Nombre de campaña"/>
           </div>
@@ -186,7 +210,7 @@
               <option value="huevos">Huevos</option>
               <option value="DesayunoSangrecita">Desayuno Sangrecita</option>
               <option value="DescuentoWeb">Descuento Web</option>
-              <option value="custom">➕ Personalizado</option>
+              <option value="custom">+ Personalizado</option>
             </select>
             <input id="motivoCustom" class="hidden custom-input" type="text" placeholder="Descripción del motivo"/>
           </div>
@@ -231,7 +255,7 @@
               <option value="NAB2B">NAB2B</option>
               <option value="HUE">HUE</option>
               <option value="Elaborados">Elaborados</option>
-              <option value="custom">➕ Otro código</option>
+              <option value="custom">+ Otro código</option>
             </select>
             <input id="codigoCustom" class="hidden custom-input" type="text" placeholder="Código personalizado"/>
           </div>
@@ -243,15 +267,15 @@
 
         <!-- Buttons -->
         <div class="btn-group form-actions">
-          <button class="btn btn-primary btn-generate" type="submit">🚀 GENERAR UTM</button>
-          <button class="btn btn-secondary" type="button" onclick="resetForm()">🔄 LIMPIAR</button>
+          <button class="btn btn-primary btn-generate" type="submit"><i data-lucide="rocket" class="icon"></i> GENERAR UTM</button>
+          <button class="btn btn-secondary" type="button" onclick="resetForm()"><i data-lucide="refresh-cw" class="icon"></i> LIMPIAR</button>
         </div>
       </form>
 
       <!-- Result Container -->
       <div id="resultContainer" class="hidden">
         <div class="result-box">
-          <button class="copy-btn" onclick="copyResult()">📋 Copiar</button>
+          <button class="copy-btn" onclick="copyResult()"><i data-lucide="clipboard-copy" class="icon"></i> Copiar</button>
           <div id="resultText"></div>
         </div>
       </div>
@@ -259,12 +283,12 @@
   </div>
 
   <!-- ============================================
-       🏗️ HTML SECTION 4: HISTORIAL DE UTMs
+       HTML SECTION 4: HISTORIAL DE UTMs
        ============================================ -->
 
   <div class="history-container">
     <div class="card">
-      <div class="card-title">📊 Historial de UTMs</div>
+      <div class="card-title"><i data-lucide="bar-chart-2" class="icon"></i> Historial de UTMs</div>
 
       <!-- Stats Grid -->
       <div class="stat-grid">
@@ -284,9 +308,9 @@
 
       <!-- Export Buttons -->
       <div class="btn-group export-buttons">
-        <button class="btn btn-success" onclick="exportCSV()">📥 CSV</button>
-        <button class="btn btn-success btn-excel" onclick="exportExcel()">📊 Excel</button>
-        <button class="btn btn-warning" onclick="clearHistory()">🗑️ Borrar</button>
+        <button class="btn btn-success" onclick="exportCSV()"><i data-lucide="download" class="icon"></i> CSV</button>
+        <button class="btn btn-success btn-excel" onclick="exportExcel()"><i data-lucide="file-spreadsheet" class="icon"></i> Excel</button>
+        <button class="btn btn-warning" onclick="clearHistory()"><i data-lucide="trash-2" class="icon"></i> Borrar</button>
       </div>
 
       <!-- UTM List -->
@@ -295,20 +319,20 @@
   </div>
 
   <!-- ============================================
-       🏗️ HTML SECTION 5: FOOTER
+       HTML SECTION 5: FOOTER
        ============================================ -->
 
   <div class="footer">Powered by <span class="font-display">RESEARCH</span> | Generador UTM v2.1</div>
 </div>
 
 <!-- ============================================
-     🏗️ HTML SECTION 6: BOTÓN DE AYUDA
+     HTML SECTION 6: BOTON DE AYUDA
      ============================================ -->
 
-<button class="help-btn" onclick="openHelp()" title="Ayuda">ℹ️</button>
+<button class="help-btn" onclick="openHelp()" title="Ayuda"><i data-lucide="info" class="icon"></i></button>
 
 <!-- ============================================
-     🏗️ HTML SECTION 6.5: MODAL DE CONFIGURACIÓN
+     HTML SECTION 6.5: MODAL DE CONFIGURACION
      ============================================ -->
 
 <div id="configModal" class="config-modal-overlay hidden" onclick="closeConfigModal(event)">
@@ -316,28 +340,28 @@
 
     <!-- Config Modal Header -->
     <div class="config-modal-header">
-      <h2>⚙️ Configuración del Generador</h2>
+      <h2><i data-lucide="settings" class="icon"></i> Configuración del Generador</h2>
       <div class="config-header-actions">
         <button class="config-restore-btn" onclick="restoreDefaults()" title="Restaurar valores por defecto">
-          🔄 Restaurar
+          <i data-lucide="refresh-cw" class="icon"></i> Restaurar
         </button>
-        <button class="config-modal-close" onclick="closeConfigModal()">✕</button>
+        <button class="config-modal-close" onclick="closeConfigModal()"><i data-lucide="x" class="icon"></i></button>
       </div>
     </div>
 
     <!-- Config Tabs -->
     <div class="config-tabs">
       <button class="config-tab-btn active" onclick="switchConfigTab('urls')" data-tab="urls">
-        📍 URLs
+        <i data-lucide="map-pin" class="icon"></i> URLs
       </button>
       <button class="config-tab-btn" onclick="switchConfigTab('campanias')" data-tab="campanias">
-        🎯 Campañas
+        <i data-lucide="target" class="icon"></i> Campañas
       </button>
       <button class="config-tab-btn" onclick="switchConfigTab('motivos')" data-tab="motivos">
-        🎨 Motivos
+        <i data-lucide="palette" class="icon"></i> Motivos
       </button>
       <button class="config-tab-btn" onclick="switchConfigTab('codigos')" data-tab="codigos">
-        🏷️ Códigos Brand
+        <i data-lucide="tag" class="icon"></i> Códigos Brand
       </button>
     </div>
 
@@ -346,19 +370,19 @@
 
       <!-- TAB: URLs -->
       <div id="configTabUrls" class="config-tab-content">
-        <div class="config-section-title">📍 Gestión de URLs Predeterminadas</div>
+        <div class="config-section-title"><i data-lucide="map-pin" class="icon"></i> Gestión de URLs Predeterminadas</div>
 
         <!-- URLs List -->
         <div id="urlsList" class="config-items-list"></div>
 
         <!-- Add Button -->
         <button class="config-add-btn" onclick="showAddUrlForm()">
-          ➕ Agregar Nueva URL
+          <i data-lucide="plus" class="icon"></i> Agregar Nueva URL
         </button>
 
         <!-- Add URL Form (Hidden by default) -->
         <div id="addUrlForm" class="config-form hidden">
-          <div class="config-form-title">➕ Agregar Nueva URL</div>
+          <div class="config-form-title"><i data-lucide="plus" class="icon"></i> Agregar Nueva URL</div>
           <div class="config-form-group">
             <label>Etiqueta * (sin espacios ni tildes)</label>
             <input type="text" id="urlLabel" placeholder="Ej: Delivery_Promociones" />
@@ -372,14 +396,14 @@
             <input type="text" id="urlCategory" placeholder="Ej: delivery, corporativo" />
           </div>
           <div class="config-form-actions">
-            <button class="config-form-btn save" onclick="saveNewUrl()">💾 Guardar</button>
-            <button class="config-form-btn cancel" onclick="cancelAddUrl()">❌ Cancelar</button>
+            <button class="config-form-btn save" onclick="saveNewUrl()"><i data-lucide="save" class="icon"></i> Guardar</button>
+            <button class="config-form-btn cancel" onclick="cancelAddUrl()"><i data-lucide="x" class="icon"></i> Cancelar</button>
           </div>
         </div>
 
         <!-- Preview -->
         <div class="config-preview-box">
-          <div class="config-preview-title">📊 Preview</div>
+          <div class="config-preview-title"><i data-lucide="eye" class="icon"></i> Preview</div>
           <div class="config-preview-content">
             Las URLs configuradas aparecerán en el selector "URL de Destino" del formulario principal.
           </div>
@@ -388,19 +412,19 @@
 
       <!-- TAB: Campañas -->
       <div id="configTabCampanias" class="config-tab-content hidden">
-        <div class="config-section-title">🎯 Gestión de Tipos de Campaña</div>
+        <div class="config-section-title"><i data-lucide="target" class="icon"></i> Gestión de Tipos de Campaña</div>
 
         <!-- Campañas List -->
         <div id="campanasList" class="config-items-list"></div>
 
         <!-- Add Button -->
         <button class="config-add-btn" onclick="showAddCampanaForm()">
-          ➕ Agregar Nueva Campaña
+          <i data-lucide="plus" class="icon"></i> Agregar Nueva Campaña
         </button>
 
         <!-- Add Campaña Form (Hidden by default) -->
         <div id="addCampanaForm" class="config-form hidden">
-          <div class="config-form-title">➕ Agregar Nueva Campaña</div>
+          <div class="config-form-title"><i data-lucide="plus" class="icon"></i> Agregar Nueva Campaña</div>
           <div class="config-form-group">
             <label>Nombre * (sin espacios, tildes ni caracteres especiales)</label>
             <input type="text" id="campanaName" placeholder="Ej: BlackFriday, Verano2025" />
@@ -418,14 +442,14 @@
             </select>
           </div>
           <div class="config-form-actions">
-            <button class="config-form-btn save" onclick="saveNewCampana()">💾 Guardar</button>
-            <button class="config-form-btn cancel" onclick="cancelAddCampana()">❌ Cancelar</button>
+            <button class="config-form-btn save" onclick="saveNewCampana()"><i data-lucide="save" class="icon"></i> Guardar</button>
+            <button class="config-form-btn cancel" onclick="cancelAddCampana()"><i data-lucide="x" class="icon"></i> Cancelar</button>
           </div>
         </div>
 
         <!-- Preview -->
         <div class="config-preview-box">
-          <div class="config-preview-title">📊 Preview UTM</div>
+          <div class="config-preview-title"><i data-lucide="eye" class="icon"></i> Preview UTM</div>
           <div class="config-preview-content">
             <div class="config-preview-label">utm_campaign:</div>
             <div class="config-preview-value" id="previewCampana">brand_conv_[TuCampaña]_OCTUBRE_2025</div>
@@ -435,19 +459,19 @@
 
       <!-- TAB: Motivos -->
       <div id="configTabMotivos" class="config-tab-content hidden">
-        <div class="config-section-title">🎨 Gestión de Motivos/Creatividades</div>
+        <div class="config-section-title"><i data-lucide="palette" class="icon"></i> Gestión de Motivos/Creatividades</div>
 
         <!-- Motivos List -->
         <div id="motivosList" class="config-items-list"></div>
 
         <!-- Add Button -->
         <button class="config-add-btn" onclick="showAddMotivoForm()">
-          ➕ Agregar Nuevo Motivo
+          <i data-lucide="plus" class="icon"></i> Agregar Nuevo Motivo
         </button>
 
         <!-- Add Motivo Form (Hidden by default) -->
         <div id="addMotivoForm" class="config-form hidden">
-          <div class="config-form-title">➕ Agregar Nuevo Motivo</div>
+          <div class="config-form-title"><i data-lucide="plus" class="icon"></i> Agregar Nuevo Motivo</div>
           <div class="config-form-group">
             <label>Nombre * (sin espacios, tildes ni caracteres especiales)</label>
             <input type="text" id="motivoName" placeholder="Ej: descuento_verano, promo_2x1" />
@@ -465,14 +489,14 @@
             </select>
           </div>
           <div class="config-form-actions">
-            <button class="config-form-btn save" onclick="saveNewMotivo()">💾 Guardar</button>
-            <button class="config-form-btn cancel" onclick="cancelAddMotivo()">❌ Cancelar</button>
+            <button class="config-form-btn save" onclick="saveNewMotivo()"><i data-lucide="save" class="icon"></i> Guardar</button>
+            <button class="config-form-btn cancel" onclick="cancelAddMotivo()"><i data-lucide="x" class="icon"></i> Cancelar</button>
           </div>
         </div>
 
         <!-- Preview -->
         <div class="config-preview-box">
-          <div class="config-preview-title">📊 Preview UTM</div>
+          <div class="config-preview-title"><i data-lucide="eye" class="icon"></i> Preview UTM</div>
           <div class="config-preview-content">
             <div class="config-preview-label">utm_content:</div>
             <div class="config-preview-value" id="previewMotivo">brand_AON_01_META_[TuMotivo]</div>
@@ -482,19 +506,19 @@
 
       <!-- TAB: Códigos Brand -->
       <div id="configTabCodigos" class="config-tab-content hidden">
-        <div class="config-section-title">🏷️ Gestión de Códigos de Pieza (Brand)</div>
+        <div class="config-section-title"><i data-lucide="tag" class="icon"></i> Gestión de Códigos de Pieza (Brand)</div>
 
         <!-- Códigos List -->
         <div id="codigosList" class="config-items-list"></div>
 
         <!-- Add Button -->
         <button class="config-add-btn" onclick="showAddCodigoForm()">
-          ➕ Agregar Nuevo Código
+          <i data-lucide="plus" class="icon"></i> Agregar Nuevo Código
         </button>
 
         <!-- Add Código Form (Hidden by default) -->
         <div id="addCodigoForm" class="config-form hidden">
-          <div class="config-form-title">➕ Agregar Nuevo Código</div>
+          <div class="config-form-title"><i data-lucide="plus" class="icon"></i> Agregar Nuevo Código</div>
           <div class="config-form-group">
             <label>Código * (sin espacios, tildes ni caracteres especiales)</label>
             <input type="text" id="codigoName" placeholder="Ej: VERANO, PROMO2025" />
@@ -504,14 +528,14 @@
             <input type="text" id="codigoDesc" placeholder="Ej: Campana_Verano_2025" />
           </div>
           <div class="config-form-actions">
-            <button class="config-form-btn save" onclick="saveNewCodigo()">💾 Guardar</button>
-            <button class="config-form-btn cancel" onclick="cancelAddCodigo()">❌ Cancelar</button>
+            <button class="config-form-btn save" onclick="saveNewCodigo()"><i data-lucide="save" class="icon"></i> Guardar</button>
+            <button class="config-form-btn cancel" onclick="cancelAddCodigo()"><i data-lucide="x" class="icon"></i> Cancelar</button>
           </div>
         </div>
 
         <!-- Preview -->
         <div class="config-preview-box">
-          <div class="config-preview-title">📊 Preview UTM</div>
+          <div class="config-preview-title"><i data-lucide="eye" class="icon"></i> Preview UTM</div>
           <div class="config-preview-content">
             <div class="config-preview-label">utm_content:</div>
             <div class="config-preview-value" id="previewCodigo">brand_[TuCodigo]_01_META_pollo</div>
@@ -524,7 +548,7 @@
 </div>
 
 <!-- ============================================
-     🏗️ HTML SECTION 7: MODAL DE AYUDA
+     HTML SECTION 7: MODAL DE AYUDA
      ============================================ -->
 
 <div id="helpModal" class="modal-overlay hidden" onclick="closeHelp(event)">
@@ -532,22 +556,22 @@
 
     <!-- Modal Header -->
     <div class="modal-header">
-      <h2>📚 Guía Completa del Generador UTM</h2>
-      <button class="modal-close" onclick="closeHelp()">✕</button>
+      <h2><i data-lucide="book-open" class="icon"></i> Guía Completa del Generador UTM</h2>
+      <button class="modal-close" onclick="closeHelp()"><i data-lucide="x" class="icon"></i></button>
     </div>
 
     <!-- Modal Body -->
     <div class="modal-body">
 
-      <!-- PRESENTACIÓN -->
+      <!-- PRESENTACION -->
       <div class="modal-section">
-        <h3>🎯 ¿Qué es el Generador UTM?</h3>
+        <h3><i data-lucide="target" class="icon"></i> ¿Qué es el Generador UTM?</h3>
         <p>Esta herramienta te permite crear URLs de rastreo personalizadas (UTM) para todas tus campañas digitales de San Fernando. Con estas URLs podrás identificar exactamente de dónde vienen tus usuarios y qué campañas generan mejores resultados en Google Analytics 4 y Looker Studio.</p>
       </div>
 
       <!-- IMPORTANCIA -->
       <div class="modal-section">
-        <h3>⭐ ¿Por qué es importante?</h3>
+        <h3><i data-lucide="star" class="icon"></i> ¿Por qué es importante?</h3>
         <ul>
           <li><strong>Medición precisa:</strong> Saber exactamente qué plataforma, campaña o creatividad genera conversiones</li>
           <li><strong>Optimización de presupuesto:</strong> Invertir en lo que realmente funciona</li>
@@ -558,7 +582,7 @@
 
       <!-- DIFERENCIAS BRAND VS ECOM -->
       <div class="modal-section">
-        <h3>🏢 Brand vs Ecommerce</h3>
+        <h3><i data-lucide="building-2" class="icon"></i> Brand vs Ecommerce</h3>
         <p>Cada división tiene una estrategia diferente de naming según sus objetivos:</p>
 
         <div class="table-responsive">
@@ -573,13 +597,13 @@
             <tbody>
               <tr>
                 <td><strong>Código de Pieza</strong></td>
-                <td>✅ Sí (AON, NAB2B, HUE, etc.)</td>
-                <td>❌ No</td>
+                <td>Sí (AON, NAB2B, HUE, etc.)</td>
+                <td>No</td>
               </tr>
               <tr>
                 <td><strong>Número de Pieza</strong></td>
-                <td>✅ Sí (01, 02, 14, etc.)</td>
-                <td>❌ No</td>
+                <td>Sí (01, 02, 14, etc.)</td>
+                <td>No</td>
               </tr>
               <tr>
                 <td><strong>Enfoque</strong></td>
@@ -603,7 +627,7 @@
 
       <!-- PLATAFORMAS -->
       <div class="modal-section">
-        <h3>🌐 Plataformas Disponibles</h3>
+        <h3><i data-lucide="globe" class="icon"></i> Plataformas Disponibles</h3>
         <div class="platform-grid">
           <div class="platform-tag">Meta (FB/IG)</div>
           <div class="platform-tag">Google</div>
@@ -616,7 +640,7 @@
 
       <!-- OBJETIVOS Y MEDIUM -->
       <div class="modal-section">
-        <h3>🎯 Objetivos y Medium</h3>
+        <h3><i data-lucide="target" class="icon"></i> Objetivos y Medium</h3>
         <h4>Objetivos disponibles:</h4>
         <ul>
           <li><strong>Tráfico (trf):</strong> Llevar usuarios al sitio</li>
@@ -638,7 +662,7 @@
 
       <!-- PLACEMENT META -->
       <div class="modal-section">
-        <h3>📱 Placement en Meta</h3>
+        <h3><i data-lucide="smartphone" class="icon"></i> Placement en Meta</h3>
         <p>Cuando seleccionas Meta como plataforma, puedes especificar dónde se muestra el anuncio:</p>
         <ul>
           <li><strong>META:</strong> Facebook + Instagram simultáneamente</li>
@@ -646,13 +670,13 @@
           <li><strong>IG:</strong> Solo Instagram</li>
         </ul>
         <div class="tip-box">
-          <strong>💡 Tip:</strong> Esto te permite filtrar resultados por red social específica en tus reportes.
+          <strong><i data-lucide="lightbulb" class="icon"></i> Tip:</strong> Esto te permite filtrar resultados por red social específica en tus reportes.
         </div>
       </div>
 
-      <!-- GUÍA DE FILTRADO EN GA4 -->
+      <!-- GUIA DE FILTRADO EN GA4 -->
       <div class="modal-section">
-        <h3>📊 Cómo Filtrar en Google Analytics 4</h3>
+        <h3><i data-lucide="bar-chart-2" class="icon"></i> Cómo Filtrar en Google Analytics 4</h3>
 
         <h4>Ruta básica:</h4>
         <div class="code-example">Reports → Acquisition → Traffic Acquisition</div>
@@ -691,13 +715,13 @@ Session manual ad content CONTAINS "VALES" | "pollo" | "embutidos"
         </div>
 
         <div class="tip-box">
-          <strong>🔎 Consejo Pro:</strong> Usa "Explorations" en GA4 para análisis más profundos. Ve a Explore → Blank → Agrega dimensiones de Session source, Session medium, Session campaign y Session manual ad content.
+          <strong><i data-lucide="search" class="icon"></i> Consejo Pro:</strong> Usa "Explorations" en GA4 para análisis más profundos. Ve a Explore → Blank → Agrega dimensiones de Session source, Session medium, Session campaign y Session manual ad content.
         </div>
       </div>
 
       <!-- CONSEJOS EXTRA -->
       <div class="modal-section">
-        <h3>💎 Consejos de Filtrado Extra</h3>
+        <h3><i data-lucide="gem" class="icon"></i> Consejos de Filtrado Extra</h3>
         <ul>
           <li><strong>Usa filtros combinados:</strong> Source + Medium + Campaign para precisión máxima</li>
           <li><strong>Crea segmentos:</strong> Guarda tus filtros favoritos como segmentos reutilizables</li>
@@ -709,37 +733,37 @@ Session manual ad content CONTAINS "VALES" | "pollo" | "embutidos"
 
       <!-- MOTIVO Y CREATIVIDAD -->
       <div class="modal-section">
-        <h3>🎨 Especificación de Motivo y Creatividad</h3>
+        <h3><i data-lucide="palette" class="icon"></i> Especificación de Motivo y Creatividad</h3>
         <p>Es crucial ser específico en el campo "Motivo/Creatividad" para identificar exactamente qué pieza gráfica o mensaje está generando resultados:</p>
 
         <div class="warning-box">
-          <strong>⚠️ MUY IMPORTANTE - Restricciones de Caracteres:</strong>
+          <strong><i data-lucide="alert-triangle" class="icon"></i> MUY IMPORTANTE - Restricciones de Caracteres:</strong>
           <p style="margin:8px 0 0 0;"><strong>NO uses espacios, tildes, ñ, ni caracteres especiales</strong> en los campos de la UTM. Estos elementos rompen la estructura de la UTM e impiden el tracking posterior en Analytics.</p>
 
-          <h4 style="margin-top:16px;margin-bottom:8px;color:#ef4444;">❌ CARACTERES PROHIBIDOS:</h4>
+          <h4 style="margin-top:16px;margin-bottom:8px;color:#ef4444;">CARACTERES PROHIBIDOS:</h4>
           <div class="code-example" style="margin-top:8px;">
-• Espacios: "pollo parrillero" ❌<br>
-• Tildes: "promoción", "válido", "más" ❌<br>
-• Eñes: "diseño", "niño" ❌<br>
-• Puntuación española: "¿qué?", "¡wow!" ❌<br>
-• Acentos sueltos: "´", "`" ❌<br>
-• Especiales: "%", "&", "#", "×", "/", "\", "&lt;", "&gt;", etc. ❌
+• Espacios: "pollo parrillero" [X]<br>
+• Tildes: "promoción", "válido", "más" [X]<br>
+• Eñes: "diseño", "niño" [X]<br>
+• Puntuación española: "¿qué?", "¡wow!" [X]<br>
+• Acentos sueltos: "´", "`" [X]<br>
+• Especiales: "%", "&", "#", "×", "/", "\", "&lt;", "&gt;", etc. [X]
           </div>
 
-          <h4 style="margin-top:16px;margin-bottom:8px;color:#10b981;">✅ USA EN SU LUGAR:</h4>
+          <h4 style="margin-top:16px;margin-bottom:8px;color:#10b981;">USA EN SU LUGAR:</h4>
           <div class="code-example" style="margin-top:8px;background:#f0fdf4;border-color:#86efac;">
-✅ "pollo_parrillero" (guión bajo en lugar de espacio)<br>
-✅ "promocion", "valido", "mas" (sin tildes)<br>
-✅ "diseno", "nino" (reemplaza ñ → n)<br>
-✅ "que", "wow" (sin signos de puntuación)<br>
-✅ "2x1", "descuento20" (números y letras simples)
+[OK] "pollo_parrillero" (guión bajo en lugar de espacio)<br>
+[OK] "promocion", "valido", "mas" (sin tildes)<br>
+[OK] "diseno", "nino" (reemplaza ñ → n)<br>
+[OK] "que", "wow" (sin signos de puntuación)<br>
+[OK] "2x1", "descuento20" (números y letras simples)
           </div>
 
-          <p style="margin-top:12px;"><strong>💡 Tip:</strong> El sistema limpia automáticamente estos caracteres mientras escribes, pero es mejor evitarlos desde el inicio.</p>
+          <p style="margin-top:12px;"><strong><i data-lucide="lightbulb" class="icon"></i> Tip:</strong> El sistema limpia automáticamente estos caracteres mientras escribes, pero es mejor evitarlos desde el inicio.</p>
         </div>
 
         <div class="tip-box">
-          <strong>✅ BUENAS PRÁCTICAS:</strong>
+          <strong>BUENAS PRÁCTICAS:</strong>
           <ul style="margin-top:8px;">
             <li>Usa guiones bajos (_) en lugar de espacios</li>
             <li>Usa nombres descriptivos y únicos</li>
@@ -752,14 +776,14 @@ Session manual ad content CONTAINS "VALES" | "pollo" | "embutidos"
         </div>
 
         <div class="code-example">
-❌ MAL: motivo = "¿promoción válida?"<br>
-✅ BIEN: motivo = "promocion_valida"<br><br>
-❌ MAL: motivo = "¡oferta 2×1!"<br>
-✅ BIEN: motivo = "oferta_2x1"<br><br>
-❌ MAL: motivo = "diseño navideño" (tiene espacio y ñ)<br>
-✅ BIEN: motivo = "diseno_navideno"<br><br>
-❌ MAL: motivo = "más_productos" (tiene tilde)<br>
-✅ BIEN: motivo = "mas_productos"
+[X] MAL: motivo = "¿promoción válida?"<br>
+[OK] BIEN: motivo = "promocion_valida"<br><br>
+[X] MAL: motivo = "¡oferta 2×1!"<br>
+[OK] BIEN: motivo = "oferta_2x1"<br><br>
+[X] MAL: motivo = "diseño navideño" (tiene espacio y ñ)<br>
+[OK] BIEN: motivo = "diseno_navideno"<br><br>
+[X] MAL: motivo = "más_productos" (tiene tilde)<br>
+[OK] BIEN: motivo = "mas_productos"
         </div>
 
         <p><strong>Esto evita:</strong></p>
@@ -771,9 +795,9 @@ Session manual ad content CONTAINS "VALES" | "pollo" | "embutidos"
         </ul>
       </div>
 
-      <!-- EJEMPLOS PRÁCTICOS -->
+      <!-- EJEMPLOS PRACTICOS -->
       <div class="modal-section">
-        <h3>💼 Ejemplos Prácticos</h3>
+        <h3><i data-lucide="briefcase" class="icon"></i> Ejemplos Prácticos</h3>
 
         <h4>Ejemplo 1: Campaña Brand en Meta</h4>
         <div class="code-example">
@@ -845,7 +869,7 @@ utm_content=brand_HUE_03_TIKTOK_huevos_frescos_dance
 
       <!-- FAQ -->
       <div class="modal-section">
-        <h3>❓ Preguntas Frecuentes</h3>
+        <h3><i data-lucide="help-circle" class="icon"></i> Preguntas Frecuentes</h3>
 
         <div class="faq-item">
           <div class="faq-question">¿Por qué Ecommerce no usa códigos de pieza?</div>
@@ -874,7 +898,7 @@ utm_content=brand_HUE_03_TIKTOK_huevos_frescos_dance
 
         <div class="faq-item">
           <div class="faq-question">¿Puedo exportar mi historial?</div>
-          <div class="faq-answer">Sí, usa el botón "📥 CSV" en el historial para descargar todas tus UTMs generadas en formato Excel/CSV.</div>
+          <div class="faq-answer">Sí, usa el botón "CSV" en el historial para descargar todas tus UTMs generadas en formato Excel/CSV.</div>
         </div>
 
         <div class="faq-item">
@@ -883,26 +907,26 @@ utm_content=brand_HUE_03_TIKTOK_huevos_frescos_dance
         </div>
       </div>
 
-      <!-- BUENAS PRÁCTICAS FINALES -->
+      <!-- BUENAS PRACTICAS FINALES -->
       <div class="modal-section">
-        <h3>✨ Buenas Prácticas Finales</h3>
+        <h3><i data-lucide="sparkles" class="icon"></i> Buenas Prácticas Finales</h3>
         <ul>
-          <li>✅ Siempre completa todos los campos obligatorios</li>
-          <li>✅ Sé consistente con la nomenclatura (mayúsculas/minúsculas)</li>
-          <li>✅ Usa nombres descriptivos en "Motivo/Creatividad"</li>
-          <li>✅ Guarda tu historial exportando regularmente a CSV</li>
-          <li>✅ Prueba tus UTMs antes de lanzar campañas grandes</li>
-          <li>✅ Documenta tus convenciones de naming para todo el equipo</li>
-          <li>✅ Usa guiones bajos (_) para separar palabras</li>
-          <li>❌ <strong>No uses espacios (rompen la UTM)</strong></li>
-          <li>❌ <strong>No uses tildes ni ñ (impiden tracking)</strong></li>
-          <li>❌ <strong>No uses caracteres especiales: ¿¡´`, %, &, #, ×, /, etc.</strong></li>
-          <li>❌ No reutilices UTMs para campañas diferentes</li>
-          <li>❌ No agregues UTMs a enlaces internos de tu sitio</li>
+          <li>Siempre completa todos los campos obligatorios</li>
+          <li>Sé consistente con la nomenclatura (mayúsculas/minúsculas)</li>
+          <li>Usa nombres descriptivos en "Motivo/Creatividad"</li>
+          <li>Guarda tu historial exportando regularmente a CSV</li>
+          <li>Prueba tus UTMs antes de lanzar campañas grandes</li>
+          <li>Documenta tus convenciones de naming para todo el equipo</li>
+          <li>Usa guiones bajos (_) para separar palabras</li>
+          <li><strong>No uses espacios (rompen la UTM)</strong></li>
+          <li><strong>No uses tildes ni ñ (impiden tracking)</strong></li>
+          <li><strong>No uses caracteres especiales: ¿¡´`, %, &, #, ×, /, etc.</strong></li>
+          <li>No reutilices UTMs para campañas diferentes</li>
+          <li>No agregues UTMs a enlaces internos de tu sitio</li>
         </ul>
 
         <div class="warning-box" style="margin-top:20px;">
-          <strong>🚨 RECUERDA:</strong> Los espacios, tildes, eñes y caracteres especiales españoles (¿¡´`) son la causa #1 de UTMs rotas. Siempre revisa antes de implementar.
+          <strong><i data-lucide="alert-triangle" class="icon"></i> RECUERDA:</strong> Los espacios, tildes, eñes y caracteres especiales españoles (¿¡´`) son la causa #1 de UTMs rotas. Siempre revisa antes de implementar.
         </div>
       </div>
 
@@ -912,6 +936,13 @@ utm_content=brand_HUE_03_TIKTOK_huevos_frescos_dance
 
 <!-- JavaScript - ES Module -->
 <script type="module" src="./src/main.js"></script>
+
+<!-- Initialize Lucide Icons -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+  });
+</script>
 
 </body>
 </html>

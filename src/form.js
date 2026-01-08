@@ -100,7 +100,7 @@ export function cleanInput(e) {
 
   if (val !== cleaned) {
     input.value = cleaned;
-    toast('⚠️ Caracteres no permitidos reemplazados automáticamente');
+    toast('Caracteres no permitidos reemplazados');
   }
 }
 
@@ -108,7 +108,7 @@ export function cleanInput(e) {
 export function resetForm() {
   document.getElementById('utmForm').reset();
   document.getElementById('resultContainer').classList.add('hidden');
-  toast('🔄 Formulario limpiado');
+  toast('Formulario limpiado');
 }
 
 /* --- Poblar Número de Pieza (01-30) --- */

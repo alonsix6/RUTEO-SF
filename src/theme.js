@@ -41,14 +41,17 @@ export function changeTheme(theme) {
 /* --- Actualizar Icono del Botón --- */
 function updateThemeIcon(theme) {
   const icons = {
-    dark: '🌙',
-    light: '☀️',
-    ocean: '🌊',
-    forest: '🌿',
-    pink: '💖'
+    dark: 'moon',
+    light: 'sun',
+    ocean: 'waves',
+    forest: 'leaf',
+    pink: 'heart'
   };
   const btn = document.getElementById('themeToggle');
-  if (btn) btn.textContent = icons[theme] || '🎨';
+  if (btn) {
+    btn.innerHTML = `<i data-lucide="${icons[theme] || 'palette'}" class="icon"></i><span>Temas</span>`;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
 }
 
 /* --- Marcar Tema Activo --- */

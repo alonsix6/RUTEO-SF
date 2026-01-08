@@ -122,7 +122,7 @@ export function syncFormOptions() {
     });
     const customUrlOpt = document.createElement('option');
     customUrlOpt.value = 'custom';
-    customUrlOpt.textContent = '➕ URL Personalizada';
+    customUrlOpt.textContent = '+ URL Personalizada';
     urlSelect.appendChild(customUrlOpt);
   }
 
@@ -140,7 +140,7 @@ export function syncFormOptions() {
     if (accountLinkOpt) campSelect.appendChild(accountLinkOpt);
     const customCampOpt = document.createElement('option');
     customCampOpt.value = 'custom';
-    customCampOpt.textContent = '➕ Personalizada';
+    customCampOpt.textContent = '+ Personalizada';
     campSelect.appendChild(customCampOpt);
   }
 
@@ -156,7 +156,7 @@ export function syncFormOptions() {
     });
     const customMotOpt = document.createElement('option');
     customMotOpt.value = 'custom';
-    customMotOpt.textContent = '➕ Personalizado';
+    customMotOpt.textContent = '+ Personalizado';
     motivoSelect.appendChild(customMotOpt);
   }
 
@@ -172,7 +172,7 @@ export function syncFormOptions() {
     });
     const customCodOpt = document.createElement('option');
     customCodOpt.value = 'custom';
-    customCodOpt.textContent = '➕ Otro código';
+    customCodOpt.textContent = '+ Otro código';
     codigoSelect.appendChild(customCodOpt);
   }
 }
@@ -244,7 +244,7 @@ function renderUrlsList(urls) {
         </div>
       </div>
       <div class="config-item-actions">
-        <button class="config-action-btn delete" onclick="deleteUrl('${url.id}')">🗑️ Eliminar</button>
+        <button class="config-action-btn delete" onclick="deleteUrl('${url.id}')"><i data-lucide="trash-2" class="icon"></i> Eliminar</button>
       </div>
     `;
     container.appendChild(card);
@@ -269,13 +269,13 @@ export function saveNewUrl() {
   const url = document.getElementById('urlValue')?.value.trim();
   const category = document.getElementById('urlCategory')?.value.trim();
 
-  if (!label || !url) return toast('⚠️ Completa los campos obligatorios');
-  if (!validateText(label)) return toast('⚠️ La etiqueta contiene caracteres no permitidos');
-  if (category && !validateText(category)) return toast('⚠️ La categoría contiene caracteres no permitidos');
-  if (!url.startsWith('http://') && !url.startsWith('https://')) return toast('⚠️ La URL debe comenzar con http:// o https://');
+  if (!label || !url) return toast('Completa los campos obligatorios');
+  if (!validateText(label)) return toast('La etiqueta contiene caracteres no permitidos');
+  if (category && !validateText(category)) return toast('La categoría contiene caracteres no permitidos');
+  if (!url.startsWith('http://') && !url.startsWith('https://')) return toast('La URL debe comenzar con http:// o https://');
 
   const config = loadConfig();
-  if (config.urls.some(u => u.url === url)) return toast('⚠️ Ya existe una URL con esa dirección');
+  if (config.urls.some(u => u.url === url)) return toast('Ya existe una URL con esa dirección');
 
   config.urls.push({
     id: 'url_' + Date.now(),
@@ -288,7 +288,7 @@ export function saveNewUrl() {
   saveConfig(config);
   cancelAddUrl();
   renderUrlsList(config.urls);
-  toast('✅ URL agregada correctamente');
+  toast('URL agregada correctamente');
 }
 
 export function deleteUrl(id) {
@@ -297,7 +297,7 @@ export function deleteUrl(id) {
   config.urls = config.urls.filter(u => u.id !== id);
   saveConfig(config);
   renderUrlsList(config.urls);
-  toast('🗑️ URL eliminada');
+  toast('URL eliminada');
 }
 
 /* --- CAMPAÑAS MANAGEMENT --- */
@@ -310,11 +310,11 @@ function renderCampaniasList(campanias) {
     const card = document.createElement('div');
     card.className = 'config-item-card';
 
-    const badge = camp.isCore ? '<span class="config-badge core">🔒 Core</span>' : '<span class="config-badge custom">Custom</span>';
+    const badge = camp.isCore ? '<span class="config-badge core"><i data-lucide="lock" class="icon"></i> Core</span>' : '<span class="config-badge custom">Custom</span>';
     const divBadge = camp.division === 'both' ? '<span class="config-badge both">Ambas</span>' :
       camp.division === 'brand' ? '<span class="config-badge brand">Brand</span>' : '<span class="config-badge ecommerce">Ecommerce</span>';
-    const actions = camp.isCore ? '<button class="config-action-btn locked">🔒 Protegido</button>' :
-      `<button class="config-action-btn delete" onclick="deleteCampana('${camp.id}')">🗑️ Eliminar</button>`;
+    const actions = camp.isCore ? '<button class="config-action-btn locked"><i data-lucide="lock" class="icon"></i> Protegido</button>' :
+      `<button class="config-action-btn delete" onclick="deleteCampana('${camp.id}')"><i data-lucide="trash-2" class="icon"></i> Eliminar</button>`;
 
     card.innerHTML = `
       <div class="config-item-info">
@@ -350,13 +350,13 @@ export function saveNewCampana() {
   const descripcion = document.getElementById('campanaDesc')?.value.trim();
   const division = document.getElementById('campanaDivision')?.value;
 
-  if (!nombre) return toast('⚠️ El nombre es obligatorio');
-  if (!validateText(nombre)) return toast('⚠️ El nombre contiene caracteres no permitidos');
-  if (descripcion && !validateText(descripcion)) return toast('⚠️ La descripción contiene caracteres no permitidos');
+  if (!nombre) return toast('El nombre es obligatorio');
+  if (!validateText(nombre)) return toast('El nombre contiene caracteres no permitidos');
+  if (descripcion && !validateText(descripcion)) return toast('La descripción contiene caracteres no permitidos');
 
   const config = loadConfig();
   if (config.campanias.some(c => c.nombre.toLowerCase() === nombre.toLowerCase())) {
-    return toast('⚠️ Ya existe una campaña con ese nombre');
+    return toast('Ya existe una campaña con ese nombre');
   }
 
   config.campanias.push({
@@ -370,7 +370,7 @@ export function saveNewCampana() {
   saveConfig(config);
   cancelAddCampana();
   renderCampaniasList(config.campanias);
-  toast('✅ Campaña agregada correctamente');
+  toast('Campaña agregada correctamente');
 }
 
 export function deleteCampana(id) {
@@ -379,7 +379,7 @@ export function deleteCampana(id) {
   config.campanias = config.campanias.filter(c => c.id !== id);
   saveConfig(config);
   renderCampaniasList(config.campanias);
-  toast('🗑️ Campaña eliminada');
+  toast('Campaña eliminada');
 }
 
 export function updateCampanaPreview() {
@@ -408,7 +408,7 @@ function renderMotivosList(motivos) {
         <div class="config-item-meta">${divBadge}</div>
       </div>
       <div class="config-item-actions">
-        <button class="config-action-btn delete" onclick="deleteMotivo('${mot.id}')">🗑️ Eliminar</button>
+        <button class="config-action-btn delete" onclick="deleteMotivo('${mot.id}')"><i data-lucide="trash-2" class="icon"></i> Eliminar</button>
       </div>
     `;
     container.appendChild(card);
@@ -437,13 +437,13 @@ export function saveNewMotivo() {
   const categoria = document.getElementById('motivoCategoria')?.value.trim();
   const division = document.getElementById('motivoDivision')?.value;
 
-  if (!nombre) return toast('⚠️ El nombre es obligatorio');
-  if (!validateText(nombre)) return toast('⚠️ El nombre contiene caracteres no permitidos');
-  if (categoria && !validateText(categoria)) return toast('⚠️ La categoría contiene caracteres no permitidos');
+  if (!nombre) return toast('El nombre es obligatorio');
+  if (!validateText(nombre)) return toast('El nombre contiene caracteres no permitidos');
+  if (categoria && !validateText(categoria)) return toast('La categoría contiene caracteres no permitidos');
 
   const config = loadConfig();
   if (config.motivos.some(m => m.nombre.toLowerCase() === nombre.toLowerCase())) {
-    return toast('⚠️ Ya existe un motivo con ese nombre');
+    return toast('Ya existe un motivo con ese nombre');
   }
 
   config.motivos.push({
@@ -456,7 +456,7 @@ export function saveNewMotivo() {
   saveConfig(config);
   cancelAddMotivo();
   renderMotivosList(config.motivos);
-  toast('✅ Motivo agregado correctamente');
+  toast('Motivo agregado correctamente');
 }
 
 export function deleteMotivo(id) {
@@ -465,7 +465,7 @@ export function deleteMotivo(id) {
   config.motivos = config.motivos.filter(m => m.id !== id);
   saveConfig(config);
   renderMotivosList(config.motivos);
-  toast('🗑️ Motivo eliminado');
+  toast('Motivo eliminado');
 }
 
 export function updateMotivoPreview() {
@@ -484,9 +484,9 @@ function renderCodigosList(codigos) {
     const card = document.createElement('div');
     card.className = 'config-item-card';
 
-    const badge = cod.isCore ? '<span class="config-badge core">🔒 Core</span>' : '<span class="config-badge custom">Custom</span>';
-    const actions = cod.isCore ? '<button class="config-action-btn locked">🔒 Protegido</button>' :
-      `<button class="config-action-btn delete" onclick="deleteCodigo('${cod.id}')">🗑️ Eliminar</button>`;
+    const badge = cod.isCore ? '<span class="config-badge core"><i data-lucide="lock" class="icon"></i> Core</span>' : '<span class="config-badge custom">Custom</span>';
+    const actions = cod.isCore ? '<button class="config-action-btn locked"><i data-lucide="lock" class="icon"></i> Protegido</button>' :
+      `<button class="config-action-btn delete" onclick="deleteCodigo('${cod.id}')"><i data-lucide="trash-2" class="icon"></i> Eliminar</button>`;
 
     card.innerHTML = `
       <div class="config-item-info">
@@ -519,13 +519,13 @@ export function saveNewCodigo() {
   const codigo = document.getElementById('codigoName')?.value.trim().toUpperCase();
   const descripcion = document.getElementById('codigoDesc')?.value.trim();
 
-  if (!codigo) return toast('⚠️ El código es obligatorio');
-  if (!validateText(codigo)) return toast('⚠️ El código contiene caracteres no permitidos');
-  if (descripcion && !validateText(descripcion)) return toast('⚠️ La descripción contiene caracteres no permitidos');
+  if (!codigo) return toast('El código es obligatorio');
+  if (!validateText(codigo)) return toast('El código contiene caracteres no permitidos');
+  if (descripcion && !validateText(descripcion)) return toast('La descripción contiene caracteres no permitidos');
 
   const config = loadConfig();
   if (config.codigosBrand.some(c => c.codigo === codigo)) {
-    return toast('⚠️ Ya existe un código con ese nombre');
+    return toast('Ya existe un código con ese nombre');
   }
 
   config.codigosBrand.push({
@@ -538,7 +538,7 @@ export function saveNewCodigo() {
   saveConfig(config);
   cancelAddCodigo();
   renderCodigosList(config.codigosBrand);
-  toast('✅ Código agregado correctamente');
+  toast('Código agregado correctamente');
 }
 
 export function deleteCodigo(id) {
@@ -547,7 +547,7 @@ export function deleteCodigo(id) {
   config.codigosBrand = config.codigosBrand.filter(c => c.id !== id);
   saveConfig(config);
   renderCodigosList(config.codigosBrand);
-  toast('🗑️ Código eliminado');
+  toast('Código eliminado');
 }
 
 export function updateCodigoPreview() {
@@ -571,5 +571,5 @@ export function restoreDefaults() {
     renderConfigTab(tab);
   }
 
-  toast('🔄 Configuración restaurada a valores por defecto');
+  toast('Configuración restaurada a valores por defecto');
 }

@@ -1,8 +1,8 @@
-# 🚀 Linky — Generador UTM
+# Linky — Generador UTM
 
 Herramienta web para la generación automatizada de parámetros UTM para campañas digitales. Diseñado para equipos de marketing digital con soporte para múltiples marcas.
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Características](#características)
 - [Instalación](#instalación)
@@ -13,19 +13,19 @@ Herramienta web para la generación automatizada de parámetros UTM para campañ
 - [Configuración](#configuración)
 - [Tecnologías](#tecnologías)
 
-## ✨ Características
+## Características
 
-- ✅ **Generación de UTMs**: URLs de rastreo con parámetros UTM personalizados
-- 🎨 **5 Temas Visuales**: Dark, Light, Ocean Blue, Forest Green, Pink
-- 📊 **Historial**: Guarda y gestiona UTMs con localStorage
-- 📥 **Exportación**: CSV y Excel con formato
-- ⚙️ **Configurable**: URLs, campañas, motivos y códigos personalizables
-- ✅ **Validación de URLs**: Verifica accesibilidad automáticamente
-- 📱 **Responsive**: Adaptable a cualquier dispositivo
-- 💾 **Sin Backend**: 100% cliente, sin servidor requerido
-- ⚡ **Vite**: Bundling optimizado para producción
+- **Generación de UTMs**: URLs de rastreo con parámetros UTM personalizados
+- **5 Temas Visuales**: Dark, Light, Ocean Blue, Forest Green, Pink
+- **Historial**: Guarda y gestiona UTMs con localStorage
+- **Exportación**: CSV y Excel con formato
+- **Configurable**: URLs, campañas, motivos y códigos personalizables
+- **Validación de URLs**: Verifica accesibilidad automáticamente
+- **Responsive**: Adaptable a cualquier dispositivo
+- **Sin Backend**: 100% cliente, sin servidor requerido
+- **Vite**: Bundling optimizado para producción
 
-## 🔧 Instalación
+## Instalación
 
 ### Requisitos
 - Node.js 18+
@@ -42,7 +42,7 @@ cd Linky
 npm install
 ```
 
-## 📦 Comandos
+## Comandos
 
 ```bash
 # Desarrollo (hot reload en http://localhost:3000)
@@ -55,7 +55,7 @@ npm run build
 npm run preview
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 Linky/
@@ -93,7 +93,7 @@ Linky/
 └── js/                     # (Legacy - puede eliminarse)
 ```
 
-## 📖 Uso
+## Uso
 
 ### Generar UTM
 
@@ -101,19 +101,19 @@ Linky/
 2. Elige división (Brand/Ecommerce)
 3. Selecciona plataforma (Meta, Google, TikTok, etc.)
 4. Define objetivo y campaña
-5. Click en **🚀 GENERAR UTM**
+5. Click en **GENERAR UTM**
 
 ### Configuración
 
-Click en **⚙️ Ajustes** para gestionar:
-- 📍 URLs predeterminadas
-- 🎯 Tipos de campaña
-- 🎨 Motivos/creatividades
-- 🏷️ Códigos de pieza (Brand)
+Click en **Ajustes** para gestionar:
+- URLs predeterminadas
+- Tipos de campaña
+- Motivos/creatividades
+- Códigos de pieza (Brand)
 
 ---
 
-## 🔄 Adaptar para Otra Marca
+## Adaptar para Otra Marca
 
 Esta guía explica cómo adaptar Linky para una nueva marca/cliente.
 
@@ -258,7 +258,7 @@ npm run build
 
 ---
 
-## ⚙️ Configuración Técnica
+## Configuración Técnica
 
 ### localStorage Keys
 
@@ -282,15 +282,16 @@ utm_campaign=ecommerce_[objetivo]_[campaña]_[mes]_[año]
 utm_content=ecom_[placement]_[motivo]
 ```
 
-## 🌟 Tecnologías
+## Tecnologías
 
 - **Vite** - Bundler y dev server
 - **ES Modules** - JavaScript modular
 - **CSS3** - Variables CSS y Grid/Flexbox
 - **LocalStorage** - Persistencia de datos
 - **SheetJS** - Exportación Excel (CDN)
+- **Lucide Icons** - Iconografía
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "No se genera la UTM"
 - Verifica campos obligatorios (*)
