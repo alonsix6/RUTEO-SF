@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Verificación de URLs
+   Linky - Verificación de URLs
    ES Module Version
    ============================================ */
 

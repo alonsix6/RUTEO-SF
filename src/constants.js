@@ -1,5 +1,5 @@
 /* ============================================
-   RUTEO - Constantes y Estado Global
+   Linky - Constantes y Estado Global
    ES Module Version
    ============================================ */
 
