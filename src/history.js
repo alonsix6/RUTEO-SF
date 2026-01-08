@@ -29,13 +29,13 @@ export function renderHistory() {
     if (u.urlStatus) {
       const st = u.urlStatus;
       if (st.status === 'checking') {
-        statusBadge = '<span class="url-status-badge checking">🔄 Verificando...</span>';
+        statusBadge = '<span class="url-status-badge checking">Verificando...</span>';
       } else if (st.status === 'ok') {
-        statusBadge = `<span class="url-status-badge ok">✅ OK (${st.code})</span>`;
+        statusBadge = `<span class="url-status-badge ok">OK (${st.code})</span>`;
       } else if (st.status === 'warning') {
-        statusBadge = `<span class="url-status-badge warning">⚠️ Redirect (${st.code})</span>`;
+        statusBadge = `<span class="url-status-badge warning">Redirect (${st.code})</span>`;
       } else if (st.status === 'error') {
-        statusBadge = `<span class="url-status-badge error">❌ Error (${st.code || 'N/A'})</span>`;
+        statusBadge = `<span class="url-status-badge error">Error (${st.code || 'N/A'})</span>`;
       }
     }
 
@@ -43,13 +43,14 @@ export function renderHistory() {
       <div class="utm-header">
         <div class="utm-campaign">${u.utm_campaign}${statusBadge}</div>
         <div class="utm-actions">
-          <button class="utm-action-btn" onclick="copyFromHistory(${index})" title="Copiar UTM">📋 Copiar</button>
-          <button class="utm-action-btn delete" onclick="deleteFromHistory(${index})" title="Eliminar UTM">🗑️</button>
+          <button class="utm-action-btn" onclick="copyFromHistory(${index})" title="Copiar UTM"><i data-lucide="clipboard-copy" class="icon"></i> Copiar</button>
+          <button class="utm-action-btn delete" onclick="deleteFromHistory(${index})" title="Eliminar UTM"><i data-lucide="trash-2" class="icon"></i></button>
         </div>
       </div>
       <div class="utm-date" style="font-size:0.75rem;color:var(--muted);margin-bottom:8px;">${new Date(u.createdAt).toLocaleString()}</div>
       <div class="utm-url">${u.urlCompleta}</div>
     `;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     c.appendChild(d);
   });
@@ -71,7 +72,7 @@ export function copyFromHistory(index) {
   const url = utmHistory[index]?.urlCompleta;
   if (url) {
     navigator.clipboard.writeText(url);
-    toast('✅ UTM copiada');
+    toast('UTM copiada');
   }
 }
 
@@ -82,7 +83,7 @@ export function deleteFromHistory(index) {
     localStorage.setItem('utmHistory', JSON.stringify(utmHistory));
     renderHistory();
     updateStats();
-    toast('🗑️ UTM eliminada');
+    toast('UTM eliminada');
   }
 }
 
@@ -94,6 +95,6 @@ export function clearHistory() {
     localStorage.removeItem('utmHistory');
     renderHistory();
     updateStats();
-    toast('🗑️ Historial borrado');
+    toast('Historial borrado');
   }
 }

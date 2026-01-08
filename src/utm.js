@@ -20,10 +20,10 @@ export function generateUTM(e) {
 
   // Validación de URL
   if (!url) {
-    return toast('⚠️ Debe ingresar una URL');
+    return toast('Debe ingresar una URL');
   }
   if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    return toast('⚠️ La URL debe comenzar con http:// o https://');
+    return toast('La URL debe comenzar con http:// o https://');
   }
 
   const division = g('division');
@@ -40,22 +40,22 @@ export function generateUTM(e) {
 
   // Validaciones
   if (!division || !plataforma || !objetivo || !tipoCampana || !mes || !ano || !motivo) {
-    return toast('⚠️ Completa los campos obligatorios');
+    return toast('Completa los campos obligatorios');
   }
 
   if (division === 'brand' && !codigo) {
-    return toast('⚠️ Falta código pieza');
+    return toast('Falta código de pieza');
   }
 
   // Validar texto personalizado
   if (g('tipoCampana') === 'custom' && !validateText(tipoCampana)) {
-    return toast('⚠️ Tipo de campaña contiene caracteres no permitidos');
+    return toast('Tipo de campaña contiene caracteres no permitidos');
   }
   if (g('motivo') === 'custom' && !validateText(motivo)) {
-    return toast('⚠️ Motivo contiene caracteres no permitidos');
+    return toast('Motivo contiene caracteres no permitidos');
   }
   if (division === 'brand' && g('codigoPieza') === 'custom' && !validateText(codigo)) {
-    return toast('⚠️ Código de pieza contiene caracteres no permitidos');
+    return toast('Código de pieza contiene caracteres no permitidos');
   }
 
   // Construir UTM
@@ -111,7 +111,7 @@ export function generateUTM(e) {
 
   renderHistory();
   updateStats();
-  toast('✅ UTM generada, verificando URL...');
+  toast('UTM generada, verificando URL...');
 
   // Verificar URL en background
   checkURL(url).then(status => {
@@ -120,9 +120,9 @@ export function generateUTM(e) {
     renderHistory();
 
     if (status.status === 'ok') {
-      toast('✅ URL verificada correctamente');
+      toast('URL verificada correctamente');
     } else if (status.status === 'error') {
-      toast('⚠️ URL no accesible o con problemas');
+      toast('URL no accesible o con problemas');
     }
   });
 }
@@ -132,6 +132,6 @@ export function copyResult() {
   const t = document.getElementById('resultText')?.textContent;
   if (t) {
     navigator.clipboard.writeText(t);
-    toast('✅ Copiado al portapapeles');
+    toast('Copiado al portapapeles');
   }
 }
