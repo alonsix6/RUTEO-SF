@@ -249,6 +249,9 @@ function renderUrlsList(urls) {
     `;
     container.appendChild(card);
   });
+
+  // Render Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 export function showAddUrlForm() {
@@ -327,6 +330,8 @@ function renderCampaniasList(campanias) {
     container.appendChild(card);
   });
 
+  // Render Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
   updateCampanaPreview();
 }
 
@@ -414,6 +419,8 @@ function renderMotivosList(motivos) {
     container.appendChild(card);
   });
 
+  // Render Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
   updateMotivoPreview();
 }
 
@@ -499,6 +506,8 @@ function renderCodigosList(codigos) {
     container.appendChild(card);
   });
 
+  // Render Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
   updateCodigoPreview();
 }
 
